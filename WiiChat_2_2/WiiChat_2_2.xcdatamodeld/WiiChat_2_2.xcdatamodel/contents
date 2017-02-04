@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Contact" representedClassName="Contact" syncable="YES">
+        <attribute name="rowName" attributeType="String" syncable="YES"/>
+        <attribute name="sectionName" attributeType="String" syncable="YES"/>
+        <attribute name="wiiAddress" optional="YES" attributeType="String" minValueString="1" maxValueString="100" syncable="YES"/>
+        <attribute name="wiiEmail" attributeType="String" syncable="YES"/>
+        <attribute name="wiiError" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wiiHeadImg" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="wiiID" attributeType="String" minValueString="1" maxValueString="20" syncable="YES"/>
+        <attribute name="wiiName" attributeType="String" minValueString="1" maxValueString="20" syncable="YES"/>
+        <attribute name="wiiPhoto" optional="YES" transient="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="wiiSex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wiiSignature" optional="YES" attributeType="String" minValueString="1" maxValueString="140" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="User" inverseName="contact" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="wiiAddress" optional="YES" attributeType="String" minValueString="1" maxValueString="100" syncable="YES"/>
+        <attribute name="wiiEmail" attributeType="String" syncable="YES"/>
+        <attribute name="wiiError" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wiiHeadImg" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="wiiID" attributeType="String" minValueString="1" syncable="YES"/>
+        <attribute name="wiiLogin" attributeType="String" minValueString="2" defaultValueString="NO" syncable="YES"/>
+        <attribute name="wiiName" attributeType="String" minValueString="1" maxValueString="20" syncable="YES"/>
+        <attribute name="wiiPassword" attributeType="String" minValueString="6" maxValueString="16" syncable="YES"/>
+        <attribute name="wiiPhoto" optional="YES" transient="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="wiiSex" optional="YES" attributeType="String" minValueString="1" syncable="YES"/>
+        <attribute name="wiiSignature" optional="YES" attributeType="String" minValueString="1" maxValueString="140" syncable="YES"/>
+        <relationship name="contact" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" inverseName="user" inverseEntity="Contact" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Contact" positionX="-45" positionY="0" width="128" height="225"/>
+        <element name="User" positionX="-18" positionY="90" width="128" height="225"/>
+    </elements>
+</model>

@@ -1,0 +1,46 @@
+/* 
+  WCLocalizable.strings
+  WiiChat_2_2
+
+  Created by 童煊 on 2016/10/3.
+  Copyright © 2016年 童煊. All rights reserved.
+*/
+"copy" = "复制";
+"relay" = "转发";
+"favorites" = "收藏";
+"more" = "更多";
+"Location" = "地理位置";
+"Photo" = "照片";
+"Photo" = "图片";
+"TextDetail" = "文本消息";
+"Video" = "视频";
+"Discovery" = "发现";
+"Contact" = "通讯录";
+"Chat" = "聊天";
+"WiiChat" = "微信";
+"Emotion" = "表情详情";
+"Album" = "朋友圈";
+"Bottle" = "漂流瓶";
+"NearbyPeople" = "附近的人";
+"Shake" = "摇一摇";
+"Scanning" = "扫一扫";
+"Game" = "游戏";
+"Profile" = "我";
+"Profile" = "Profile";
+"Expression" = "表情";
+"MyAlbum" = "我的相册";
+"MyBankCard" = "我的银行卡";
+"MyFavorites" = "我的收藏";
+"MyProfileInfo" = "个人信息";
+"Setting" = "设置";
+"Profile" = "我";
+"News" = "新闻";
+"Today" = "今天";
+"Yesterday" = "昨天";
+
+"HoldToTalk" = "按住说话";
+"ReleaseToSend" = "放开发送";
+"SlideToCancel" = "向上滑动取消";
+"ReleaseToCancel" = "松开取消";
+"SendAMessage" = "发送新消息";
+"MessageLocation" = "消息位置";

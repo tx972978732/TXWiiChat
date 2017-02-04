@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="AllUsers" representedClassName=".AllUsers" syncable="YES">
+        <attribute name="wiiAddress" optional="YES" attributeType="String" minValueString="1" maxValueString="100" syncable="YES"/>
+        <attribute name="wiiContact" optional="YES" attributeType="Transformable" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="wiiEmail" attributeType="String" syncable="YES"/>
+        <attribute name="wiiError" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wiiHeadImg" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="wiiID" attributeType="String" minValueString="1" syncable="YES"/>
+        <attribute name="wiiLogin" attributeType="String" minValueString="2" defaultValueString="NO" syncable="YES"/>
+        <attribute name="wiiName" attributeType="String" minValueString="1" maxValueString="20" syncable="YES"/>
+        <attribute name="wiiPassword" attributeType="String" minValueString="6" maxValueString="16" syncable="YES"/>
+        <attribute name="wiiPhoto" optional="YES" transient="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="wiiSex" optional="YES" attributeType="String" minValueString="1" syncable="YES"/>
+        <attribute name="wiiSignature" optional="YES" attributeType="String" minValueString="1" maxValueString="140" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AllUsers" positionX="-63" positionY="-18" width="128" height="225"/>
+    </elements>
+</model>

@@ -1,0 +1,28 @@
+//
+//  WiiChat_iOS-Prefix.pch
+//  WiiChat_2_2
+//
+//  Created by 童煊 on 2016/12/19.
+//  Copyright © 2016年 童煊. All rights reserved.
+//
+
+#ifndef WiiChat_iOS_Prefix_pch
+#define WiiChat_iOS_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#endif /* WiiChat_iOS_Prefix_pch */
+
+#ifndef DEBUG
+#undef NSLog
+#define NSLog(args, ...)
+#endif
+
+//只在Debug模式下执行NSLog
+//#ifndef __OPTIMIZE__
+//#define NSLog(fmt, ...) NSLog((@"[文件名:%s]\n" "[函数名:%s]\n" "[行号:%d] \n" fmt"\n\n"), __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__)
+//#else
+//#define NSLog(...) {}
+//#endif
