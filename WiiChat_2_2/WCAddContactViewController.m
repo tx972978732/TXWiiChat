@@ -301,6 +301,7 @@ NSString *const addContactVCCellIdentifier = @"addContactVCCellIdentifier";
             UIButton * cancelBtn =(UIButton *)view;
             cancelBtn.tintColor = [UIColor greenColor];
             [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+        
         }
     }
     
@@ -323,7 +324,7 @@ NSString *const addContactVCCellIdentifier = @"addContactVCCellIdentifier";
         }else{
             [self neverAddedIntoContact];
         }
-    }else if ([searchResult isKindOfClass:[NSString class]]){
+    }else if ([(NSString*)searchResult isKindOfClass:[NSString class]]){
         if ([self respondsToSelector:NSSelectorFromString(searchResult)]) {
             [self performSelector:NSSelectorFromString(searchResult) withObject:nil];
         }
