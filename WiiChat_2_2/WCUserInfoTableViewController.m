@@ -19,31 +19,36 @@
 @end
 
 NSString *const userInfoTableVCCellIdentifier = @"userInfoTableVCCellIdentifier";
-
+static BOOL shouldRefreshData = NO;//避免初始化时重复刷新tableView
 @implementation WCUserInfoTableViewController
-- (void)viewWillAppear:(BOOL)animated{
-   // [self.tableView reloadData];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.userInfo = [self.UserInfoVCUserSource getUserInfo];
-        WEAKSELF
-        [weakSelf.tableView reloadData];
 
-    });
-    NSLog(@"WCUserInfoTableViewController ViewWillAppear 调用了");
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"个人信息";
-    self.UserInfoVCUserSource = [[UserSource alloc]init];
-    self.userInfo = [self.UserInfoVCUserSource getUserInfo];
-    self.tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    //[self.view addSubview:self.tableView];
-    // Do any additional setup after loading the view.
     NSLog(@"WCUserInfoTableViewController ViewDidLoad 调用了");
-
+    self.tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
+    self.title = @"个人信息";
+    _userInfo = [self.UserInfoVCUserSource getUserInfo];
+    if (shouldRefreshData==YES) {
+        shouldRefreshData = NO;
+    }
+    
 }
+- (void)viewWillAppear:(BOOL)animated{
+    NSLog(@"WCUserInfoTableViewController ViewWillAppear 调用了");
+    if (shouldRefreshData==NO) {
+        shouldRefreshData = YES;
+        return;
+    }
+    WEAKSELF
+    dispatch_async(dispatch_get_main_queue(), ^{
+        STRONGSELF
+        _userInfo = nil;
+        _userInfo = [strongSelf.UserInfoVCUserSource getUserInfo];
+        [strongSelf.tableView reloadData];
+        
+    });
+}
+
 -(void)viewDidAppear:(BOOL)animated{
     NSLog(@"WCUserInfoTableViewController ViewDidAppear 调用了");
 
@@ -56,6 +61,19 @@ NSString *const userInfoTableVCCellIdentifier = @"userInfoTableVCCellIdentifier"
 
 -(void)dealloc{
     NSLog(@"WCUserInfoTableViewController delloc");
+    self.tableView.delegate = nil;
+    self.tableView.dataSource = nil;
+    _userInfo = nil;
+    _UserInfoVCUserSource = nil;
+    shouldRefreshData = NO;
+}
+#pragma mark - load
+- (UserSource*)UserInfoVCUserSource{
+    if (_UserInfoVCUserSource) {
+        return _UserInfoVCUserSource;
+    }
+    _UserInfoVCUserSource = [[UserSource alloc]init];
+    return _UserInfoVCUserSource;
 }
 #pragma mark -UITableView Delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -75,12 +93,7 @@ NSString *const userInfoTableVCCellIdentifier = @"userInfoTableVCCellIdentifier"
     //NSLog(@"点击cell");
     if (indexPath.section==0&&indexPath.row==1) {
         WCEditUserInfoTableViewController *editNameVC = [[WCEditUserInfoTableViewController alloc]initWithUserInfoEditType:userInfoEditTypeName userInfo:self.userInfo];
-       // WCBaseNavigationController *nc = [[WCBaseNavigationController alloc]initWithRootViewController:editNameVC];
         [self.navigationController pushViewController:editNameVC animated:YES];
-//        [nc setTransitioningDelegate:self];
-//        [nc setModalPresentationStyle:UIModalPresentationCustom];
-//        
-//        [self presentViewController:nc animated:YES completion:nil];
     }else if (indexPath.section==1&&indexPath.row==0){
         WCEditUserInfoTableViewController *editGenderVC = [[WCEditUserInfoTableViewController alloc]initWithUserInfoEditType:userInfoEditTypeSex userInfo:self.userInfo];
         [self.navigationController pushViewController:editGenderVC animated:YES];

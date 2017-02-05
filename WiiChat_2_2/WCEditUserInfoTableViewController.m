@@ -8,13 +8,13 @@
 
 #import "WCEditUserInfoTableViewController.h"
 #import "WCProfileTableViewCell.h"
-#import "EditUserInfoHelper.h"
 #import "SVProgressHUD.h"
 #import "YQImageTool.h"
-
-
+#import "EditUserInfoHelper.h"
+#import "CountStringLengthHelper.h"
 
 #define MAX_STARWORDS_LENGTH 30
+
 @interface WCEditUserInfoTableViewController ()
 @property(nonatomic,strong)UITextField *editNameTextField;
 @property(nonatomic,strong)UITextView *editNameTextView;
@@ -23,13 +23,14 @@
 @property(nonatomic,strong)UITextView *editSignatureTextView;
 @property(nonatomic,strong)UILabel *editSignatureCountLabel;
 @property(nonatomic,strong)UIImageView *editHeadImgView;
+@property(nonatomic,strong)CountStringLengthHelper *countStringHelper;
 @end
 
 NSString *const eidtUserInfoTableVCCellIdentifier = @"eidtUserInfoTableVCCellIdentifier";
-
-@implementation WCEditUserInfoTableViewController
 static userInfoEditType editType;
 static NSInteger characterLength;
+
+@implementation WCEditUserInfoTableViewController
 
 #pragma mark - life cycle
 -(instancetype)initWithUserInfoEditType:(userInfoEditType)type userInfo:(NSMutableDictionary *)userInfo{
@@ -41,19 +42,33 @@ static NSInteger characterLength;
             self.tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
             self.tableView.delegate = self;
             self.tableView.dataSource = self;
-
+            
         }else{
             self.tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
             self.tableView.delegate = self;
             self.tableView.dataSource = self;
-
+            
         }
-            NSLog(@"editType1:%ld",(long)editType);
-            //[self.view addSubview:self.tableView];
+        NSLog(@"editType1:%ld",(long)editType);
+        //[self.view addSubview:self.tableView];
         
     }
     return self;
 }
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    if (editType==userInfoEditTypeHeadImg) {
+        self.view.backgroundColor = [UIColor blackColor];
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        self.tableView.separatorColor = [UIColor clearColor];
+        self.tableView.backgroundColor = [UIColor blackColor];
+        [self loadGesture];
+    }else if (editType==userInfoEditTypeSignature){
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textViewEditChanged:) name:@"UITextFieldTextDidChangeNotification" object:self.editSignatureTextView];//限制字符串长度
+    }
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     switch (editType) {
         case userInfoEditTypeName:
@@ -69,50 +84,25 @@ static NSInteger characterLength;
             break;
         case userInfoEditTypeSex:
             self.title = @"性别";
-             break;
+            break;
         case userInfoEditTypeHeadImg:
             self.title = @"个人头像";
             self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"更多" style:UIBarButtonItemStyleDone target:self action:@selector(choseHeadImg)];
-             break;
+            break;
         case userInfoEditTypeQRCode:
             self.title = @"我的二维码";
-             break;
+            break;
         case userInfoEditTypeAddress:
             self.title = @"我的地址";
-             break;
+            break;
         case userInfoEditTypeLocal:
             self.title = @"地区";
-             break;
+            break;
         default:
             self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(popEditUserVC)];
             break;
     }
     NSLog(@"editType2:%ld",(long)editType);
-}
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    if (editType==userInfoEditTypeHeadImg) {
-        self.view.backgroundColor = [UIColor blackColor];
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        self.tableView.separatorColor = [UIColor clearColor];
-        self.tableView.backgroundColor = [UIColor blackColor];
-        self.tableViewCell.backgroundColor = [UIColor clearColor];
-        self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 80, self.view.bounds.size.width, 810)];
-        self.scrollView.backgroundColor = [UIColor blackColor];
-        self.scrollView.delegate = self;
-        self.scrollView.minimumZoomScale = 1;
-        self.scrollView.maximumZoomScale = 2;
-        self.scrollView.showsHorizontalScrollIndicator = NO;
-        self.scrollView.showsVerticalScrollIndicator = NO;
-        //[self.view addSubview:self.scrollView];
-        self.editHeadImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.scrollView.bounds.size.width, self.scrollView.bounds.size.height-400)];
-        //self.editHeadImgView.image = [UIImage imageWithData:[self.userInfo valueForKey:@"wiiHeadImg"]];
-        self.editHeadImgView.image = [UIImage imageNamed:@"TestHeadImg.jpg"];
-        //self.editHeadImgView.contentMode = UIViewContentModeScaleAspectFit;
-        self.scrollView.contentSize = self.editHeadImgView.frame.size;
-        [self.scrollView addSubview:self.editHeadImgView];
-        [self loadGesture];
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -120,17 +110,68 @@ static NSInteger characterLength;
     // Dispose of any resources that can be recreated.
 }
 -(void)dealloc{
-//        self.userInfo = nil;
-//        self.editNameTextField.delegate = nil;
-//        self.editNameTextField = nil;
-//        self.tableView.delegate = nil;
-//        self.tableView.dataSource = nil;
-//    self.tableView = nil;
+    _editNameTextField.delegate = nil;
+    self.tableView.delegate = nil;
+    self.tableView.dataSource = nil;
+    _scrollView.delegate = nil;
+    _scrollView = nil;
+    _editNameTextField = nil;
+    _userInfo = nil;
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"UITextFieldTextDidChangeNotification"  object:self.editSignatureTextView];
     NSLog(@"WCEditUserTableViewController dealloc");
 }
+#pragma mark - load
+- (UIScrollView*)scrollView{
+    if (_scrollView) {
+        return _scrollView;
+    }
+    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 80, self.view.bounds.size.width, 810)];
+    _scrollView.backgroundColor = [UIColor blackColor];
+    _scrollView.delegate = self;
+    _scrollView.minimumZoomScale = 1;
+    _scrollView.maximumZoomScale = 2;
+    _scrollView.showsHorizontalScrollIndicator = NO;
+    _scrollView.showsVerticalScrollIndicator = NO;
+    _scrollView.userInteractionEnabled = YES;
+    _scrollView.contentSize = self.editHeadImgView.frame.size;
+    [_scrollView addSubview:self.editHeadImgView];
+    return _scrollView;
+}
+- (UIImageView*)editHeadImgView{
+    if (_editHeadImgView) {
+        return _editHeadImgView;
+    }
+    _editHeadImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.scrollView.bounds.size.width, self.scrollView.bounds.size.height-400)];
+    _editHeadImgView.image = [UIImage imageNamed:@"TestHeadImg.jpg"];
+    _editHeadImgView.userInteractionEnabled = YES;
+    return _editHeadImgView;
+    
+}
+-(UITextView*)editSignatureTextView{
+    if (_editSignatureTextView) {
+        return _editSignatureTextView;
+    }
+    _editSignatureTextView = [[UITextView alloc]init];
+    return _editSignatureTextView;
+}
+
+- (UITextField*)editNameTextField{
+    if (_editNameTextField) {
+        return _editNameTextField;
+    }
+    _editNameTextField = [[UITextField alloc]init];
+    return _editNameTextField;
+}
+
+- (CountStringLengthHelper*)countStringHelper{
+    if (_countStringHelper) {
+        return _countStringHelper;
+    }
+    _countStringHelper = [[CountStringLengthHelper alloc]initCountHelperWithMAX_Length:MAX_STARWORDS_LENGTH];
+    return _countStringHelper;
+}
+
 -(void)loadGesture{
-    self.editHeadImgView.userInteractionEnabled = YES;
-    self.scrollView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(scaleTapGesture:)];
     tapGesture.cancelsTouchesInView = NO;
     tapGesture.numberOfTapsRequired = 2;//点击的次数
@@ -139,9 +180,6 @@ static NSInteger characterLength;
     [self.editHeadImgView addGestureRecognizer:tapGesture];
 }
 
--(void)loadEditSignatureTextView{
-     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textViewEditChanged:) name:@"UITextFieldTextDidChangeNotification" object:self.editSignatureTextView];//限制字符串长度
-}
 
 #pragma mark -UITableView Delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -258,7 +296,7 @@ static NSInteger characterLength;
             }
             self.editNameTextField = editNameCell.cellTextField;
             return editNameCell;
-        
+            
         }
             break;
         case userInfoEditTypeSex:
@@ -267,48 +305,28 @@ static NSInteger characterLength;
             if (editGenderCell==nil) {
                 editGenderCell = [[WCProfileTableViewCell alloc]initEditUserInfoTypeGenderWithStyle:UITableViewCellStyleDefault reuseIdentifier:eidtUserInfoTableVCCellIdentifier];
             }
-            
+            switch (indexPath.row) {
+                case 0:
+                    editGenderCell.cellNameLabel.text = @"男";
+                    break;
+                    
+                default:
+                    editGenderCell.cellNameLabel.text = @"女";
+                    break;
+            }
             if ([[self.userInfo valueForKey:@"wiiSex"] isEqualToString:@"男"]) {
-                switch (indexPath.row) {
-                    case 0:
-                        editGenderCell.cellNameLabel.text = @"男";
-                        editGenderCell.accessoryType = UITableViewCellAccessoryCheckmark;
-                        break;
-                        
-                    default:
-                        editGenderCell.cellNameLabel.text = @"女";
-                        editGenderCell.accessoryType = UITableViewCellAccessoryNone;
-                        break;
+                if (indexPath.row==0) {
+                    editGenderCell.accessoryType = UITableViewCellAccessoryCheckmark;
                 }
             }else if ([[self.userInfo valueForKey:@"wiiSex"] isEqualToString:@"女"]){
-                switch (indexPath.row) {
-                    case 0:
-                        editGenderCell.cellNameLabel.text = @"男";
-                        editGenderCell.accessoryType = UITableViewCellAccessoryNone;
-                        break;
-                        
-                    default:
-                        editGenderCell.cellNameLabel.text = @"女";
-                        editGenderCell.accessoryType = UITableViewCellAccessoryCheckmark;
-                        break;
-                }
-            }else{
-                switch (indexPath.row) {
-                    case 0:
-                        editGenderCell.cellNameLabel.text = @"男";
-                        editGenderCell.accessoryType = UITableViewCellAccessoryNone;
-                        break;
-                        
-                    default:
-                        editGenderCell.cellNameLabel.text = @"女";
-                        editGenderCell.accessoryType = UITableViewCellAccessoryNone;
-                        break;
+                if (indexPath.row==1) {
+                    editGenderCell.accessoryType = UITableViewCellAccessoryCheckmark;
                 }
             }
             return editGenderCell;
         }
-    break;
-    case userInfoEditTypeSignature:
+            break;
+        case userInfoEditTypeSignature:
         {
             WCProfileTableViewCell *editSignatureCell = [tableView dequeueReusableCellWithIdentifier:eidtUserInfoTableVCCellIdentifier];
             if (editSignatureCell==nil) {
@@ -316,21 +334,15 @@ static NSInteger characterLength;
             }
             editSignatureCell.cellTextView.text = [self.userInfo valueForKey:@"wiiSignature"];
             editSignatureCell.cellTextView.delegate = self;
-           // [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textViewEditChanged:) name:@"UITextViewTextDidChangeNotification" object:editSignatureCell.cellTextView];//限制字符串长度
             self.editSignatureTextView = editSignatureCell.cellTextView;
             if ([editSignatureCell.cellTextView canBecomeFirstResponder]) {
                 [editSignatureCell.cellTextView becomeFirstResponder];
             }
-            NSInteger userInfoSignatureCount = [self existedStringLength:[self.userInfo valueForKey:@"wiiSignature"]]/2;
-            NSInteger restCount = MAX_STARWORDS_LENGTH - userInfoSignatureCount;
-            if (restCount<=0) {
-                restCount=0;
-            }
-            editSignatureCell.cellDetailLabel.text = [NSString stringWithFormat:@"%ld",(long)restCount];
+            editSignatureCell.cellDetailLabel.text = [NSString stringWithFormat:@"%ld",(long)[self.countStringHelper restCountLength:[self.userInfo valueForKey:@"wiiSignature"]]];//剩余可输入字符长度
             self.editSignatureCountLabel = editSignatureCell.cellDetailLabel;
             return editSignatureCell;
         }
-    break;
+            break;
         case userInfoEditTypeHeadImg:
         {
             self.view.backgroundColor = [UIColor blackColor];
@@ -341,7 +353,7 @@ static NSInteger characterLength;
             [editHeadImgCell.backgroundView addSubview:self.scrollView];
             return editHeadImgCell;
         }
-    default:{
+        default:{
             WCProfileTableViewCell *headTableViewCell = [[WCProfileTableViewCell alloc]initUserInfoHeadCellWithStyle:UITableViewCellStyleDefault reuseIdentifier:eidtUserInfoTableVCCellIdentifier];// coredata
             if ([self.userInfo valueForKey:@"wiiHeadImg"]!=nil) {
                 headTableViewCell.cellImgView.image = [UIImage imageWithData:[self.userInfo valueForKey:@"wiiHeadImg"]];
@@ -352,7 +364,7 @@ static NSInteger characterLength;
             headTableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             return headTableViewCell;
         }
-    break;
+            break;
     }
 }
 #pragma mark - UITextField Delegate
@@ -402,19 +414,10 @@ static NSInteger characterLength;
     [self.editSignatureTextView resignFirstResponder];
 }
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
-//    if (text.length==0) {
-//        return YES;
-//    }
     NSLog(@"testDelete");
-    NSInteger existedLength = [self existedStringLength1:self.editSignatureTextView.text]/2;
+    NSInteger existedLength = [self.countStringHelper existedStringLength1:self.editSignatureTextView.text]/2;
     NSInteger selectedLength = range.length;
     NSInteger replaceLength = text.length;
-//    NSInteger restLength = MAX_STARWORDS_LENGTH - existedLength - replaceLength;
-//    if (restLength>=0) {
-//        self.editSignatureCountLabel.text = [NSString stringWithFormat:@"%ld",(long)restLength];
-//    }else{
-//        self.editSignatureCountLabel.text = @"0";
-//    }
     if (existedLength - selectedLength + replaceLength >MAX_STARWORDS_LENGTH) {
         return NO;
     }
@@ -425,7 +428,7 @@ static NSInteger characterLength;
     UITextRange *selectedRange = [textView markedTextRange];
     UITextPosition *position = [textView positionFromPosition:selectedRange.start offset:0];
     if (selectedRange&&position) {
-        NSInteger existedLength = [self existedStringLength:textView.text]/2;
+        NSInteger existedLength = [self.countStringHelper existedStringLength:textView.text]/2;
         NSInteger restCount = MAX_STARWORDS_LENGTH - existedLength;
         if (restCount<=0) {
             restCount=0;
@@ -433,8 +436,8 @@ static NSInteger characterLength;
         self.editSignatureCountLabel.text = [NSString stringWithFormat:@"%ld",(long)restCount];
         return;
     }else if (selectedRange==nil&&position==nil){
-        if ([self judgementString:textView.text]==-1) {
-            NSInteger existedLength = [self existedStringLength:textView.text]/2;
+        if ([self.countStringHelper judgementString:textView.text]==-1) {
+            NSInteger existedLength = [self.countStringHelper existedStringLength:textView.text]/2;
             NSInteger restCount = MAX_STARWORDS_LENGTH - existedLength;
             if (restCount<=0) {
                 restCount=0;
@@ -442,8 +445,8 @@ static NSInteger characterLength;
             self.editSignatureCountLabel.text = [NSString stringWithFormat:@"%ld",(long)restCount];
             return;
         }
-        [textView setText:[textView.text substringToIndex:[self judgementString:textView.text]]];
-        NSInteger existedLength = [self existedStringLength:self.editSignatureTextView.text]/2;
+        [textView setText:[textView.text substringToIndex:[self.countStringHelper judgementString:textView.text]]];
+        NSInteger existedLength = [self.countStringHelper existedStringLength:self.editSignatureTextView.text]/2;
         NSInteger restCount = MAX_STARWORDS_LENGTH - existedLength;
         if (restCount<=0) {
             restCount=0;
@@ -453,149 +456,6 @@ static NSInteger characterLength;
 }
 
 #pragma mark - helper method
--(NSInteger)existedStringLength:(NSString*)string{
-     characterLength = 0;
-    for(int i=0; i< [string length];++i){
-        int a = [string characterAtIndex:i];
-        NSString *str = [NSString stringWithFormat:@"%c",a];
-        NSRange range = NSMakeRange(i, 1);
-        NSString *subString = [string substringWithRange:range];
-        const char *cString = [subString UTF8String];
-        if (cString==NULL) {
-            range = NSMakeRange(i, 2);
-            subString = [string substringWithRange:range];
-            if ([self stringContainsEmoji:subString]!=0){
-                NSLog(@"str:%@",str);
-                NSInteger emojiCount = [self stringContainsEmoji:subString];
-                NSLog(@"emojiCount:%ld",(long)emojiCount);
-                characterLength +=(4*emojiCount);//表情的字符长度判断
-            }
-            i+=1;
-        }else{
-            if((a >= 0x4e00 && a <= 0x9fa5)||(strlen(cString)==3)){ //判断是否为中文
-                characterLength +=2;
-            }else{
-                characterLength +=1;
-            }
-        }
-    }
-    NSLog(@"当前字符串长度%ld",(long)characterLength/2);
-    if ((characterLength%2)==0) {//输入1个英文、数字字符时立即显示占用1位（即显示剩余字数时，不足1时取整显示）
-        return characterLength;
-    }else{
-        return characterLength+1;
-    }
-    //return characterLength;
-}
--(NSInteger)existedStringLength1:(NSString*)string{//计算已存在的字符长度时，按实际占用长度计算
-    characterLength = 0;
-    for(int i=0; i< [string length];++i){
-        int a = [string characterAtIndex:i];
-        NSString *str = [NSString stringWithFormat:@"%c",a];
-        NSRange range = NSMakeRange(i, 1);
-        NSString *subString = [string substringWithRange:range];
-        const char *cString = [subString UTF8String];
-        if (cString==NULL) {
-            range = NSMakeRange(i, 2);
-            subString = [string substringWithRange:range];
-            if ([self stringContainsEmoji:subString]!=0){
-                NSLog(@"str:%@",str);
-                NSInteger emojiCount = [self stringContainsEmoji:subString];
-                NSLog(@"emojiCount:%ld",(long)emojiCount);
-                characterLength +=(4*emojiCount);//表情的字符长度判断
-            }
-            i+=1;
-        }else{
-            if((a >= 0x4e00 && a <= 0x9fa5)||(strlen(cString)==3)){ //判断是否为中文
-                characterLength +=2;
-            }else{
-                characterLength +=1;
-            }
-        }
-    }
-    NSLog(@"当前字符串长度%ld",(long)characterLength/2);
-    return characterLength;
-}
--(NSInteger)judgementString:(NSString*)string{
-    NSInteger count = 0;
-    for (int i=0; i<string.length; ++i) {
-        NSRange range = NSMakeRange(i, 1);
-        NSString *subString = [string substringWithRange:range];
-        const char *cString = [subString UTF8String];
-        if (cString==NULL) {
-            range = NSMakeRange(i, 2);
-            subString = [string substringWithRange:range];
-            NSLog(@"subStrlength:%ld , subString:%@",(long)subString.length,subString);
-            NSLog(@"strlength:%ld",(long)string.length);
-            if ([self stringContainsEmoji:subString]!=0) {
-                NSLog(@"judgement emoji");
-                NSData *data = [subString dataUsingEncoding:NSNonLossyASCIIStringEncoding];
-                NSString *goodValue = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-                if (goodValue.length == 6) {
-                    if ((count+2)>MAX_STARWORDS_LENGTH*2) {
-                        return i;
-                    }else
-                        count+=2;
-                }else{
-                    if ((count+2)>MAX_STARWORDS_LENGTH*2) {
-                        return i;
-                    }else
-                        count+=2;
-                }
-                i+=1;
-            }
-        }else if (strlen(cString)==3){
-            if ((count+2)>MAX_STARWORDS_LENGTH*2) {
-                return i;
-            }else
-                count+=2;
-        }else{
-            if ((count+1)>MAX_STARWORDS_LENGTH*2) {
-                return i;
-            }else
-                count+=1;
-        }
-    }
-    return -1;
-}
-- (NSInteger)stringContainsEmoji:(NSString *)string{
-    // 过滤所有表情。returnValue为NO表示不含有表情，YES表示含有表情
-    __block NSInteger returnValue = 0;
-    [string enumerateSubstringsInRange:NSMakeRange(0, [string length]) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
-        
-        const unichar hs = [substring characterAtIndex:0];
-        // surrogate pair
-        if (0xd800 <= hs && hs <= 0xdbff) {
-            if (substring.length > 1) {
-                const unichar ls = [substring characterAtIndex:1];
-                const int uc = ((hs - 0xd800) * 0x400) + (ls - 0xdc00) + 0x10000;
-                if (0x1d000 <= uc && uc <= 0x1f77f) {
-                    returnValue +=1;
-                }
-            }
-        } else if (substring.length > 1) {
-            const unichar ls = [substring characterAtIndex:1];
-            if (ls == 0x20e3) {
-                returnValue +=1;
-            }
-        } else {
-            // non surrogate
-            if (0x2100 <= hs && hs <= 0x27ff) {
-                returnValue +=1;
-            } else if (0x2B05 <= hs && hs <= 0x2b07) {
-                returnValue +=1;
-            } else if (0x2934 <= hs && hs <= 0x2935) {
-                returnValue +=1;
-            } else if (0x3297 <= hs && hs <= 0x3299) {
-                returnValue +=1;
-            } else if (hs == 0xa9 || hs == 0xae || hs == 0x303d || hs == 0x3030 || hs == 0x2b55 || hs == 0x2b1c || hs == 0x2b1b || hs == 0x2b50) {
-                returnValue +=1;
-            }
-        }
-    }];
-    NSInteger result = returnValue;
-    return result;
-}
 
 //字符统计
 -(void)textViewEditChanged:(NSNotification*)obj{
@@ -623,7 +483,7 @@ static NSInteger characterLength;
     }else{
         textView.text = toBeString;
     }
-
+    
 }
 -(void)textViewEditChanged1:(NSNotification*)obj{
     UITextView *textView = (UITextView *)obj.object;
@@ -639,7 +499,7 @@ static NSInteger characterLength;
         // 没有高亮选择的字，则对已输入的文字进行字数统计和限制 优化第三方输入法
         if (!position)
         {
-           
+            
             if (toBeString.length > MAX_STARWORDS_LENGTH)
             {
                 NSRange rangeIndex = [toBeString rangeOfComposedCharacterSequenceAtIndex:MAX_STARWORDS_LENGTH];
@@ -658,35 +518,35 @@ static NSInteger characterLength;
     }
     // 中文输入法以外的直接对其统计限制即可，不考虑其他语种情况
     else{
-       
-    {
-        if (toBeString.length > MAX_STARWORDS_LENGTH)
+        
         {
-            NSRange rangeIndex = [toBeString rangeOfComposedCharacterSequenceAtIndex:MAX_STARWORDS_LENGTH];
-            if (rangeIndex.length == 1)
+            if (toBeString.length > MAX_STARWORDS_LENGTH)
             {
-                textView.text = [toBeString substringToIndex:MAX_STARWORDS_LENGTH];
-            }
-            else
-            {
-                NSRange rangeRange = [toBeString rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, MAX_STARWORDS_LENGTH)];
-                textView.text = [toBeString substringWithRange:rangeRange];
+                NSRange rangeIndex = [toBeString rangeOfComposedCharacterSequenceAtIndex:MAX_STARWORDS_LENGTH];
+                if (rangeIndex.length == 1)
+                {
+                    textView.text = [toBeString substringToIndex:MAX_STARWORDS_LENGTH];
+                }
+                else
+                {
+                    NSRange rangeRange = [toBeString rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, MAX_STARWORDS_LENGTH)];
+                    textView.text = [toBeString substringWithRange:rangeRange];
+                }
             }
         }
     }
-    }
-
+    
 }
 
 -(void)scaleTapGesture:(UIGestureRecognizer*)tapGesture{
     NSLog(@"双击缩放图片");
     //self.editHeadImgView.image = [YQImageTool getThumbImageWithImage:[UIImage imageNamed:@"TestHeadImg"] andSize:CGSizeMake(50, 50) Scale:NO];
-//    self.editHeadImgView.frame = CGRectMake(0, 180, 100, 100);
-//    self.editHeadImgView.image = [YQImageTool getCornerImageFillSize:CGSizeMake(50, 50) WithImage:[UIImage imageNamed:@"TestHeadImg"] andCornerWith:5.0f andBackGroundColor:[UIColor clearColor]];
+    //    self.editHeadImgView.frame = CGRectMake(0, 180, 100, 100);
+    //    self.editHeadImgView.image = [YQImageTool getCornerImageFillSize:CGSizeMake(50, 50) WithImage:[UIImage imageNamed:@"TestHeadImg"] andCornerWith:5.0f andBackGroundColor:[UIColor clearColor]];
     
-//    float newScale = self.scrollView.zoomScale * 0.5;
-//    CGRect zoomRect = [self zoomRectForScale:newScale withCenter:[tapGesture locationInView:tapGesture.view]];
-//    [self.scrollView zoomToRect:zoomRect animated:YES];
+    //    float newScale = self.scrollView.zoomScale * 0.5;
+    //    CGRect zoomRect = [self zoomRectForScale:newScale withCenter:[tapGesture locationInView:tapGesture.view]];
+    //    [self.scrollView zoomToRect:zoomRect animated:YES];
     if (self.scrollView.zoomScale>1.0) {
         [self.scrollView setZoomScale:1.0 animated:YES];
     }else{
@@ -706,15 +566,15 @@ static NSInteger characterLength;
 // pop VC
 -(void)popEditUserVC{
     //[self.view endEditing:YES];
-//    if (![self.editNameTextView isFirstResponder]&&![self.editNameTextField isFirstResponder]) {
-//        [self dismissViewControllerAnimated:YES completion:nil];
-//    }
+    //    if (![self.editNameTextView isFirstResponder]&&![self.editNameTextField isFirstResponder]) {
+    //        [self dismissViewControllerAnimated:YES completion:nil];
+    //    }
     //NSLog(@"%@",self.editNameTextField.text);
     [self.navigationController popViewControllerAnimated:YES];
-//    if ([self.editNameTextField isFirstResponder]) {
-//        [self.editNameTextField resignFirstResponder];
-//    }
-   // [self.editNameTextField removeFromSuperview];
+    //    if ([self.editNameTextField isFirstResponder]) {
+    //        [self.editNameTextField resignFirstResponder];
+    //    }
+    // [self.editNameTextField removeFromSuperview];
 }
 -(void)saveEditName{
     if ([[self.userInfo valueForKey:@"wiiName"]isEqualToString:self.editNameTextField.text]) {//未修改则直接返回
@@ -842,13 +702,13 @@ static NSInteger characterLength;
 }
 \
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
