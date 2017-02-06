@@ -9,9 +9,9 @@
 #import "WCEditUserInfoTableViewController.h"
 #import "WCProfileTableViewCell.h"
 #import "SVProgressHUD.h"
-#import "YQImageTool.h"
 #import "EditUserInfoHelper.h"
 #import "CountStringLengthHelper.h"
+#import "WCHeadImgScrollVIew.h"
 
 #define MAX_STARWORDS_LENGTH 30
 
@@ -24,33 +24,22 @@
 @property(nonatomic,strong)UILabel *editSignatureCountLabel;
 @property(nonatomic,strong)UIImageView *editHeadImgView;
 @property(nonatomic,strong)CountStringLengthHelper *countStringHelper;
+@property(nonatomic,strong)WCHeadImgScrollVIew *headImgScrollView;
 @end
 
 NSString *const eidtUserInfoTableVCCellIdentifier = @"eidtUserInfoTableVCCellIdentifier";
 static userInfoEditType editType;
-static NSInteger characterLength;
-
+static BOOL tapClicks=NO;
 @implementation WCEditUserInfoTableViewController
 
 #pragma mark - life cycle
 -(instancetype)initWithUserInfoEditType:(userInfoEditType)type userInfo:(NSMutableDictionary *)userInfo{
     self = [super init];
+    NSLog(@"InitWithUserInfo 调用了");
     if (self) {
         self.userInfo = userInfo;
         editType = type;
-        if (editType==userInfoEditTypeHeadImg) {
-            self.tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
-            self.tableView.delegate = self;
-            self.tableView.dataSource = self;
-            
-        }else{
-            self.tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
-            self.tableView.delegate = self;
-            self.tableView.dataSource = self;
-            
-        }
         NSLog(@"editType1:%ld",(long)editType);
-        //[self.view addSubview:self.tableView];
         
     }
     return self;
@@ -58,6 +47,7 @@ static NSInteger characterLength;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"EditUserInfo ViewDidLoad调用了");
     if (editType==userInfoEditTypeHeadImg) {
         self.view.backgroundColor = [UIColor blackColor];
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -65,7 +55,10 @@ static NSInteger characterLength;
         self.tableView.backgroundColor = [UIColor blackColor];
         [self loadGesture];
     }else if (editType==userInfoEditTypeSignature){
+        self.tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textViewEditChanged:) name:@"UITextFieldTextDidChangeNotification" object:self.editSignatureTextView];//限制字符串长度
+    }else{
+        self.tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
     }
 }
 
@@ -113,39 +106,24 @@ static NSInteger characterLength;
     _editNameTextField.delegate = nil;
     self.tableView.delegate = nil;
     self.tableView.dataSource = nil;
-    _scrollView.delegate = nil;
-    _scrollView = nil;
+    _headImgScrollView.delegate = nil;
+    _headImgScrollView = nil;
     _editNameTextField = nil;
     _userInfo = nil;
     [[NSNotificationCenter defaultCenter]removeObserver:self name:@"UITextFieldTextDidChangeNotification"  object:self.editSignatureTextView];
     NSLog(@"WCEditUserTableViewController dealloc");
 }
 #pragma mark - load
-- (UIScrollView*)scrollView{
-    if (_scrollView) {
-        return _scrollView;
+- (UIScrollView*)headImgScrollView{
+    if (_headImgScrollView) {
+        return _headImgScrollView;
     }
-    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 80, self.view.bounds.size.width, 810)];
-    _scrollView.backgroundColor = [UIColor blackColor];
-    _scrollView.delegate = self;
-    _scrollView.minimumZoomScale = 1;
-    _scrollView.maximumZoomScale = 2;
-    _scrollView.showsHorizontalScrollIndicator = NO;
-    _scrollView.showsVerticalScrollIndicator = NO;
-    _scrollView.userInteractionEnabled = YES;
-    _scrollView.contentSize = self.editHeadImgView.frame.size;
-    [_scrollView addSubview:self.editHeadImgView];
-    return _scrollView;
-}
-- (UIImageView*)editHeadImgView{
-    if (_editHeadImgView) {
-        return _editHeadImgView;
-    }
-    _editHeadImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.scrollView.bounds.size.width, self.scrollView.bounds.size.height-400)];
-    _editHeadImgView.image = [UIImage imageNamed:@"TestHeadImg.jpg"];
-    _editHeadImgView.userInteractionEnabled = YES;
-    return _editHeadImgView;
-    
+    _headImgScrollView = [[WCHeadImgScrollVIew alloc]initHeadImgScrollViewWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 810) ViewType:headImgScrollViewTypeDefault headImg:[UIImage imageNamed:@"TestHeadImg.jpg"]];
+    _headImgScrollView.delegate = self;
+    self.tableView.scrollEnabled = NO;
+    _headImgScrollView.contentSize = CGSizeMake(self.view.bounds.size.width, 800);
+    _headImgScrollView.contentInset = UIEdgeInsetsMake(0, 0, 150, 0);
+    return _headImgScrollView;
 }
 -(UITextView*)editSignatureTextView{
     if (_editSignatureTextView) {
@@ -176,8 +154,8 @@ static NSInteger characterLength;
     tapGesture.cancelsTouchesInView = NO;
     tapGesture.numberOfTapsRequired = 2;//点击的次数
     tapGesture.numberOfTouchesRequired = 1;//手指的个数
-    [self.scrollView addGestureRecognizer:tapGesture];
-    [self.editHeadImgView addGestureRecognizer:tapGesture];
+    [self.headImgScrollView addGestureRecognizer:tapGesture];
+    [self.headImgScrollView.headImgView addGestureRecognizer:tapGesture];
 }
 
 
@@ -350,7 +328,7 @@ static NSInteger characterLength;
             if (editHeadImgCell==nil) {
                 editHeadImgCell = [[WCProfileTableViewCell alloc]initEditUserInfoTypeHeadImgWithStyle:UITableViewCellStyleDefault reuserIdentifier:eidtUserInfoTableVCCellIdentifier];
             }
-            [editHeadImgCell.backgroundView addSubview:self.scrollView];
+            [editHeadImgCell.backgroundView addSubview:self.headImgScrollView];
             return editHeadImgCell;
         }
         default:{
@@ -377,7 +355,7 @@ static NSInteger characterLength;
 
 - (void)photoKitController:(STPhotoKitController *)photoKitController resultImage:(UIImage *)resultImage
 {
-    self.editHeadImgView.image = resultImage;
+    self.headImgScrollView.headImgView.image = resultImage;//****保存选择的相片至数据库中
 }
 
 #pragma mark - 2.UIImagePickerController的委托
@@ -389,7 +367,7 @@ static NSInteger characterLength;
         STPhotoKitController *photoVC = [STPhotoKitController new];
         [photoVC setDelegate:self];
         [photoVC setImageOriginal:imageOriginal];
-        [photoVC setSizeClip:CGSizeMake(self.editHeadImgView.width, self.editHeadImgView.height)];
+        [photoVC setSizeClip:CGSizeMake(self.headImgScrollView.headImgView.width, self.headImgScrollView.headImgView.height)];
         [self presentViewController:photoVC animated:YES completion:nil];
     }];
 }
@@ -401,16 +379,21 @@ static NSInteger characterLength;
 
 #pragma mark - UIScrollView Delegate
 - (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
-    return self.editHeadImgView;
+    return self.headImgScrollView.headImgView;
 }
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale{
+    if (scrollView.pinchGestureRecognizer.numberOfTouches==2) {
+        CGPoint p1 = [scrollView.pinchGestureRecognizer locationOfTouch:0 inView:self.headImgScrollView.headImgView];
+        CGPoint p2 = [scrollView.pinchGestureRecognizer locationOfTouch:1 inView:self.headImgScrollView.headImgView];
+        CGPoint pointCenter = CGPointMake((p1.x+p2.x)/2, (p1.y+p2.y)/2);
+        NSLog(@"pointCenter:%@",NSStringFromCGPoint(pointCenter));
+    }
     [scrollView setZoomScale:scale animated:YES];
 }
 
 
 #pragma mark - UITextView Delegate
 - (void)textViewDidEndEditing:(UITextView *)textView{
-    //[self.view endEditing:YES];
     [self.editSignatureTextView resignFirstResponder];
 }
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
@@ -537,32 +520,69 @@ static NSInteger characterLength;
     }
     
 }
+//***缩放方法1：修改scrollView的bounds值改变图像位置后缩放。 缺点：先改变位置后缩放动画不连续！
+//-(void)scaleTapGesture:(UIGestureRecognizer*)tapGesture{
+//    CGPoint p1 = [tapGesture locationOfTouch:0 inView:self.view];
+//    CGFloat tempX = p1.x - self.view.center.x;
+//    CGFloat tempY = p1.y - self.view.center.y;
+//    NSLog(@"tapGesture location:%@",NSStringFromCGPoint(p1));
+//    NSLog(@"双击缩放图片");
+//    if (self.scrollView.zoomScale>1.0) {
+//        [self.scrollView setZoomScale:1.0 animated:YES];
+//        //self.editHeadImgView.frame = CGRectMake(0, 50, self.view.bounds.size.width, self.scrollView.bounds.size.height-400);
+//        [self.scrollView setBounds:CGRectMake(0, 0, self.view.bounds.size.width, 810)];
+//        _scrollView.scrollEnabled = NO;
+//    }else{
+//        NSLog(@"original bounds :%@",NSStringFromCGRect(self.scrollView.bounds));
+//        self.scrollView.contentOffset = CGPointMake(100, 100);
+//        if (p1.x>=self.view.center.x&&p1.y>=self.view.center.y) {
+//            [self.scrollView setBounds:CGRectMake(tempX, tempY, self.view.bounds.size.width, 810)];
+//            NSLog(@"四象限");
+//        }else if (p1.x<self.view.center.x&&p1.y>=self.view.center.y){
+//            [self.scrollView setBounds:CGRectMake(tempX, tempY, self.view.bounds.size.width, 810)];
+//            NSLog(@"三象限");
+//        }else if (p1.x>=self.view.center.x&&p1.y<self.view.center.y){
+//            [self.scrollView setBounds:CGRectMake(tempX, tempY, self.view.bounds.size.width, 810)];
+//            NSLog(@"一象限");
+//        }else{
+//            [self.scrollView setBounds:CGRectMake(tempX, tempY, self.view.bounds.size.width, 810)];
+//            NSLog(@"二象限");
+//        }
+//
+//        NSLog(@"new bounds :%@",NSStringFromCGRect(self.scrollView.bounds));
+//        [self.scrollView setZoomScale:2.0 animated:YES];
+//        _scrollView.scrollEnabled = YES;
+//    }
+//}
 
+//****缩放方法2 根据点击的center调整zoomRect
 -(void)scaleTapGesture:(UIGestureRecognizer*)tapGesture{
-    NSLog(@"双击缩放图片");
-    //self.editHeadImgView.image = [YQImageTool getThumbImageWithImage:[UIImage imageNamed:@"TestHeadImg"] andSize:CGSizeMake(50, 50) Scale:NO];
-    //    self.editHeadImgView.frame = CGRectMake(0, 180, 100, 100);
-    //    self.editHeadImgView.image = [YQImageTool getCornerImageFillSize:CGSizeMake(50, 50) WithImage:[UIImage imageNamed:@"TestHeadImg"] andCornerWith:5.0f andBackGroundColor:[UIColor clearColor]];
-    
-    //    float newScale = self.scrollView.zoomScale * 0.5;
-    //    CGRect zoomRect = [self zoomRectForScale:newScale withCenter:[tapGesture locationInView:tapGesture.view]];
-    //    [self.scrollView zoomToRect:zoomRect animated:YES];
-    if (self.scrollView.zoomScale>1.0) {
-        [self.scrollView setZoomScale:1.0 animated:YES];
-    }else{
-        [self.scrollView setZoomScale:2.0 animated:YES];
-    }
+    CGPoint p1 = [tapGesture locationOfTouch:0 inView:self.view];
+        _headImgScrollView.scrollEnabled = YES;
+        float newScale;
+        if (!tapClicks) {
+            newScale = self.headImgScrollView.zoomScale *2.0;
+            _headImgScrollView.scrollEnabled = YES;
+        }
+        else{
+            newScale = self.headImgScrollView.zoomScale *0.0;
+            _headImgScrollView.scrollEnabled = NO;
+        }
+        CGRect zoomRect = [self zoomRectForScale:newScale withCenter:p1];
+        [self.headImgScrollView zoomToRect:zoomRect animated:YES];
+        tapClicks = !tapClicks;
 }
+
+
 - (CGRect)zoomRectForScale:(float)scale withCenter:(CGPoint)center
 {
     CGRect zoomRect;
-    zoomRect.size.height = self.scrollView.frame.size.height / scale;
-    zoomRect.size.width  = self.scrollView.frame.size.width  / scale;
-    zoomRect.origin.x = center.x - (zoomRect.size.width  / 2.0);
-    zoomRect.origin.y = center.y - (zoomRect.size.height / 2.0);
+    zoomRect.size.height =self.headImgScrollView.frame.size.height / scale;
+    zoomRect.size.width  =self.headImgScrollView.frame.size.width  / scale;
+    zoomRect.origin.x = center.x - (zoomRect.size.width  /2.0);
+    zoomRect.origin.y = center.y - (zoomRect.size.height /2.0);
     return zoomRect;
 }
-
 // pop VC
 -(void)popEditUserVC{
     //[self.view endEditing:YES];

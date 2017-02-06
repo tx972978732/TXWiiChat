@@ -72,6 +72,7 @@
 		D4C4B63E1DB106EE00F5D105 /* EditUserInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C4B63D1DB106EE00F5D105 /* EditUserInfoHelper.m */; };
 		D4D2DEEE1D9D37F700BCA6F6 /* RegisterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D2DEED1D9D37F700BCA6F6 /* RegisterHelper.m */; };
 		D4D2DEF11D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4D2DEEF1D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodeld */; };
+		D4D8EAA21E488E7800743378 /* WCHeadImgScrollVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8EAA11E488E7800743378 /* WCHeadImgScrollVIew.m */; };
 		D4DB484A1DC9F63B002B7665 /* WCAddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DB48491DC9F63B002B7665 /* WCAddContactViewController.m */; };
 		D4DB48501DCA00BF002B7665 /* gongzhonghao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DB484B1DCA00BF002B7665 /* gongzhonghao@2x.png */; };
 		D4DB48511DCA00BF002B7665 /* leida@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DB484C1DCA00BF002B7665 /* leida@2x.png */; };
@@ -228,6 +229,8 @@
 		D4D2DEEC1D9D37F700BCA6F6 /* RegisterHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterHelper.h; sourceTree = "<group>"; };
 		D4D2DEED1D9D37F700BCA6F6 /* RegisterHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterHelper.m; sourceTree = "<group>"; };
 		D4D2DEF01D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WiiChatSourceData.xcdatamodel; sourceTree = "<group>"; };
+		D4D8EAA01E488E7800743378 /* WCHeadImgScrollVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCHeadImgScrollVIew.h; sourceTree = "<group>"; };
+		D4D8EAA11E488E7800743378 /* WCHeadImgScrollVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCHeadImgScrollVIew.m; sourceTree = "<group>"; };
 		D4DB48481DC9F63B002B7665 /* WCAddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCAddContactViewController.h; sourceTree = "<group>"; };
 		D4DB48491DC9F63B002B7665 /* WCAddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCAddContactViewController.m; sourceTree = "<group>"; };
 		D4DB484B1DCA00BF002B7665 /* gongzhonghao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gongzhonghao@2x.png"; path = "photos/gongzhonghao@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -501,6 +504,8 @@
 				D4846BA81DAA53F500209CDB /* WCUserInfoTableViewController.m */,
 				D49928551DAB417500F6DD90 /* WCEditUserInfoTableViewController.h */,
 				D49928561DAB417500F6DD90 /* WCEditUserInfoTableViewController.m */,
+				D4D8EAA01E488E7800743378 /* WCHeadImgScrollVIew.h */,
+				D4D8EAA11E488E7800743378 /* WCHeadImgScrollVIew.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -843,6 +848,7 @@
 				D4F2282C1DA2762D005DB421 /* WCFetchResultControllerDataBase.m in Sources */,
 				D48AEDB91E4714450002D18F /* Contact+CoreDataProperties.m in Sources */,
 				D4B7FFD71D9557F2004D77B8 /* RegisterViewController.m in Sources */,
+				D4D8EAA21E488E7800743378 /* WCHeadImgScrollVIew.m in Sources */,
 				D4AF93C31DA9166D00675224 /* WCUIStoreManager.m in Sources */,
 				D4F228241DA2728E005DB421 /* WCBaseTableViewController.m in Sources */,
 				D48AEDCA1E47151D0002D18F /* WCMessageRootTableViewController.m in Sources */,
