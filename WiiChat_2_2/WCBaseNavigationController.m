@@ -10,6 +10,7 @@
 #import "UIBaseSettingInfo.h"
 
 @interface WCBaseNavigationController ()
+@property (strong, nonatomic) UIView *navLineV;
 
 @end
 
@@ -26,6 +27,16 @@
     self.navigationBar.tintColor = WCNavigationTintColor;
     self.navigationBar.titleTextAttributes = WCNavigationBarTitleTextAttribute;
     // Do any additional setup after loading the view.
+    
+    //藏旧
+    [self hideBorderInView:self.navigationBar];
+    //添新
+    if (!_navLineV) {
+        _navLineV = [[UIView alloc]initWithFrame:CGRectMake(0, 44, kScreen_Width, 1.0/ [UIScreen mainScreen].scale)];
+        _navLineV.backgroundColor = [UIColor lightGrayColor];
+        [self.navigationBar addSubview:_navLineV];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,6 +44,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)hideBorderInView:(UIView *)view{
+    
+    
+    if ([view isKindOfClass:[UIImageView class]]
+        && view.frame.size.height <= 1) {
+        view.hidden = YES;
+    }
+    for (UIView *subView in view.subviews) {
+        [self hideBorderInView:subView];
+    }
+}
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (self.viewControllers.count) {
         viewController.hidesBottomBarWhenPushed = YES;

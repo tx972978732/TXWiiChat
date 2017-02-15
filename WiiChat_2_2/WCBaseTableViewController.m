@@ -17,6 +17,9 @@
 #pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;//防止UINavigationBar 遮挡tableview
+    self.automaticallyAdjustsScrollViewInsets = NO;
+
     //[self.view addSubview:self.tableView];
     // Do any additional setup after loading the view.
 }

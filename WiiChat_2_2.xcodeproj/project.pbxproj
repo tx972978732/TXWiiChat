@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DEA54176366D62933A70DC3 /* Pods_WiiChat_2_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86A55449349F48C0FEE35F7 /* Pods_WiiChat_2_2.framework */; };
 		D401E2891DF6AD50001F63B2 /* DefaultHeadImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D401E2881DF6AD50001F63B2 /* DefaultHeadImg@2x.png */; };
 		D41C23341DAE66CC00699CE7 /* YYEAnimatorPush.m in Sources */ = {isa = PBXBuildFile; fileRef = D41C23331DAE66CC00699CE7 /* YYEAnimatorPush.m */; };
 		D42D7A6A1DD33182009097A6 /* searchIcon2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D42D7A691DD33182009097A6 /* searchIcon2@2x.png */; };
@@ -31,6 +32,8 @@
 		D45C29471D90F3A2005C2B9A /* WCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45C29461D90F3A2005C2B9A /* WCBaseViewController.m */; };
 		D45C294A1D912576005C2B9A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45C29491D912576005C2B9A /* LoginViewController.m */; };
 		D46A333C1D93EDC40075E358 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D46A333B1D93EDC40075E358 /* Login.storyboard */; };
+		D47EA3461E5442DC007CE82D /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D47EA3451E5442DC007CE82D /* ODRefreshControl.m */; };
+		D47EA3481E5466AB007CE82D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47EA3471E5466AB007CE82D /* CoreGraphics.framework */; };
 		D47EA7001DEC3EEF00F949B0 /* GroupChat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D47EA6FC1DEC3EEF00F949B0 /* GroupChat@2x.png */; };
 		D47EA7011DEC3EEF00F949B0 /* NewFriend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D47EA6FD1DEC3EEF00F949B0 /* NewFriend@2x.png */; };
 		D47EA7021DEC3EEF00F949B0 /* PublicAccount@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D47EA6FE1DEC3EEF00F949B0 /* PublicAccount@2x.png */; };
@@ -70,6 +73,8 @@
 		D4B7FFD41D9556BA004D77B8 /* WCBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B7FFD31D9556BA004D77B8 /* WCBaseNavigationController.m */; };
 		D4B7FFD71D9557F2004D77B8 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B7FFD61D9557F2004D77B8 /* RegisterViewController.m */; };
 		D4C4B63E1DB106EE00F5D105 /* EditUserInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C4B63D1DB106EE00F5D105 /* EditUserInfoHelper.m */; };
+		D4CC81C91E5065E700926922 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CC81C61E5065E700926922 /* AFNetworking.framework */; };
+		D4CC81CA1E5065E700926922 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CC81C71E5065E700926922 /* ReactiveCocoa.framework */; };
 		D4D2DEEE1D9D37F700BCA6F6 /* RegisterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D2DEED1D9D37F700BCA6F6 /* RegisterHelper.m */; };
 		D4D2DEF11D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4D2DEEF1D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodeld */; };
 		D4D8EAA21E488E7800743378 /* WCHeadImgScrollVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8EAA11E488E7800743378 /* WCHeadImgScrollVIew.m */; };
@@ -115,6 +120,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B86A55449349F48C0FEE35F7 /* Pods_WiiChat_2_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WiiChat_2_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D401E2881DF6AD50001F63B2 /* DefaultHeadImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DefaultHeadImg@2x.png"; path = "photos/DefaultHeadImg@2x.png"; sourceTree = SOURCE_ROOT; };
 		D41C23321DAE66CC00699CE7 /* YYEAnimatorPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YYEAnimatorPush.h; path = "../../../../../../Downloads/presentViewController--pushViewController-master/presente模拟push/YYEAnimatorPush.h"; sourceTree = "<group>"; };
 		D41C23331DAE66CC00699CE7 /* YYEAnimatorPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YYEAnimatorPush.m; path = "../../../../../../Downloads/presentViewController--pushViewController-master/presente模拟push/YYEAnimatorPush.m"; sourceTree = "<group>"; };
@@ -160,6 +166,9 @@
 		D45C29481D912576005C2B9A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D45C29491D912576005C2B9A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D46A333B1D93EDC40075E358 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		D47EA3441E5442DC007CE82D /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
+		D47EA3451E5442DC007CE82D /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
+		D47EA3471E5466AB007CE82D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D47EA6FC1DEC3EEF00F949B0 /* GroupChat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GroupChat@2x.png"; path = "photos/GroupChat@2x.png"; sourceTree = SOURCE_ROOT; };
 		D47EA6FD1DEC3EEF00F949B0 /* NewFriend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewFriend@2x.png"; path = "photos/NewFriend@2x.png"; sourceTree = SOURCE_ROOT; };
 		D47EA6FE1DEC3EEF00F949B0 /* PublicAccount@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PublicAccount@2x.png"; path = "photos/PublicAccount@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -226,6 +235,8 @@
 		D4B7FFD61D9557F2004D77B8 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		D4C4B63C1DB106EE00F5D105 /* EditUserInfoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUserInfoHelper.h; sourceTree = "<group>"; };
 		D4C4B63D1DB106EE00F5D105 /* EditUserInfoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUserInfoHelper.m; sourceTree = "<group>"; };
+		D4CC81C61E5065E700926922 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
+		D4CC81C71E5065E700926922 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "Pods/../build/Debug-iphoneos/ReactiveCocoa/ReactiveCocoa.framework"; sourceTree = "<group>"; };
 		D4D2DEEC1D9D37F700BCA6F6 /* RegisterHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterHelper.h; sourceTree = "<group>"; };
 		D4D2DEED1D9D37F700BCA6F6 /* RegisterHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterHelper.m; sourceTree = "<group>"; };
 		D4D2DEF01D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WiiChatSourceData.xcdatamodel; sourceTree = "<group>"; };
@@ -266,6 +277,8 @@
 		D4FF91BB1DD097FC00473CC7 /* AddContactHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactHelper.m; sourceTree = "<group>"; };
 		D4FF91BD1DD0A25300473CC7 /* WCContactInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCContactInfoViewController.h; sourceTree = "<group>"; };
 		D4FF91BE1DD0A25300473CC7 /* WCContactInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCContactInfoViewController.m; sourceTree = "<group>"; };
+		EFFC6CE4E7E646752E8AD613 /* Pods-WiiChat_2_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiiChat_2_2.release.xcconfig"; path = "Pods/Target Support Files/Pods-WiiChat_2_2/Pods-WiiChat_2_2.release.xcconfig"; sourceTree = "<group>"; };
+		FD788BB6BD2249FBAFAA404E /* Pods-WiiChat_2_2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiiChat_2_2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WiiChat_2_2/Pods-WiiChat_2_2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,7 +286,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D47EA3481E5466AB007CE82D /* CoreGraphics.framework in Frameworks */,
+				D4CC81C91E5065E700926922 /* AFNetworking.framework in Frameworks */,
+				D4CC81CA1E5065E700926922 /* ReactiveCocoa.framework in Frameworks */,
 				D4E2290C1D96A19A00299CA9 /* QuartzCore.framework in Frameworks */,
+				0DEA54176366D62933A70DC3 /* Pods_WiiChat_2_2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +311,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5764F0A8E509625CC37E335 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD788BB6BD2249FBAFAA404E /* Pods-WiiChat_2_2.debug.xcconfig */,
+				EFFC6CE4E7E646752E8AD613 /* Pods-WiiChat_2_2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D437ACFD1DC60DF90024513A /* YYEAAnimatorPush */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				D4E229111D96A9EE00299CA9 /* CoreDataClass */,
+				D47EA3431E5442DC007CE82D /* ODRefreshControl */,
 				D446448C1DC761630050433E /* STConfig */,
 				D48AED9E1E47127C0002D18F /* ChineseStringConvert */,
 				D44644961DC761630050433E /* STPhotoKit */,
@@ -364,6 +391,7 @@
 				D45C29241D90EE45005C2B9A /* WiiChat_2_2UITests */,
 				D45C28FB1D90EE45005C2B9A /* Products */,
 				D4E2290A1D96A19A00299CA9 /* Frameworks */,
+				A5764F0A8E509625CC37E335 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -463,6 +491,15 @@
 				D4DB484F1DCA00BF002B7665 /* shouji@2x.png */,
 			);
 			name = photos;
+			sourceTree = "<group>";
+		};
+		D47EA3431E5442DC007CE82D /* ODRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				D47EA3441E5442DC007CE82D /* ODRefreshControl.h */,
+				D47EA3451E5442DC007CE82D /* ODRefreshControl.m */,
+			);
+			path = ODRefreshControl;
 			sourceTree = "<group>";
 		};
 		D4846BA11DAA219C00209CDB /* WCTableViewCell */ = {
@@ -572,7 +609,11 @@
 		D4E2290A1D96A19A00299CA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D47EA3471E5466AB007CE82D /* CoreGraphics.framework */,
+				D4CC81C61E5065E700926922 /* AFNetworking.framework */,
+				D4CC81C71E5065E700926922 /* ReactiveCocoa.framework */,
 				D4E2290B1D96A19A00299CA9 /* QuartzCore.framework */,
+				B86A55449349F48C0FEE35F7 /* Pods_WiiChat_2_2.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -661,9 +702,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D45C292A1D90EE45005C2B9A /* Build configuration list for PBXNativeTarget "WiiChat_2_2" */;
 			buildPhases = (
+				D3EBF7752C2955E3F1CB861E /* [CP] Check Pods Manifest.lock */,
 				D45C28F61D90EE45005C2B9A /* Sources */,
 				D45C28F71D90EE45005C2B9A /* Frameworks */,
 				D45C28F81D90EE45005C2B9A /* Resources */,
+				8436E6FB117F75B1C7AC1771 /* [CP] Embed Pods Frameworks */,
+				84D495599923F2483CE7AF33 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -808,6 +852,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8436E6FB117F75B1C7AC1771 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WiiChat_2_2/Pods-WiiChat_2_2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84D495599923F2483CE7AF33 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WiiChat_2_2/Pods-WiiChat_2_2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3EBF7752C2955E3F1CB861E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D45C28F61D90EE45005C2B9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -865,6 +957,7 @@
 				D446449B1DC761630050433E /* STConst.m in Sources */,
 				D4E229051D96A18300299CA9 /* SVProgressAnimatedView.m in Sources */,
 				D4E229101D96A9D800299CA9 /* SmoothCheckBox.m in Sources */,
+				D47EA3461E5442DC007CE82D /* ODRefreshControl.m in Sources */,
 				D49E9DE81DC3725700D709FA /* YQImageCompressTool.m in Sources */,
 				D48AEDB61E4714450002D18F /* AllUsers.m in Sources */,
 				D48AEDBF1E47148F0002D18F /* WiiChatCoreDataStackManager.m in Sources */,
@@ -1018,9 +1111,16 @@
 		};
 		D45C292B1D90EE45005C2B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD788BB6BD2249FBAFAA404E /* Pods-WiiChat_2_2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/ReactiveCocoa",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Result",
+				);
 				INFOPLIST_FILE = WiiChat_2_2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
@@ -1033,9 +1133,16 @@
 		};
 		D45C292C1D90EE45005C2B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFFC6CE4E7E646752E8AD613 /* Pods-WiiChat_2_2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/ReactiveCocoa",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Result",
+				);
 				INFOPLIST_FILE = WiiChat_2_2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;

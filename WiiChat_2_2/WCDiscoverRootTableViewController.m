@@ -7,15 +7,18 @@
 //
 
 #import "WCDiscoverRootTableViewController.h"
+#import "ODRefreshControl.h"
 
 @interface WCDiscoverRootTableViewController ()
-
+@property(nonatomic,strong)ODRefreshControl *refreshController;
 @end
 
 @implementation WCDiscoverRootTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.refreshController = [[ODRefreshControl alloc]initInScrollView:self.tableView];
+    [self.refreshController addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     // Do any additional setup after loading the view.
 }
 
@@ -24,6 +27,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)refresh{
+    NSLog(@"refresh");
+    [self.refreshController endRefreshing];
+}
 /*
 #pragma mark - Navigation
 

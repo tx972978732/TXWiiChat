@@ -43,6 +43,7 @@
     // Do any additional setup after loading the view.
 }
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
     self.fetchResultControllerDataBase.paused = NO;
     self.searchController.hidesNavigationBarDuringPresentation = YES;
     [self.tableView reloadData];
