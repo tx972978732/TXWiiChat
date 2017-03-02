@@ -9,6 +9,7 @@
 #import "WCContactInfoViewController.h"
 #import "WCUIStoreManager.h"
 #import "AddContactHelper.h"
+#import "Masonry.h"
 
 @interface WCContactInfoViewController ()
 @property(nonatomic,strong)AllUsers *dataSourceContact;
@@ -62,18 +63,50 @@ NSString *const contactInfoVCCellIdentifier = @"contactInfoVCCellIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.ContactInfoVCUserSource = [[UserSource alloc]init];
+    [self loadBtn];
+    
+
     // Do any additional setup after loading the view.
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+
+
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void)updateViewConstraints{
+    UITableViewHeaderFooterView *tempView = [self.tableView footerViewForSection:2];
+    NSLog(@"tempView:%@",tempView);
+    NSLayoutConstraint *messageBtnHeight = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:44];
+    [self.sendMessageBtn addConstraint:messageBtnHeight];
+    NSLayoutConstraint *messageBtnLeft = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:tempView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:50];
+    [tempView addConstraint:messageBtnLeft];
+    NSLayoutConstraint *messageBtnWidth = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeWidth multiplier:1.0 constant:275];
+    [self.sendMessageBtn addConstraint:messageBtnWidth];
+    NSLayoutConstraint *messageBtnTop = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:tempView attribute:NSLayoutAttributeTop multiplier:1.0 constant:30];
+    [tempView addConstraint:messageBtnTop];
+
+    [super updateViewConstraints];
+
+}
 #pragma mark - load view
 -(void)loadBtn{
     self.sendMessageBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.sendMessageBtn.frame = CGRectMake(50, 30, self.view.frame.size.width-100, 44);
+    //self.sendMessageBtn.frame = CGRectMake(50, 30, self.view.frame.size.width-100, 44);
+    self.sendMessageBtn.translatesAutoresizingMaskIntoConstraints = NO;
+    
     self.sendMessageBtn.backgroundColor = [UIColor greenColor];
     [self.sendMessageBtn setTitle:@"发送消息" forState:UIControlStateNormal];
     [self.sendMessageBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
@@ -135,12 +168,37 @@ NSString *const contactInfoVCCellIdentifier = @"contactInfoVCCellIdentifier";
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 400)];
-    footerView.backgroundColor = [UIColor clearColor];
-    [self loadBtn];
+    static NSString *footerViewIdentifier = @"footerViewIdentifier";
+    UITableViewHeaderFooterView *footerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:footerViewIdentifier];
+    if (!footerView) {
+        footerView = [[UITableViewHeaderFooterView alloc]initWithReuseIdentifier:footerViewIdentifier];
+    }
+    footerView.contentView.backgroundColor = [UIColor clearColor];
+//    UITableViewHeaderFooterView *footerView = [[UITableViewHeaderFooterView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 400)];
+//    footerView.backgroundColor = [UIColor clearColor];
     if (section==2) {
         if (relationships==alreadyAddedIntoContact) {        //判断是否为好友 footerView不同
             [footerView addSubview:self.sendMessageBtn];
+            
+            NSLog(@"footerView:%@",footerView);
+//原生约束方法 代码自动布局
+//            NSLayoutConstraint *messageBtnHeight = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:44];
+//            [self.sendMessageBtn addConstraint:messageBtnHeight];
+//            NSLayoutConstraint *messageBtnLeft = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:footerView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:50];
+//            [footerView addConstraint:messageBtnLeft];
+//            NSLayoutConstraint *messageBtnWidth = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeWidth multiplier:1.0 constant:275];
+//            [self.sendMessageBtn addConstraint:messageBtnWidth];
+//            NSLayoutConstraint *messageBtnTop = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:footerView attribute:NSLayoutAttributeTop multiplier:1.0 constant:30];
+//            [footerView addConstraint:messageBtnTop];
+
+//Masonry方法 代码自动布局
+            [self.sendMessageBtn makeConstraints:^(MASConstraintMaker *make) {
+                make.width.equalTo(275);
+                make.height.equalTo(44);
+                make.right.equalTo(footerView).with.offset(-50);
+                
+            }];
+
             [footerView addSubview:self.faceTimeRequestBtn];
             return footerView;
         }else{
@@ -148,6 +206,8 @@ NSString *const contactInfoVCCellIdentifier = @"contactInfoVCCellIdentifier";
             return footerView;
         }
     }
+    
+
     return nil;
 }
 

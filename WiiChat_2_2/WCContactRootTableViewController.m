@@ -21,6 +21,7 @@
 //@property(nonatomic,strong)NSMutableArray *UIDataSource; 已将数据内容剥离出去
 @property BOOL searchControllerWasActive;
 @property BOOL searchControllerSearchFieldWasFirstResponder;
+
 @end
 
 @implementation WCContactRootTableViewController
@@ -36,6 +37,10 @@
     self.tableView.sectionIndexColor = [UIColor darkGrayColor];
     self.tableView.sectionIndexBackgroundColor = [UIColor clearColor];//字母索引栏透明
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];//让分割线接触右边框
+    self.automaticallyAdjustsScrollViewInsets = YES;//滚动视图从NavBar下开始
+    self.extendedLayoutIncludesOpaqueBars  = YES;
+    self.edgesForExtendedLayout = UIRectEdgeAll;//滚动视图沿伸至屏幕边缘
+   // self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     [self loadAddContactBtn];
     [self loadSearchBar];
     [self setupFetchedResultsController];
@@ -84,6 +89,7 @@
     self.searchController.searchResultsUpdater = self;
     self.searchController.searchBar.delegate = self;
     [self.searchController.searchBar sizeToFit];
+    self.searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
     self.searchController.hidesNavigationBarDuringPresentation = YES;
     self.searchController.searchBar.frame = CGRectMake(0, 0, self.view.frame.size.width, 44);
     self.searchController.searchBar.barTintColor = [UIColor colorWithRed:234.0f/255.0f green:234.0f/255.0f blue:234.0f/255.0f alpha:1.0];
@@ -95,6 +101,7 @@
 -(void)loadAddContactBtn{
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addContact)];
 }
+
 
 #pragma mark - UITableView Delegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

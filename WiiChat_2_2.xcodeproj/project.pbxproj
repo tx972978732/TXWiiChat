@@ -75,8 +75,11 @@
 		D4C4B63E1DB106EE00F5D105 /* EditUserInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C4B63D1DB106EE00F5D105 /* EditUserInfoHelper.m */; };
 		D4CC81C91E5065E700926922 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CC81C61E5065E700926922 /* AFNetworking.framework */; };
 		D4CC81CA1E5065E700926922 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CC81C71E5065E700926922 /* ReactiveCocoa.framework */; };
+		D4D219F51E5AF82800D0A173 /* WCBaseSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D219F41E5AF82800D0A173 /* WCBaseSearchBar.m */; };
+		D4D219F81E5AFB9E00D0A173 /* WCBaseSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D219F71E5AFB9E00D0A173 /* WCBaseSearchController.m */; };
 		D4D2DEEE1D9D37F700BCA6F6 /* RegisterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D2DEED1D9D37F700BCA6F6 /* RegisterHelper.m */; };
 		D4D2DEF11D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4D2DEEF1D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodeld */; };
+		D4D7E5E41E55B6AF00EBFA8C /* WCBaseSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7E5E31E55B6AF00EBFA8C /* WCBaseSearchViewController.m */; };
 		D4D8EAA21E488E7800743378 /* WCHeadImgScrollVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8EAA11E488E7800743378 /* WCHeadImgScrollVIew.m */; };
 		D4DB484A1DC9F63B002B7665 /* WCAddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DB48491DC9F63B002B7665 /* WCAddContactViewController.m */; };
 		D4DB48501DCA00BF002B7665 /* gongzhonghao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DB484B1DCA00BF002B7665 /* gongzhonghao@2x.png */; };
@@ -237,9 +240,15 @@
 		D4C4B63D1DB106EE00F5D105 /* EditUserInfoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUserInfoHelper.m; sourceTree = "<group>"; };
 		D4CC81C61E5065E700926922 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
 		D4CC81C71E5065E700926922 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "Pods/../build/Debug-iphoneos/ReactiveCocoa/ReactiveCocoa.framework"; sourceTree = "<group>"; };
+		D4D219F31E5AF82800D0A173 /* WCBaseSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseSearchBar.h; sourceTree = "<group>"; };
+		D4D219F41E5AF82800D0A173 /* WCBaseSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseSearchBar.m; sourceTree = "<group>"; };
+		D4D219F61E5AFB9E00D0A173 /* WCBaseSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseSearchController.h; sourceTree = "<group>"; };
+		D4D219F71E5AFB9E00D0A173 /* WCBaseSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseSearchController.m; sourceTree = "<group>"; };
 		D4D2DEEC1D9D37F700BCA6F6 /* RegisterHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterHelper.h; sourceTree = "<group>"; };
 		D4D2DEED1D9D37F700BCA6F6 /* RegisterHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterHelper.m; sourceTree = "<group>"; };
 		D4D2DEF01D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WiiChatSourceData.xcdatamodel; sourceTree = "<group>"; };
+		D4D7E5E21E55B6AF00EBFA8C /* WCBaseSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseSearchViewController.h; sourceTree = "<group>"; };
+		D4D7E5E31E55B6AF00EBFA8C /* WCBaseSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseSearchViewController.m; sourceTree = "<group>"; };
 		D4D8EAA01E488E7800743378 /* WCHeadImgScrollVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCHeadImgScrollVIew.h; sourceTree = "<group>"; };
 		D4D8EAA11E488E7800743378 /* WCHeadImgScrollVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCHeadImgScrollVIew.m; sourceTree = "<group>"; };
 		D4DB48481DC9F63B002B7665 /* WCAddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCAddContactViewController.h; sourceTree = "<group>"; };
@@ -418,6 +427,7 @@
 				D4AF93C21DA9166D00675224 /* WCUIStoreManager.m */,
 				D4F228251DA2737D005DB421 /* WCBaseController */,
 				D4F2282D1DA27636005DB421 /* FetchResultDatabase */,
+				D4D219F21E5AF7E700D0A173 /* WCView */,
 				D4F228261DA273A6005DB421 /* WCViewController */,
 				D45A7DCA1DA13DB4001F19A1 /* HelperClass */,
 				D46A333D1D93F8170075E358 /* photos */,
@@ -566,11 +576,24 @@
 			path = YQImageCompressor;
 			sourceTree = "<group>";
 		};
+		D4D219F21E5AF7E700D0A173 /* WCView */ = {
+			isa = PBXGroup;
+			children = (
+				D4D219F31E5AF82800D0A173 /* WCBaseSearchBar.h */,
+				D4D219F41E5AF82800D0A173 /* WCBaseSearchBar.m */,
+				D4D219F61E5AFB9E00D0A173 /* WCBaseSearchController.h */,
+				D4D219F71E5AFB9E00D0A173 /* WCBaseSearchController.m */,
+			);
+			name = WCView;
+			sourceTree = "<group>";
+		};
 		D4DB48471DC9F5FB002B7665 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
 				D4DB48481DC9F63B002B7665 /* WCAddContactViewController.h */,
 				D4DB48491DC9F63B002B7665 /* WCAddContactViewController.m */,
+				D4D7E5E21E55B6AF00EBFA8C /* WCBaseSearchViewController.h */,
+				D4D7E5E31E55B6AF00EBFA8C /* WCBaseSearchViewController.m */,
 				D4FF91BD1DD0A25300473CC7 /* WCContactInfoViewController.h */,
 				D4FF91BE1DD0A25300473CC7 /* WCContactInfoViewController.m */,
 				D4F2701F1DDDD12B00330662 /* WCSearchResultTableController.h */,
@@ -909,6 +932,7 @@
 				D45C29381D90EF28005C2B9A /* WiiChatSingletonClass.m in Sources */,
 				D48AEDBA1E4714450002D18F /* User.m in Sources */,
 				D4E229081D96A18300299CA9 /* SVRadialGradientLayer.m in Sources */,
+				D4D7E5E41E55B6AF00EBFA8C /* WCBaseSearchViewController.m in Sources */,
 				D45C29051D90EE45005C2B9A /* ViewController.m in Sources */,
 				D45C29021D90EE45005C2B9A /* AppDelegate.m in Sources */,
 				D4D2DEF11D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodeld in Sources */,
@@ -947,7 +971,9 @@
 				D4C4B63E1DB106EE00F5D105 /* EditUserInfoHelper.m in Sources */,
 				D4DB484A1DC9F63B002B7665 /* WCAddContactViewController.m in Sources */,
 				D48AEDCB1E47151D0002D18F /* WCProfileRootTableViewController.m in Sources */,
+				D4D219F81E5AFB9E00D0A173 /* WCBaseSearchController.m in Sources */,
 				D4D2DEEE1D9D37F700BCA6F6 /* RegisterHelper.m in Sources */,
+				D4D219F51E5AF82800D0A173 /* WCBaseSearchBar.m in Sources */,
 				D48AED9D1E4708FF0002D18F /* CountStringLengthHelper.m in Sources */,
 				D48AEDC81E47151D0002D18F /* WCContactRootTableViewController.m in Sources */,
 				D45C290B1D90EE45005C2B9A /* WiiChat_2_2.xcdatamodeld in Sources */,

@@ -332,19 +332,21 @@
         [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeNative];//动画类型
         [SVProgressHUD setOffsetFromCenter:UIOffsetMake(0, -30.0f)];
         [SVProgressHUD showWithStatus:@"正在登录中.."];
+        WEAKSELF
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             // time-consuming task
             sleep(1);
             dispatch_async(dispatch_get_main_queue(), ^{
+                STRONGSELF
                 [SVProgressHUD dismiss];
-                User *resultUser = [self.loginVCUserSource insertUserWithID1:self.accountField.text Password:self.passwordField.text];
+                User *resultUser = [strongSelf.loginVCUserSource insertUserWithID1:strongSelf.accountField.text Password:strongSelf.passwordField.text];
             //User *resultUser = [UserSource insertUserWithID1:self.accountField.text Password:self.passwordField.text];
                 //检索错误信息
                 NSLog(@"登录用户信息:%@",resultUser);
                 if (resultUser.wiiError!=nil) {//若有错误，输出错误信息至errorAlert
                     NSString *errorInfo = resultUser.wiiError;
                     resultUser = nil;
-                    [self pushErrorAlertWithInfo:errorInfo];
+                    [strongSelf pushErrorAlertWithInfo:errorInfo];
                 }else{          //无错误信息，转入登录流程
                     if ([resultUser.wiiLogin isEqualToString:@"YES_Pass"]) {//若未在其他设备登录，则直接登录
                         [[NSUserDefaults standardUserDefaults] setObject:resultUser.wiiID forKey:@"userID"];
@@ -353,7 +355,7 @@
                         [(AppDelegate*)[UIApplication sharedApplication].delegate switchRootViewController];
                         
                     }else if ([resultUser.wiiLogin isEqualToString:@"YES_AlreadyLogin"]){//若已在其他设备登录，则提示是否顶替
-                        [self pushLoginAlertWithUserInfo:resultUser];
+                        [strongSelf pushLoginAlertWithUserInfo:resultUser];
                     }
                 }
                 

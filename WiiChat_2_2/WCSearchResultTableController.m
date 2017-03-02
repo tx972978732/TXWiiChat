@@ -17,11 +17,12 @@ NSString *const searchResultTableVCCellIdentifier = @"searchResultTableVCCellIde
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
     //self.tableView.delegate = self;
     //self.tableView.dataSource = self;
     self.tableView.backgroundView = [[UIView alloc]init];
     self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     // Do any additional setup after loading the view.
 }
 

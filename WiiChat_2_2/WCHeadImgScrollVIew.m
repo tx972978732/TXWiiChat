@@ -33,6 +33,12 @@
     }
     _headImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, self.bounds.size.height-400)];
     _headImgView.userInteractionEnabled = YES;
+    _headImgView.transform = CGAffineTransformMakeScale(-1.0, 1.0);
+    dispatch_block_t animations = ^{
+        _headImgView.transform = CGAffineTransformIdentity;//给图片增加水平翻转动画
+    };
+    [UIView animateWithDuration:3.3 delay:0. usingSpringWithDamping:1.f initialSpringVelocity:0.f options:UIViewAnimationOptionBeginFromCurrentState animations:animations completion:nil];
+
     return _headImgView;
     
 }

@@ -20,8 +20,11 @@
 #define NSLog(args, ...)
 #endif
 
-#define MAS_SHORTHAND //Masonry
-
+ //Masonry
+//define this constant if you want to use Masonry without the 'mas_' prefix
+#define MAS_SHORTHAND
+//define this constant if you want to enable auto-boxing for default syntax, `mas_equalTo` == `equalTo`
+#define MAS_SHORTHAND_GLOBALS
 
 //常用变量
 #define kKeyWindow [UIApplication sharedApplication].keyWindow

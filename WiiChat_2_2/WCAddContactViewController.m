@@ -39,11 +39,15 @@ NSString *const addContactVCCellIdentifier = @"addContactVCCellIdentifier";
     self.tableView.backgroundView = self.backgroundView;
     self.tableView.backgroundView.backgroundColor = [UIColor clearColor];
     self.tableView.tableHeaderView = self.searchController.searchBar;
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    self.automaticallyAdjustsScrollViewInsets = YES;//滚动视图从NavBar下开始
+    self.extendedLayoutIncludesOpaqueBars  = YES;
+    self.edgesForExtendedLayout = UIRectEdgeAll;//滚动视图沿伸至屏幕边缘
     self.dataSource = [[WCUIStoreManager sharedWCUIStoreManager]getAddContactUIDataSource];
     
 }
 -(void)viewWillAppear:(BOOL)animated{
-    _searchController.hidesNavigationBarDuringPresentation = YES;
+    [super viewWillAppear:YES];
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
@@ -71,6 +75,10 @@ NSString *const addContactVCCellIdentifier = @"addContactVCCellIdentifier";
     self.tableView.dataSource = nil;
 }
 
+- (void)updateViewConstraints{
+    
+}
+
 #pragma mark - load
 -(WCSearchResultTableController*)searchResultsTableController{
     if (_searchResultsTableController) {
@@ -92,10 +100,10 @@ NSString *const addContactVCCellIdentifier = @"addContactVCCellIdentifier";
     _searchController.hidesNavigationBarDuringPresentation = YES;
     _searchController.dimsBackgroundDuringPresentation = YES;
     //    _searchController.searchBar.frame = CGRectMake(0, 0, self.view.frame.size.width, 44);
-    _searchController.searchBar.backgroundImage = [self imageWithColor:[UIColor clearColor] size:_searchController.searchBar.bounds.size];
+    //_searchController.searchBar.backgroundImage = [self imageWithColor:[UIColor clearColor] size:_searchController.searchBar.bounds.size];
     _searchController.searchBar.backgroundColor = [UIColor whiteColor];
     _searchController.searchBar.barTintColor = [UIColor colorWithRed:234.0f/255.0f green:234.0f/255.0f blue:234.0f/255.0f alpha:1.0];
-    _searchController.searchBar.placeholder = @"wiiChat号/手机号";
+    _searchController.searchBar.placeholder = @"WiiChat号/手机号";
     _searchController.searchBar.returnKeyType = UIReturnKeySearch;
     self.definesPresentationContext = YES;
     return _searchController;
@@ -158,20 +166,23 @@ NSString *const addContactVCCellIdentifier = @"addContactVCCellIdentifier";
     if (tableView!=self.tableView) {
         return nil;
     }
-
-    //if (![_searchController isActive]) {
-        UIView *headerView = [[UIView alloc]init];
-        headerView.backgroundColor = [UIColor clearColor];
+    static NSString *headerViewIdentifier = @"headerViewIdentifier";
+    UITableViewHeaderFooterView *myHeaderView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerViewIdentifier];
+    if (!myHeaderView) {
+        myHeaderView = [[UITableViewHeaderFooterView alloc]initWithReuseIdentifier:headerViewIdentifier];
+    }
+    
+    myHeaderView.contentView.backgroundColor = [UIColor clearColor];
+//        UIView *headerView = [[UIView alloc]init];
+//        headerView.backgroundColor = [UIColor clearColor];
         self.headerLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 25)];
         self.headerLabel.textAlignment = NSTextAlignmentCenter;
         self.headerLabel.text = @"我的WiiChat号:1";
         self.headerLabel.font = [UIFont fontWithName:@"Arial" size:13.0];
         self.headerLabel.textColor = [UIColor darkTextColor];
-        [headerView addSubview:self.headerLabel];
-        return headerView;
-        
-    //}
-    //return nil;
+        [myHeaderView addSubview:self.headerLabel];
+        return myHeaderView;
+    
 }
 
 
@@ -263,7 +274,8 @@ NSString *const addContactVCCellIdentifier = @"addContactVCCellIdentifier";
 #pragma mark -  UISearchBarDelegate Delegate
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
-    //self.tableView.contentInset = UIEdgeInsetsMake(-15, 0, 0, 0);
+    [[self.tableView headerViewForSection:0] setOpaque:NO];
+    [[self.tableView headerViewForSection:0] setAlpha:0];
     _searchController.searchBar.barTintColor = [UIColor colorWithRed:234.0f/255.0f green:234.0f/255.0f blue:234.0f/255.0f alpha:1.0];
     if (![self.effectView superview]) {
         UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
@@ -272,8 +284,19 @@ NSString *const addContactVCCellIdentifier = @"addContactVCCellIdentifier";
         [self.tableView addSubview:self.effectView];
     }
     return YES;
-    
 }
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar;  {
+    [searchBar setShowsCancelButton:YES];
+    for(UIView *view in  [[[searchBar subviews] objectAtIndex:0] subviews]) {
+        if([view isKindOfClass:[NSClassFromString(@"UIButton") class]]) {
+            UIButton * cancelBtn =(UIButton *)view;
+            cancelBtn.tintColor = [UIColor greenColor];
+            [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+        }
+    }
+}
+
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
     //_searchController.searchBar.barTintColor = [UIColor whiteColor];
     self.tableView.backgroundView.backgroundColor = [UIColor clearColor];
@@ -294,21 +317,10 @@ NSString *const addContactVCCellIdentifier = @"addContactVCCellIdentifier";
     }
 }
 
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar;  {
-    [searchBar setShowsCancelButton:YES];
-    for(UIView *view in  [[[searchBar subviews] objectAtIndex:0] subviews]) {
-        if([view isKindOfClass:[NSClassFromString(@"UIButton") class]]) {
-            UIButton * cancelBtn =(UIButton *)view;
-            cancelBtn.tintColor = [UIColor greenColor];
-            [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-        
-        }
-    }
-    
-    
-}
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     NSLog(@"取消搜索");
+    [[self.tableView headerViewForSection:0] setOpaque:YES];
+    [[self.tableView headerViewForSection:0] setAlpha:1];
     //[self.effectView removeFromSuperview];
     self.tableView.backgroundView.backgroundColor = [UIColor clearColor];
     //[self.tableView reloadData];

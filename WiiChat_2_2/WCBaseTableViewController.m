@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;//防止UINavigationBar 遮挡tableview
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    //self.automaticallyAdjustsScrollViewInsets = NO;
 
     //[self.view addSubview:self.tableView];
     // Do any additional setup after loading the view.
@@ -42,6 +42,18 @@
 }
 
 #pragma mark - load view
+
+#pragma mark - view rotation
+
+-(BOOL)shouldAutorotate{
+    return NO;
+}
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return UIInterfaceOrientationPortrait;
+}
 
 
 /*
