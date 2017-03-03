@@ -16,7 +16,8 @@
 #import "ErrorInfo.h"
 #import <AFNetworking/AFNetworking.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
-#import "RACEXTScope.h"//﻿
+#import "RACEXTScope.h"
+#import "masonry.h"
 
 
 @interface LoginViewController ()
@@ -94,14 +95,10 @@
         }
         NSLog(@"combine result:%@",x);
     }];
-    
+    [self registerBtn];
+    [self forgetPwBtn];
     
     //[self.commitBtn addTarget:self action:@selector(commitBtnAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.commitBtn];
-    [self.registerBtn addTarget:self action:@selector(registerBtnAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.registerBtn];
-    [self.forgetPwBtn addTarget:self action:@selector(forgetBtnAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.forgetPwBtn];
 }
 
 - (void)loadLoginTextField{
@@ -129,14 +126,22 @@
         return _commitBtn;
     }
     _commitBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _commitBtn.frame = CGRectMake(139, 235, 106, 40);
-    _commitBtn.backgroundColor = [UIColor colorWithRed:253.0f/255.0f green:239.0f/255.0f blue:224.0f/255.0f alpha:1.0];
     [_commitBtn setTitle:@"登    录" forState:UIControlStateNormal];
     _commitBtn.layer.borderColor = [UIColor brownColor].CGColor;
     _commitBtn.layer.borderWidth = 3.0f;
     _commitBtn.layer.cornerRadius = 5;
     [_commitBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
     _commitBtn.showsTouchWhenHighlighted = YES;
+    [self.view addSubview:_commitBtn];
+   // _commitBtn.frame = CGRectMake(139, 235, 106, 40);
+    
+    _commitBtn.backgroundColor = [UIColor colorWithRed:253.0f/255.0f green:239.0f/255.0f blue:224.0f/255.0f alpha:1.0];
+    [_commitBtn makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).with.offset(139);
+        make.top.equalTo(self.view).with.offset(235);
+        make.width.equalTo(106);
+        make.height.equalTo(40);
+    }];
     
     return _commitBtn;
 }
@@ -146,10 +151,19 @@
         return _registerBtn;
     }
     _registerBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _registerBtn.frame = CGRectMake(20, 600, 96, 40);
     [_registerBtn setTitle:@"注   册" forState:UIControlStateNormal];
     [_registerBtn setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
     _registerBtn.showsTouchWhenHighlighted = YES;
+    [self.view addSubview:_registerBtn];
+    [_registerBtn addTarget:self action:@selector(registerBtnAction) forControlEvents:UIControlEventTouchUpInside];
+
+   // _registerBtn.frame = CGRectMake(20, 600, 96, 40);
+    [_registerBtn makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).with.offset(20);
+        make.top.equalTo(self.view).with.offset(600);
+        make.width.equalTo(96);
+        make.height.equalTo(40);
+    }];
     return _registerBtn;
 }
 
@@ -158,10 +172,18 @@
         return _forgetPwBtn;
     }
     _forgetPwBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    _forgetPwBtn.frame = CGRectMake(245, 600, 96, 40);
     [_forgetPwBtn setTitle:@"忘 记 密 码 ？" forState:UIControlStateNormal];
     [_forgetPwBtn setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
     _forgetPwBtn.showsTouchWhenHighlighted = YES;
+    [_forgetPwBtn addTarget:self action:@selector(forgetBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_forgetPwBtn];
+   // _forgetPwBtn.frame = CGRectMake(245, 600, 96, 40);
+    [_forgetPwBtn makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.registerBtn).with.offset(225);
+        make.top.equalTo(self.registerBtn);
+        make.width.equalTo(96);
+        make.height.equalTo(40);
+    }];
     return _forgetPwBtn;
 }
 

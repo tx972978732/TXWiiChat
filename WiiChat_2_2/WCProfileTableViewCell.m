@@ -12,7 +12,7 @@
 -(instancetype)initHeadCellWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        _cellNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(90, 26, 100, 22)];
+        _cellNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(90, 22, 200, 28)];
         _cellNameLabel.font = [UIFont systemFontOfSize:24.0f];
         _cellImgView = [[UIImageView alloc]initWithFrame:CGRectMake(15, 17, 64, 64)];
         _cellImgView.layer.masksToBounds = YES;

@@ -27,15 +27,16 @@
     self.navigationBar.tintColor = WCNavigationTintColor;
     self.navigationBar.titleTextAttributes = WCNavigationBarTitleTextAttribute;
     // Do any additional setup after loading the view.
-    
-    //藏旧
-    [self hideBorderInView:self.navigationBar];
-    //添新
-    if (!_navLineV) {
-        _navLineV = [[UIView alloc]initWithFrame:CGRectMake(0, 44, kScreen_Width, 1.0/ [UIScreen mainScreen].scale)];
-        _navLineV.backgroundColor = [UIColor lightGrayColor];
-        [self.navigationBar addSubview:_navLineV];
-    }
+
+    //*导航栏与VC的分界线
+//    //藏旧
+//   [self hideBorderInView:self.navigationBar];
+//    //添新
+//    if (!_navLineV) {
+//        _navLineV = [[UIView alloc]initWithFrame:CGRectMake(0, 44, kScreen_Width, 1.0/ [UIScreen mainScreen].scale)];
+//        _navLineV.backgroundColor = [UIColor lightGrayColor];
+//        [self.navigationBar addSubview:_navLineV];
+//    }
 
 }
 

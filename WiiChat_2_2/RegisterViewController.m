@@ -242,7 +242,7 @@
             case 0:
             textField.placeholder = @"请输入用户名";
             if(![textField.text isEqual:@""]){
-            if ([textField.text isEqualToString:@"true"]) {  //判断条件 应该由数据库回调确定
+                if ([self isValidateAccount:textField.text]&&textField.text.length<=8) {  //判断条件 应该由数据库回调确定
                 self.accountCheckBox.isChecked = true;//清除内容时 清除checkbox动画
                 [self.accountCheckBox checkBoxClicked];
                 self.accountCheckBox.isChecked = false;
@@ -427,7 +427,7 @@
     switch(textField.tag){
         case 0:
             if(![textField.text isEqual:@""]){
-                if ([textField.text isEqualToString:@"true"]) {  //判断条件 应该由数据库回调确定
+                if ([self isValidateAccount:textField.text]&&textField.text.length<=8) {  //判断条件 应该由数据库回调确定
                     self.accountCheckBox.isChecked = true;//清除内容时 清除checkbox动画
                     [self.accountCheckBox checkBoxClicked];
                     self.accountCheckBox.isChecked = false;
