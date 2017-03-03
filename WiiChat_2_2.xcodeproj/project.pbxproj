@@ -8,85 +8,92 @@
 
 /* Begin PBXBuildFile section */
 		0DEA54176366D62933A70DC3 /* Pods_WiiChat_2_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86A55449349F48C0FEE35F7 /* Pods_WiiChat_2_2.framework */; };
-		D401E2891DF6AD50001F63B2 /* DefaultHeadImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D401E2881DF6AD50001F63B2 /* DefaultHeadImg@2x.png */; };
 		D41C23341DAE66CC00699CE7 /* YYEAnimatorPush.m in Sources */ = {isa = PBXBuildFile; fileRef = D41C23331DAE66CC00699CE7 /* YYEAnimatorPush.m */; };
-		D42D7A6A1DD33182009097A6 /* searchIcon2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D42D7A691DD33182009097A6 /* searchIcon2@2x.png */; };
-		D437ACFB1DC5E5D10024513A /* TestHeadImg@2x.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D437ACFA1DC5E5D10024513A /* TestHeadImg@2x.JPG */; };
-		D446449B1DC761630050433E /* STConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D446448F1DC761630050433E /* STConst.m */; };
-		D446449C1DC761630050433E /* STUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D44644911DC761630050433E /* STUI.m */; };
-		D446449D1DC761630050433E /* UIImage+ST.m in Sources */ = {isa = PBXBuildFile; fileRef = D44644931DC761630050433E /* UIImage+ST.m */; };
-		D446449E1DC761630050433E /* UIView+ST.m in Sources */ = {isa = PBXBuildFile; fileRef = D44644951DC761630050433E /* UIView+ST.m */; };
-		D446449F1DC761630050433E /* STPhotoKitController.m in Sources */ = {isa = PBXBuildFile; fileRef = D44644981DC761630050433E /* STPhotoKitController.m */; };
-		D44644A01DC761630050433E /* UIImagePickerController+ST.m in Sources */ = {isa = PBXBuildFile; fileRef = D446449A1DC761630050433E /* UIImagePickerController+ST.m */; };
-		D45A7DC91DA13DA6001F19A1 /* LoginHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D45A7DC81DA13DA6001F19A1 /* LoginHelper.m */; };
 		D45C28FF1D90EE45005C2B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D45C28FE1D90EE45005C2B9A /* main.m */; };
 		D45C29021D90EE45005C2B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D45C29011D90EE45005C2B9A /* AppDelegate.m */; };
-		D45C29051D90EE45005C2B9A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45C29041D90EE45005C2B9A /* ViewController.m */; };
 		D45C29081D90EE45005C2B9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45C29061D90EE45005C2B9A /* Main.storyboard */; };
 		D45C290B1D90EE45005C2B9A /* WiiChat_2_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D45C29091D90EE45005C2B9A /* WiiChat_2_2.xcdatamodeld */; };
 		D45C290D1D90EE45005C2B9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45C290C1D90EE45005C2B9A /* Assets.xcassets */; };
 		D45C29101D90EE45005C2B9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45C290E1D90EE45005C2B9A /* LaunchScreen.storyboard */; };
 		D45C291B1D90EE45005C2B9A /* WiiChat_2_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D45C291A1D90EE45005C2B9A /* WiiChat_2_2Tests.m */; };
 		D45C29261D90EE45005C2B9A /* WiiChat_2_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D45C29251D90EE45005C2B9A /* WiiChat_2_2UITests.m */; };
-		D45C29381D90EF28005C2B9A /* WiiChatSingletonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D45C29371D90EF28005C2B9A /* WiiChatSingletonClass.m */; };
-		D45C29471D90F3A2005C2B9A /* WCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45C29461D90F3A2005C2B9A /* WCBaseViewController.m */; };
-		D45C294A1D912576005C2B9A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45C29491D912576005C2B9A /* LoginViewController.m */; };
 		D46A333C1D93EDC40075E358 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D46A333B1D93EDC40075E358 /* Login.storyboard */; };
-		D47EA3461E5442DC007CE82D /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D47EA3451E5442DC007CE82D /* ODRefreshControl.m */; };
 		D47EA3481E5466AB007CE82D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47EA3471E5466AB007CE82D /* CoreGraphics.framework */; };
-		D47EA7001DEC3EEF00F949B0 /* GroupChat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D47EA6FC1DEC3EEF00F949B0 /* GroupChat@2x.png */; };
-		D47EA7011DEC3EEF00F949B0 /* NewFriend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D47EA6FD1DEC3EEF00F949B0 /* NewFriend@2x.png */; };
-		D47EA7021DEC3EEF00F949B0 /* PublicAccount@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D47EA6FE1DEC3EEF00F949B0 /* PublicAccount@2x.png */; };
-		D47EA7031DEC3EEF00F949B0 /* Stamp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D47EA6FF1DEC3EEF00F949B0 /* Stamp@2x.png */; };
-		D47EA7061DEC40A500F949B0 /* WCContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D47EA7051DEC40A500F949B0 /* WCContactTableViewCell.m */; };
-		D4846BA01DAA217200209CDB /* WCProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4846B9F1DAA217200209CDB /* WCProfileTableViewCell.m */; };
-		D4846BA61DAA27EF00209CDB /* AppleWatch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4846BA51DAA27EF00209CDB /* AppleWatch@2x.png */; };
-		D4846BA91DAA53F500209CDB /* WCUserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4846BA81DAA53F500209CDB /* WCUserInfoTableViewController.m */; };
-		D48AED9D1E4708FF0002D18F /* CountStringLengthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AED9C1E4708FF0002D18F /* CountStringLengthHelper.m */; };
-		D48AEDA31E47135C0002D18F /* ChineseString.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDA01E47135C0002D18F /* ChineseString.m */; };
-		D48AEDA41E47135C0002D18F /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDA11E47135C0002D18F /* pinyin.c */; };
-		D48AEDA71E4713C90002D18F /* ErrorInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDA61E4713C90002D18F /* ErrorInfo.m */; };
-		D48AEDB61E4714450002D18F /* AllUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDA91E4714450002D18F /* AllUsers.m */; };
-		D48AEDB71E4714450002D18F /* AllUsers+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDAB1E4714450002D18F /* AllUsers+CoreDataProperties.m */; };
-		D48AEDB81E4714450002D18F /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDAD1E4714450002D18F /* Contact.m */; };
-		D48AEDB91E4714450002D18F /* Contact+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDAF1E4714450002D18F /* Contact+CoreDataProperties.m */; };
-		D48AEDBA1E4714450002D18F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDB11E4714450002D18F /* User.m */; };
-		D48AEDBB1E4714450002D18F /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDB31E4714450002D18F /* User+CoreDataProperties.m */; };
-		D48AEDBC1E4714450002D18F /* UserSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDB51E4714450002D18F /* UserSource.m */; };
-		D48AEDBF1E47148F0002D18F /* WiiChatCoreDataStackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDBE1E47148F0002D18F /* WiiChatCoreDataStackManager.m */; };
-		D48AEDC81E47151D0002D18F /* WCContactRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDC11E47151D0002D18F /* WCContactRootTableViewController.m */; };
-		D48AEDC91E47151D0002D18F /* WCDiscoverRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDC31E47151D0002D18F /* WCDiscoverRootTableViewController.m */; };
-		D48AEDCA1E47151D0002D18F /* WCMessageRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDC51E47151D0002D18F /* WCMessageRootTableViewController.m */; };
-		D48AEDCB1E47151D0002D18F /* WCProfileRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDC71E47151D0002D18F /* WCProfileRootTableViewController.m */; };
-		D48AEDCE1E4715890002D18F /* UIBaseSettingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D48AEDCD1E4715890002D18F /* UIBaseSettingInfo.m */; };
-		D49928571DAB417500F6DD90 /* WCEditUserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D49928561DAB417500F6DD90 /* WCEditUserInfoTableViewController.m */; };
-		D49928651DAB4A2200F6DD90 /* LoginBackgroundImg@2x.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D499285C1DAB4A2200F6DD90 /* LoginBackgroundImg@2x.JPG */; };
-		D49928661DAB4A2200F6DD90 /* MoreEmotions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D499285D1DAB4A2200F6DD90 /* MoreEmotions@2x.png */; };
-		D49E9DE81DC3725700D709FA /* YQImageCompressTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D49E9DE51DC3725700D709FA /* YQImageCompressTool.m */; };
-		D49E9DE91DC3725700D709FA /* YQImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D49E9DE71DC3725700D709FA /* YQImageTool.m */; };
-		D4AF93C31DA9166D00675224 /* WCUIStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AF93C21DA9166D00675224 /* WCUIStoreManager.m */; };
-		D4AF93D41DA91CA000675224 /* MyAlbum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4AF93CF1DA91CA000675224 /* MyAlbum@2x.png */; };
-		D4AF93D51DA91CA000675224 /* MyCards@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4AF93D01DA91CA000675224 /* MyCards@2x.png */; };
-		D4AF93D61DA91CA000675224 /* MyFavorites@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4AF93D11DA91CA000675224 /* MyFavorites@2x.png */; };
-		D4AF93D71DA91CA000675224 /* MySetting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4AF93D21DA91CA000675224 /* MySetting@2x.png */; };
-		D4AF93D91DA91E8200675224 /* MyWallet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4AF93D81DA91E8200675224 /* MyWallet@2x.png */; };
-		D4B7FFD41D9556BA004D77B8 /* WCBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B7FFD31D9556BA004D77B8 /* WCBaseNavigationController.m */; };
-		D4B7FFD71D9557F2004D77B8 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B7FFD61D9557F2004D77B8 /* RegisterViewController.m */; };
-		D4C4B63E1DB106EE00F5D105 /* EditUserInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C4B63D1DB106EE00F5D105 /* EditUserInfoHelper.m */; };
 		D4CC81C91E5065E700926922 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CC81C61E5065E700926922 /* AFNetworking.framework */; };
 		D4CC81CA1E5065E700926922 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CC81C71E5065E700926922 /* ReactiveCocoa.framework */; };
-		D4D219F51E5AF82800D0A173 /* WCBaseSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D219F41E5AF82800D0A173 /* WCBaseSearchBar.m */; };
-		D4D219F81E5AFB9E00D0A173 /* WCBaseSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D219F71E5AFB9E00D0A173 /* WCBaseSearchController.m */; };
-		D4D2DEEE1D9D37F700BCA6F6 /* RegisterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D2DEED1D9D37F700BCA6F6 /* RegisterHelper.m */; };
 		D4D2DEF11D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4D2DEEF1D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodeld */; };
-		D4D7E5E41E55B6AF00EBFA8C /* WCBaseSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7E5E31E55B6AF00EBFA8C /* WCBaseSearchViewController.m */; };
-		D4D8EAA21E488E7800743378 /* WCHeadImgScrollVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8EAA11E488E7800743378 /* WCHeadImgScrollVIew.m */; };
-		D4DB484A1DC9F63B002B7665 /* WCAddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DB48491DC9F63B002B7665 /* WCAddContactViewController.m */; };
-		D4DB48501DCA00BF002B7665 /* gongzhonghao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DB484B1DCA00BF002B7665 /* gongzhonghao@2x.png */; };
-		D4DB48511DCA00BF002B7665 /* leida@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DB484C1DCA00BF002B7665 /* leida@2x.png */; };
-		D4DB48521DCA00BF002B7665 /* mianduimian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DB484D1DCA00BF002B7665 /* mianduimian@2x.png */; };
-		D4DB48531DCA00BF002B7665 /* saoyisao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DB484E1DCA00BF002B7665 /* saoyisao@2x.png */; };
-		D4DB48541DCA00BF002B7665 /* shouji@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DB484F1DCA00BF002B7665 /* shouji@2x.png */; };
+		D4DAE0741E692E0F00F7D425 /* AllUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0651E692E0F00F7D425 /* AllUsers.m */; };
+		D4DAE0751E692E0F00F7D425 /* AllUsers+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0671E692E0F00F7D425 /* AllUsers+CoreDataProperties.m */; };
+		D4DAE0761E692E0F00F7D425 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0691E692E0F00F7D425 /* Contact.m */; };
+		D4DAE0771E692E0F00F7D425 /* Contact+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE06B1E692E0F00F7D425 /* Contact+CoreDataProperties.m */; };
+		D4DAE0781E692E0F00F7D425 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE06D1E692E0F00F7D425 /* User.m */; };
+		D4DAE0791E692E0F00F7D425 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE06F1E692E0F00F7D425 /* User+CoreDataProperties.m */; };
+		D4DAE07A1E692E0F00F7D425 /* UserSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0711E692E0F00F7D425 /* UserSource.m */; };
+		D4DAE07B1E692E0F00F7D425 /* WiiChatCoreDataStackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0731E692E0F00F7D425 /* WiiChatCoreDataStackManager.m */; };
+		D4DAE07E1E692E3800F7D425 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE07D1E692E3800F7D425 /* ODRefreshControl.m */; };
+		D4DAE0881E692E5E00F7D425 /* STConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0811E692E5E00F7D425 /* STConst.m */; };
+		D4DAE0891E692E5E00F7D425 /* STUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0831E692E5E00F7D425 /* STUI.m */; };
+		D4DAE08A1E692E5E00F7D425 /* UIImage+ST.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0851E692E5E00F7D425 /* UIImage+ST.m */; };
+		D4DAE08B1E692E5E00F7D425 /* UIView+ST.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0871E692E5E00F7D425 /* UIView+ST.m */; };
+		D4DAE0901E692E7800F7D425 /* ChineseString.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE08D1E692E7800F7D425 /* ChineseString.m */; };
+		D4DAE0911E692E7800F7D425 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE08E1E692E7800F7D425 /* pinyin.c */; };
+		D4DAE0961E692EA000F7D425 /* STPhotoKitController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0931E692EA000F7D425 /* STPhotoKitController.m */; };
+		D4DAE0971E692EA000F7D425 /* UIImagePickerController+ST.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0951E692EA000F7D425 /* UIImagePickerController+ST.m */; };
+		D4DAE09A1E692EBD00F7D425 /* YQImageCompressTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0991E692EBD00F7D425 /* YQImageCompressTool.m */; };
+		D4DAE09D1E692ED200F7D425 /* YQImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE09C1E692ED200F7D425 /* YQImageTool.m */; };
+		D4DAE0A21E692F1900F7D425 /* WCUIStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE09F1E692F1900F7D425 /* WCUIStoreManager.m */; };
+		D4DAE0A31E692F1900F7D425 /* WiiChatSingletonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0A11E692F1900F7D425 /* WiiChatSingletonClass.m */; };
+		D4DAE0B21E692F3100F7D425 /* AddContactHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0A51E692F3100F7D425 /* AddContactHelper.m */; };
+		D4DAE0B31E692F3100F7D425 /* CountStringLengthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0A71E692F3100F7D425 /* CountStringLengthHelper.m */; };
+		D4DAE0B41E692F3100F7D425 /* EditUserInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0A91E692F3100F7D425 /* EditUserInfoHelper.m */; };
+		D4DAE0B51E692F3100F7D425 /* ErrorInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0AB1E692F3100F7D425 /* ErrorInfo.m */; };
+		D4DAE0B61E692F3100F7D425 /* LoginHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0AD1E692F3100F7D425 /* LoginHelper.m */; };
+		D4DAE0B71E692F3100F7D425 /* RegisterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0AF1E692F3100F7D425 /* RegisterHelper.m */; };
+		D4DAE0B81E692F3100F7D425 /* UIBaseSettingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0B11E692F3100F7D425 /* UIBaseSettingInfo.m */; };
+		D4DAE0CE1E692F5700F7D425 /* AppleWatch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0B91E692F5700F7D425 /* AppleWatch@2x.png */; };
+		D4DAE0CF1E692F5700F7D425 /* DefaultHeadImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0BA1E692F5700F7D425 /* DefaultHeadImg@2x.png */; };
+		D4DAE0D01E692F5700F7D425 /* gongzhonghao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0BB1E692F5700F7D425 /* gongzhonghao@2x.png */; };
+		D4DAE0D11E692F5700F7D425 /* GroupChat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0BC1E692F5700F7D425 /* GroupChat@2x.png */; };
+		D4DAE0D21E692F5700F7D425 /* leida@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0BD1E692F5700F7D425 /* leida@2x.png */; };
+		D4DAE0D31E692F5700F7D425 /* LoginBackgroundImg@2x.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0BE1E692F5700F7D425 /* LoginBackgroundImg@2x.JPG */; };
+		D4DAE0D41E692F5700F7D425 /* mianduimian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0BF1E692F5700F7D425 /* mianduimian@2x.png */; };
+		D4DAE0D51E692F5700F7D425 /* MoreEmotions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0C01E692F5700F7D425 /* MoreEmotions@2x.png */; };
+		D4DAE0D61E692F5700F7D425 /* MyAlbum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0C11E692F5700F7D425 /* MyAlbum@2x.png */; };
+		D4DAE0D71E692F5700F7D425 /* MyCards@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0C21E692F5700F7D425 /* MyCards@2x.png */; };
+		D4DAE0D81E692F5700F7D425 /* MyFavorites@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0C31E692F5700F7D425 /* MyFavorites@2x.png */; };
+		D4DAE0D91E692F5700F7D425 /* MySetting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0C41E692F5700F7D425 /* MySetting@2x.png */; };
+		D4DAE0DA1E692F5700F7D425 /* MyWallet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0C51E692F5700F7D425 /* MyWallet@2x.png */; };
+		D4DAE0DB1E692F5700F7D425 /* NewFriend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0C61E692F5700F7D425 /* NewFriend@2x.png */; };
+		D4DAE0DC1E692F5700F7D425 /* PublicAccount@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0C71E692F5700F7D425 /* PublicAccount@2x.png */; };
+		D4DAE0DD1E692F5700F7D425 /* saoyisao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0C81E692F5700F7D425 /* saoyisao@2x.png */; };
+		D4DAE0DE1E692F5700F7D425 /* searchIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0C91E692F5700F7D425 /* searchIcon@2x.png */; };
+		D4DAE0DF1E692F5700F7D425 /* searchIcon2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0CA1E692F5700F7D425 /* searchIcon2@2x.png */; };
+		D4DAE0E01E692F5700F7D425 /* shouji@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0CB1E692F5700F7D425 /* shouji@2x.png */; };
+		D4DAE0E11E692F5700F7D425 /* Stamp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0CC1E692F5700F7D425 /* Stamp@2x.png */; };
+		D4DAE0E21E692F5700F7D425 /* TestHeadImg@2x.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0CD1E692F5700F7D425 /* TestHeadImg@2x.JPG */; };
+		D4DAE0E51E692F7900F7D425 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0E41E692F7900F7D425 /* ViewController.m */; };
+		D4DAE0F21E692FE400F7D425 /* WCBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0E71E692FE400F7D425 /* WCBaseNavigationController.m */; };
+		D4DAE0F31E692FE400F7D425 /* WCBaseSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0E91E692FE400F7D425 /* WCBaseSearchController.m */; };
+		D4DAE0F41E692FE400F7D425 /* WCBaseSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0EB1E692FE400F7D425 /* WCBaseSearchViewController.m */; };
+		D4DAE0F51E692FE400F7D425 /* WCBaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0ED1E692FE400F7D425 /* WCBaseTabBarViewController.m */; };
+		D4DAE0F61E692FE400F7D425 /* WCBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0EF1E692FE400F7D425 /* WCBaseTableViewController.m */; };
+		D4DAE0F71E692FE400F7D425 /* WCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0F11E692FE400F7D425 /* WCBaseViewController.m */; };
+		D4DAE0FA1E69301100F7D425 /* WCFetchResultControllerDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0F91E69301100F7D425 /* WCFetchResultControllerDataBase.m */; };
+		D4DAE1031E69304100F7D425 /* WCBaseSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0FC1E69304100F7D425 /* WCBaseSearchBar.m */; };
+		D4DAE1041E69304100F7D425 /* WCContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0FE1E69304100F7D425 /* WCContactTableViewCell.m */; };
+		D4DAE1051E69304100F7D425 /* WCHeadImgScrollVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE1001E69304100F7D425 /* WCHeadImgScrollVIew.m */; };
+		D4DAE1061E69304100F7D425 /* WCProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE1021E69304100F7D425 /* WCProfileTableViewCell.m */; };
+		D4DAE1131E69309B00F7D425 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE1081E69309B00F7D425 /* LoginViewController.m */; };
+		D4DAE1141E69309B00F7D425 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE10A1E69309B00F7D425 /* RegisterViewController.m */; };
+		D4DAE1151E69309B00F7D425 /* WCContactRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE10C1E69309B00F7D425 /* WCContactRootTableViewController.m */; };
+		D4DAE1161E69309B00F7D425 /* WCDiscoverRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE10E1E69309B00F7D425 /* WCDiscoverRootTableViewController.m */; };
+		D4DAE1171E69309B00F7D425 /* WCMessageRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE1101E69309B00F7D425 /* WCMessageRootTableViewController.m */; };
+		D4DAE1181E69309B00F7D425 /* WCProfileRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE1121E69309B00F7D425 /* WCProfileRootTableViewController.m */; };
+		D4DAE11F1E6930CD00F7D425 /* WCAddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE11A1E6930CD00F7D425 /* WCAddContactViewController.m */; };
+		D4DAE1201E6930CD00F7D425 /* WCContactInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE11C1E6930CD00F7D425 /* WCContactInfoViewController.m */; };
+		D4DAE1211E6930CD00F7D425 /* WCSearchResultTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE11E1E6930CD00F7D425 /* WCSearchResultTableController.m */; };
+		D4DAE1261E6930E500F7D425 /* WCEditUserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE1231E6930E500F7D425 /* WCEditUserInfoTableViewController.m */; };
+		D4DAE1271E6930E500F7D425 /* WCUserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE1251E6930E500F7D425 /* WCUserInfoTableViewController.m */; };
 		D4E229041D96A18300299CA9 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E228F91D96A18300299CA9 /* SVIndefiniteAnimatedView.m */; };
 		D4E229051D96A18300299CA9 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E228FB1D96A18300299CA9 /* SVProgressAnimatedView.m */; };
 		D4E229061D96A18300299CA9 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4E228FD1D96A18300299CA9 /* SVProgressHUD.bundle */; };
@@ -95,14 +102,7 @@
 		D4E229091D96A18300299CA9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4E229031D96A18300299CA9 /* Info.plist */; };
 		D4E2290C1D96A19A00299CA9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E2290B1D96A19A00299CA9 /* QuartzCore.framework */; };
 		D4E229101D96A9D800299CA9 /* SmoothCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E2290F1D96A9D800299CA9 /* SmoothCheckBox.m */; };
-		D4F228241DA2728E005DB421 /* WCBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F228231DA2728E005DB421 /* WCBaseTableViewController.m */; };
-		D4F2282C1DA2762D005DB421 /* WCFetchResultControllerDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F2282B1DA2762D005DB421 /* WCFetchResultControllerDataBase.m */; };
-		D4F228421DA27F47005DB421 /* WCBaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F228411DA27F47005DB421 /* WCBaseTabBarViewController.m */; };
 		D4F228461DA289CE005DB421 /* WCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4F228451DA289CE005DB421 /* WCLocalizable.strings */; };
-		D4F270211DDDD12B00330662 /* WCSearchResultTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F270201DDDD12B00330662 /* WCSearchResultTableController.m */; };
-		D4FF91B91DD08FB200473CC7 /* searchIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4FF91B81DD08FB200473CC7 /* searchIcon@2x.png */; };
-		D4FF91BC1DD097FC00473CC7 /* AddContactHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF91BB1DD097FC00473CC7 /* AddContactHelper.m */; };
-		D4FF91BF1DD0A25300473CC7 /* WCContactInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF91BE1DD0A25300473CC7 /* WCContactInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,33 +124,13 @@
 
 /* Begin PBXFileReference section */
 		B86A55449349F48C0FEE35F7 /* Pods_WiiChat_2_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WiiChat_2_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D401E2881DF6AD50001F63B2 /* DefaultHeadImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DefaultHeadImg@2x.png"; path = "photos/DefaultHeadImg@2x.png"; sourceTree = SOURCE_ROOT; };
 		D41C23321DAE66CC00699CE7 /* YYEAnimatorPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YYEAnimatorPush.h; path = "../../../../../../Downloads/presentViewController--pushViewController-master/presente模拟push/YYEAnimatorPush.h"; sourceTree = "<group>"; };
 		D41C23331DAE66CC00699CE7 /* YYEAnimatorPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YYEAnimatorPush.m; path = "../../../../../../Downloads/presentViewController--pushViewController-master/presente模拟push/YYEAnimatorPush.m"; sourceTree = "<group>"; };
-		D42D7A691DD33182009097A6 /* searchIcon2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "searchIcon2@2x.png"; path = "photos/searchIcon2@2x.png"; sourceTree = SOURCE_ROOT; };
 		D42E64311E080604007E1A92 /* WiiChat_iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WiiChat_iOS-Prefix.pch"; sourceTree = "<group>"; };
-		D437ACFA1DC5E5D10024513A /* TestHeadImg@2x.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "TestHeadImg@2x.JPG"; path = "photos/TestHeadImg@2x.JPG"; sourceTree = SOURCE_ROOT; };
-		D446448D1DC761630050433E /* STConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConfig.h; sourceTree = "<group>"; };
-		D446448E1DC761630050433E /* STConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConst.h; sourceTree = "<group>"; };
-		D446448F1DC761630050433E /* STConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STConst.m; sourceTree = "<group>"; };
-		D44644901DC761630050433E /* STUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STUI.h; sourceTree = "<group>"; };
-		D44644911DC761630050433E /* STUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STUI.m; sourceTree = "<group>"; };
-		D44644921DC761630050433E /* UIImage+ST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ST.h"; sourceTree = "<group>"; };
-		D44644931DC761630050433E /* UIImage+ST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ST.m"; sourceTree = "<group>"; };
-		D44644941DC761630050433E /* UIView+ST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ST.h"; sourceTree = "<group>"; };
-		D44644951DC761630050433E /* UIView+ST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ST.m"; sourceTree = "<group>"; };
-		D44644971DC761630050433E /* STPhotoKitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPhotoKitController.h; sourceTree = "<group>"; };
-		D44644981DC761630050433E /* STPhotoKitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPhotoKitController.m; sourceTree = "<group>"; };
-		D44644991DC761630050433E /* UIImagePickerController+ST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImagePickerController+ST.h"; sourceTree = "<group>"; };
-		D446449A1DC761630050433E /* UIImagePickerController+ST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImagePickerController+ST.m"; sourceTree = "<group>"; };
-		D45A7DC71DA13DA6001F19A1 /* LoginHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHelper.h; sourceTree = "<group>"; };
-		D45A7DC81DA13DA6001F19A1 /* LoginHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHelper.m; sourceTree = "<group>"; };
 		D45C28FA1D90EE45005C2B9A /* WiiChat_2_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiiChat_2_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45C28FE1D90EE45005C2B9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D45C29001D90EE45005C2B9A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D45C29011D90EE45005C2B9A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D45C29031D90EE45005C2B9A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D45C29041D90EE45005C2B9A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D45C29071D90EE45005C2B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D45C290A1D90EE45005C2B9A /* WiiChat_2_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WiiChat_2_2.xcdatamodel; sourceTree = "<group>"; };
 		D45C290C1D90EE45005C2B9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,102 +142,135 @@
 		D45C29211D90EE45005C2B9A /* WiiChat_2_2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiiChat_2_2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45C29251D90EE45005C2B9A /* WiiChat_2_2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WiiChat_2_2UITests.m; sourceTree = "<group>"; };
 		D45C29271D90EE45005C2B9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D45C29361D90EF28005C2B9A /* WiiChatSingletonClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiiChatSingletonClass.h; sourceTree = "<group>"; };
-		D45C29371D90EF28005C2B9A /* WiiChatSingletonClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiiChatSingletonClass.m; sourceTree = "<group>"; };
-		D45C29451D90F3A2005C2B9A /* WCBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseViewController.h; sourceTree = "<group>"; };
-		D45C29461D90F3A2005C2B9A /* WCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseViewController.m; sourceTree = "<group>"; };
-		D45C29481D912576005C2B9A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		D45C29491D912576005C2B9A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D46A333B1D93EDC40075E358 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		D47EA3441E5442DC007CE82D /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
-		D47EA3451E5442DC007CE82D /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		D47EA3471E5466AB007CE82D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D47EA6FC1DEC3EEF00F949B0 /* GroupChat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GroupChat@2x.png"; path = "photos/GroupChat@2x.png"; sourceTree = SOURCE_ROOT; };
-		D47EA6FD1DEC3EEF00F949B0 /* NewFriend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewFriend@2x.png"; path = "photos/NewFriend@2x.png"; sourceTree = SOURCE_ROOT; };
-		D47EA6FE1DEC3EEF00F949B0 /* PublicAccount@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PublicAccount@2x.png"; path = "photos/PublicAccount@2x.png"; sourceTree = SOURCE_ROOT; };
-		D47EA6FF1DEC3EEF00F949B0 /* Stamp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Stamp@2x.png"; path = "photos/Stamp@2x.png"; sourceTree = SOURCE_ROOT; };
-		D47EA7041DEC40A500F949B0 /* WCContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCContactTableViewCell.h; sourceTree = "<group>"; };
-		D47EA7051DEC40A500F949B0 /* WCContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCContactTableViewCell.m; sourceTree = "<group>"; };
-		D4846B9E1DAA217200209CDB /* WCProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCProfileTableViewCell.h; sourceTree = "<group>"; };
-		D4846B9F1DAA217200209CDB /* WCProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCProfileTableViewCell.m; sourceTree = "<group>"; };
-		D4846BA51DAA27EF00209CDB /* AppleWatch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppleWatch@2x.png"; path = "photos/AppleWatch@2x.png"; sourceTree = SOURCE_ROOT; };
-		D4846BA71DAA53F500209CDB /* WCUserInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCUserInfoTableViewController.h; sourceTree = "<group>"; };
-		D4846BA81DAA53F500209CDB /* WCUserInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCUserInfoTableViewController.m; sourceTree = "<group>"; };
-		D48AED9B1E4708FF0002D18F /* CountStringLengthHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountStringLengthHelper.h; sourceTree = "<group>"; };
-		D48AED9C1E4708FF0002D18F /* CountStringLengthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountStringLengthHelper.m; sourceTree = "<group>"; };
-		D48AED9F1E47135C0002D18F /* ChineseString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChineseString.h; path = ChineseStringConvert/ChineseString.h; sourceTree = "<group>"; };
-		D48AEDA01E47135C0002D18F /* ChineseString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChineseString.m; path = ChineseStringConvert/ChineseString.m; sourceTree = "<group>"; };
-		D48AEDA11E47135C0002D18F /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pinyin.c; path = ChineseStringConvert/pinyin.c; sourceTree = "<group>"; };
-		D48AEDA21E47135C0002D18F /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pinyin.h; path = ChineseStringConvert/pinyin.h; sourceTree = "<group>"; };
-		D48AEDA51E4713C90002D18F /* ErrorInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorInfo.h; sourceTree = "<group>"; };
-		D48AEDA61E4713C90002D18F /* ErrorInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorInfo.m; sourceTree = "<group>"; };
-		D48AEDA81E4714450002D18F /* AllUsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllUsers.h; path = CoreDataClass/AllUsers.h; sourceTree = "<group>"; };
-		D48AEDA91E4714450002D18F /* AllUsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AllUsers.m; path = CoreDataClass/AllUsers.m; sourceTree = "<group>"; };
-		D48AEDAA1E4714450002D18F /* AllUsers+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AllUsers+CoreDataProperties.h"; path = "CoreDataClass/AllUsers+CoreDataProperties.h"; sourceTree = "<group>"; };
-		D48AEDAB1E4714450002D18F /* AllUsers+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AllUsers+CoreDataProperties.m"; path = "CoreDataClass/AllUsers+CoreDataProperties.m"; sourceTree = "<group>"; };
-		D48AEDAC1E4714450002D18F /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Contact.h; path = CoreDataClass/Contact.h; sourceTree = "<group>"; };
-		D48AEDAD1E4714450002D18F /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contact.m; path = CoreDataClass/Contact.m; sourceTree = "<group>"; };
-		D48AEDAE1E4714450002D18F /* Contact+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Contact+CoreDataProperties.h"; path = "CoreDataClass/Contact+CoreDataProperties.h"; sourceTree = "<group>"; };
-		D48AEDAF1E4714450002D18F /* Contact+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Contact+CoreDataProperties.m"; path = "CoreDataClass/Contact+CoreDataProperties.m"; sourceTree = "<group>"; };
-		D48AEDB01E4714450002D18F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = CoreDataClass/User.h; sourceTree = "<group>"; };
-		D48AEDB11E4714450002D18F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = CoreDataClass/User.m; sourceTree = "<group>"; };
-		D48AEDB21E4714450002D18F /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+CoreDataProperties.h"; path = "CoreDataClass/User+CoreDataProperties.h"; sourceTree = "<group>"; };
-		D48AEDB31E4714450002D18F /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+CoreDataProperties.m"; path = "CoreDataClass/User+CoreDataProperties.m"; sourceTree = "<group>"; };
-		D48AEDB41E4714450002D18F /* UserSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserSource.h; path = CoreDataClass/UserSource.h; sourceTree = "<group>"; };
-		D48AEDB51E4714450002D18F /* UserSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserSource.m; path = CoreDataClass/UserSource.m; sourceTree = "<group>"; };
-		D48AEDBD1E47148F0002D18F /* WiiChatCoreDataStackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WiiChatCoreDataStackManager.h; path = CoreDataClass/WiiChatCoreDataStackManager.h; sourceTree = "<group>"; };
-		D48AEDBE1E47148F0002D18F /* WiiChatCoreDataStackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WiiChatCoreDataStackManager.m; path = CoreDataClass/WiiChatCoreDataStackManager.m; sourceTree = "<group>"; };
-		D48AEDC01E47151D0002D18F /* WCContactRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCContactRootTableViewController.h; sourceTree = "<group>"; };
-		D48AEDC11E47151D0002D18F /* WCContactRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCContactRootTableViewController.m; sourceTree = "<group>"; };
-		D48AEDC21E47151D0002D18F /* WCDiscoverRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCDiscoverRootTableViewController.h; sourceTree = "<group>"; };
-		D48AEDC31E47151D0002D18F /* WCDiscoverRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCDiscoverRootTableViewController.m; sourceTree = "<group>"; };
-		D48AEDC41E47151D0002D18F /* WCMessageRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCMessageRootTableViewController.h; sourceTree = "<group>"; };
-		D48AEDC51E47151D0002D18F /* WCMessageRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCMessageRootTableViewController.m; sourceTree = "<group>"; };
-		D48AEDC61E47151D0002D18F /* WCProfileRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCProfileRootTableViewController.h; sourceTree = "<group>"; };
-		D48AEDC71E47151D0002D18F /* WCProfileRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCProfileRootTableViewController.m; sourceTree = "<group>"; };
-		D48AEDCC1E4715890002D18F /* UIBaseSettingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBaseSettingInfo.h; sourceTree = "<group>"; };
-		D48AEDCD1E4715890002D18F /* UIBaseSettingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBaseSettingInfo.m; sourceTree = "<group>"; };
-		D49928551DAB417500F6DD90 /* WCEditUserInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCEditUserInfoTableViewController.h; sourceTree = "<group>"; };
-		D49928561DAB417500F6DD90 /* WCEditUserInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCEditUserInfoTableViewController.m; sourceTree = "<group>"; };
-		D499285C1DAB4A2200F6DD90 /* LoginBackgroundImg@2x.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "LoginBackgroundImg@2x.JPG"; path = "../photos/LoginBackgroundImg@2x.JPG"; sourceTree = "<group>"; };
-		D499285D1DAB4A2200F6DD90 /* MoreEmotions@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MoreEmotions@2x.png"; path = "../photos/MoreEmotions@2x.png"; sourceTree = "<group>"; };
-		D49E9DE41DC3725700D709FA /* YQImageCompressTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQImageCompressTool.h; sourceTree = "<group>"; };
-		D49E9DE51DC3725700D709FA /* YQImageCompressTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQImageCompressTool.m; sourceTree = "<group>"; };
-		D49E9DE61DC3725700D709FA /* YQImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQImageTool.h; sourceTree = "<group>"; };
-		D49E9DE71DC3725700D709FA /* YQImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQImageTool.m; sourceTree = "<group>"; };
-		D4AF93C11DA9166D00675224 /* WCUIStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCUIStoreManager.h; sourceTree = "<group>"; };
-		D4AF93C21DA9166D00675224 /* WCUIStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCUIStoreManager.m; sourceTree = "<group>"; };
-		D4AF93CF1DA91CA000675224 /* MyAlbum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MyAlbum@2x.png"; path = "photos/MyAlbum@2x.png"; sourceTree = SOURCE_ROOT; };
-		D4AF93D01DA91CA000675224 /* MyCards@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MyCards@2x.png"; path = "photos/MyCards@2x.png"; sourceTree = SOURCE_ROOT; };
-		D4AF93D11DA91CA000675224 /* MyFavorites@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MyFavorites@2x.png"; path = "photos/MyFavorites@2x.png"; sourceTree = SOURCE_ROOT; };
-		D4AF93D21DA91CA000675224 /* MySetting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MySetting@2x.png"; path = "photos/MySetting@2x.png"; sourceTree = SOURCE_ROOT; };
-		D4AF93D81DA91E8200675224 /* MyWallet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MyWallet@2x.png"; path = "photos/MyWallet@2x.png"; sourceTree = SOURCE_ROOT; };
-		D4B7FFD21D9556BA004D77B8 /* WCBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseNavigationController.h; sourceTree = "<group>"; };
-		D4B7FFD31D9556BA004D77B8 /* WCBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseNavigationController.m; sourceTree = "<group>"; };
-		D4B7FFD51D9557F2004D77B8 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
-		D4B7FFD61D9557F2004D77B8 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		D4C4B63C1DB106EE00F5D105 /* EditUserInfoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUserInfoHelper.h; sourceTree = "<group>"; };
-		D4C4B63D1DB106EE00F5D105 /* EditUserInfoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUserInfoHelper.m; sourceTree = "<group>"; };
 		D4CC81C61E5065E700926922 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
 		D4CC81C71E5065E700926922 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "Pods/../build/Debug-iphoneos/ReactiveCocoa/ReactiveCocoa.framework"; sourceTree = "<group>"; };
-		D4D219F31E5AF82800D0A173 /* WCBaseSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseSearchBar.h; sourceTree = "<group>"; };
-		D4D219F41E5AF82800D0A173 /* WCBaseSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseSearchBar.m; sourceTree = "<group>"; };
-		D4D219F61E5AFB9E00D0A173 /* WCBaseSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseSearchController.h; sourceTree = "<group>"; };
-		D4D219F71E5AFB9E00D0A173 /* WCBaseSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseSearchController.m; sourceTree = "<group>"; };
-		D4D2DEEC1D9D37F700BCA6F6 /* RegisterHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterHelper.h; sourceTree = "<group>"; };
-		D4D2DEED1D9D37F700BCA6F6 /* RegisterHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterHelper.m; sourceTree = "<group>"; };
 		D4D2DEF01D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WiiChatSourceData.xcdatamodel; sourceTree = "<group>"; };
-		D4D7E5E21E55B6AF00EBFA8C /* WCBaseSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseSearchViewController.h; sourceTree = "<group>"; };
-		D4D7E5E31E55B6AF00EBFA8C /* WCBaseSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseSearchViewController.m; sourceTree = "<group>"; };
-		D4D8EAA01E488E7800743378 /* WCHeadImgScrollVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCHeadImgScrollVIew.h; sourceTree = "<group>"; };
-		D4D8EAA11E488E7800743378 /* WCHeadImgScrollVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCHeadImgScrollVIew.m; sourceTree = "<group>"; };
-		D4DB48481DC9F63B002B7665 /* WCAddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCAddContactViewController.h; sourceTree = "<group>"; };
-		D4DB48491DC9F63B002B7665 /* WCAddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCAddContactViewController.m; sourceTree = "<group>"; };
-		D4DB484B1DCA00BF002B7665 /* gongzhonghao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gongzhonghao@2x.png"; path = "photos/gongzhonghao@2x.png"; sourceTree = SOURCE_ROOT; };
-		D4DB484C1DCA00BF002B7665 /* leida@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "leida@2x.png"; path = "photos/leida@2x.png"; sourceTree = SOURCE_ROOT; };
-		D4DB484D1DCA00BF002B7665 /* mianduimian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mianduimian@2x.png"; path = "photos/mianduimian@2x.png"; sourceTree = SOURCE_ROOT; };
-		D4DB484E1DCA00BF002B7665 /* saoyisao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "saoyisao@2x.png"; path = "photos/saoyisao@2x.png"; sourceTree = SOURCE_ROOT; };
-		D4DB484F1DCA00BF002B7665 /* shouji@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shouji@2x.png"; path = "photos/shouji@2x.png"; sourceTree = SOURCE_ROOT; };
+		D4DAE0641E692E0F00F7D425 /* AllUsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllUsers.h; path = WiiChat_2_2/CoreDataClass/AllUsers.h; sourceTree = "<group>"; };
+		D4DAE0651E692E0F00F7D425 /* AllUsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AllUsers.m; path = WiiChat_2_2/CoreDataClass/AllUsers.m; sourceTree = "<group>"; };
+		D4DAE0661E692E0F00F7D425 /* AllUsers+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AllUsers+CoreDataProperties.h"; path = "WiiChat_2_2/CoreDataClass/AllUsers+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D4DAE0671E692E0F00F7D425 /* AllUsers+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AllUsers+CoreDataProperties.m"; path = "WiiChat_2_2/CoreDataClass/AllUsers+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D4DAE0681E692E0F00F7D425 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Contact.h; path = WiiChat_2_2/CoreDataClass/Contact.h; sourceTree = "<group>"; };
+		D4DAE0691E692E0F00F7D425 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contact.m; path = WiiChat_2_2/CoreDataClass/Contact.m; sourceTree = "<group>"; };
+		D4DAE06A1E692E0F00F7D425 /* Contact+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Contact+CoreDataProperties.h"; path = "WiiChat_2_2/CoreDataClass/Contact+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D4DAE06B1E692E0F00F7D425 /* Contact+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Contact+CoreDataProperties.m"; path = "WiiChat_2_2/CoreDataClass/Contact+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D4DAE06C1E692E0F00F7D425 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = WiiChat_2_2/CoreDataClass/User.h; sourceTree = "<group>"; };
+		D4DAE06D1E692E0F00F7D425 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = WiiChat_2_2/CoreDataClass/User.m; sourceTree = "<group>"; };
+		D4DAE06E1E692E0F00F7D425 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+CoreDataProperties.h"; path = "WiiChat_2_2/CoreDataClass/User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D4DAE06F1E692E0F00F7D425 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+CoreDataProperties.m"; path = "WiiChat_2_2/CoreDataClass/User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D4DAE0701E692E0F00F7D425 /* UserSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserSource.h; path = WiiChat_2_2/CoreDataClass/UserSource.h; sourceTree = "<group>"; };
+		D4DAE0711E692E0F00F7D425 /* UserSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserSource.m; path = WiiChat_2_2/CoreDataClass/UserSource.m; sourceTree = "<group>"; };
+		D4DAE0721E692E0F00F7D425 /* WiiChatCoreDataStackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WiiChatCoreDataStackManager.h; path = WiiChat_2_2/CoreDataClass/WiiChatCoreDataStackManager.h; sourceTree = "<group>"; };
+		D4DAE0731E692E0F00F7D425 /* WiiChatCoreDataStackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WiiChatCoreDataStackManager.m; path = WiiChat_2_2/CoreDataClass/WiiChatCoreDataStackManager.m; sourceTree = "<group>"; };
+		D4DAE07C1E692E3800F7D425 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ODRefreshControl.h; path = WiiChat_2_2/Vendor/ODRefreshControl/ODRefreshControl.h; sourceTree = SOURCE_ROOT; };
+		D4DAE07D1E692E3800F7D425 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ODRefreshControl.m; path = WiiChat_2_2/Vendor/ODRefreshControl/ODRefreshControl.m; sourceTree = SOURCE_ROOT; };
+		D4DAE07F1E692E5E00F7D425 /* STConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STConfig.h; path = WiiChat_2_2/Vendor/STConfig/STConfig.h; sourceTree = SOURCE_ROOT; };
+		D4DAE0801E692E5E00F7D425 /* STConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STConst.h; path = WiiChat_2_2/Vendor/STConfig/STConst.h; sourceTree = SOURCE_ROOT; };
+		D4DAE0811E692E5E00F7D425 /* STConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STConst.m; path = WiiChat_2_2/Vendor/STConfig/STConst.m; sourceTree = SOURCE_ROOT; };
+		D4DAE0821E692E5E00F7D425 /* STUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STUI.h; path = WiiChat_2_2/Vendor/STConfig/STUI.h; sourceTree = SOURCE_ROOT; };
+		D4DAE0831E692E5E00F7D425 /* STUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STUI.m; path = WiiChat_2_2/Vendor/STConfig/STUI.m; sourceTree = SOURCE_ROOT; };
+		D4DAE0841E692E5E00F7D425 /* UIImage+ST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ST.h"; path = "WiiChat_2_2/Vendor/STConfig/UIImage+ST.h"; sourceTree = SOURCE_ROOT; };
+		D4DAE0851E692E5E00F7D425 /* UIImage+ST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ST.m"; path = "WiiChat_2_2/Vendor/STConfig/UIImage+ST.m"; sourceTree = SOURCE_ROOT; };
+		D4DAE0861E692E5E00F7D425 /* UIView+ST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+ST.h"; path = "WiiChat_2_2/Vendor/STConfig/UIView+ST.h"; sourceTree = SOURCE_ROOT; };
+		D4DAE0871E692E5E00F7D425 /* UIView+ST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+ST.m"; path = "WiiChat_2_2/Vendor/STConfig/UIView+ST.m"; sourceTree = SOURCE_ROOT; };
+		D4DAE08C1E692E7800F7D425 /* ChineseString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChineseString.h; path = WiiChat_2_2/Vendor/ChineseStringConvert/ChineseString.h; sourceTree = "<group>"; };
+		D4DAE08D1E692E7800F7D425 /* ChineseString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChineseString.m; path = WiiChat_2_2/Vendor/ChineseStringConvert/ChineseString.m; sourceTree = "<group>"; };
+		D4DAE08E1E692E7800F7D425 /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pinyin.c; path = WiiChat_2_2/Vendor/ChineseStringConvert/pinyin.c; sourceTree = "<group>"; };
+		D4DAE08F1E692E7800F7D425 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pinyin.h; path = WiiChat_2_2/Vendor/ChineseStringConvert/pinyin.h; sourceTree = "<group>"; };
+		D4DAE0921E692EA000F7D425 /* STPhotoKitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STPhotoKitController.h; path = WiiChat_2_2/Vendor/STPhotoKit/STPhotoKitController.h; sourceTree = SOURCE_ROOT; };
+		D4DAE0931E692EA000F7D425 /* STPhotoKitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STPhotoKitController.m; path = WiiChat_2_2/Vendor/STPhotoKit/STPhotoKitController.m; sourceTree = SOURCE_ROOT; };
+		D4DAE0941E692EA000F7D425 /* UIImagePickerController+ST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImagePickerController+ST.h"; path = "WiiChat_2_2/Vendor/STPhotoKit/UIImagePickerController+ST.h"; sourceTree = SOURCE_ROOT; };
+		D4DAE0951E692EA000F7D425 /* UIImagePickerController+ST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImagePickerController+ST.m"; path = "WiiChat_2_2/Vendor/STPhotoKit/UIImagePickerController+ST.m"; sourceTree = SOURCE_ROOT; };
+		D4DAE0981E692EBD00F7D425 /* YQImageCompressTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YQImageCompressTool.h; path = WiiChat_2_2/Vendor/YQImageTool/YQImageCompressor/YQImageCompressTool.h; sourceTree = SOURCE_ROOT; };
+		D4DAE0991E692EBD00F7D425 /* YQImageCompressTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YQImageCompressTool.m; path = WiiChat_2_2/Vendor/YQImageTool/YQImageCompressor/YQImageCompressTool.m; sourceTree = SOURCE_ROOT; };
+		D4DAE09B1E692ED200F7D425 /* YQImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YQImageTool.h; path = WiiChat_2_2/Vendor/YQImageTool/YQImageTool.h; sourceTree = SOURCE_ROOT; };
+		D4DAE09C1E692ED200F7D425 /* YQImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YQImageTool.m; path = WiiChat_2_2/Vendor/YQImageTool/YQImageTool.m; sourceTree = SOURCE_ROOT; };
+		D4DAE09E1E692F1900F7D425 /* WCUIStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCUIStoreManager.h; path = Helper/WCUIStoreManager.h; sourceTree = "<group>"; };
+		D4DAE09F1E692F1900F7D425 /* WCUIStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCUIStoreManager.m; path = Helper/WCUIStoreManager.m; sourceTree = "<group>"; };
+		D4DAE0A01E692F1900F7D425 /* WiiChatSingletonClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WiiChatSingletonClass.h; path = Helper/WiiChatSingletonClass.h; sourceTree = "<group>"; };
+		D4DAE0A11E692F1900F7D425 /* WiiChatSingletonClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WiiChatSingletonClass.m; path = Helper/WiiChatSingletonClass.m; sourceTree = "<group>"; };
+		D4DAE0A41E692F3100F7D425 /* AddContactHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddContactHelper.h; path = Helper/AddContactHelper.h; sourceTree = "<group>"; };
+		D4DAE0A51E692F3100F7D425 /* AddContactHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddContactHelper.m; path = Helper/AddContactHelper.m; sourceTree = "<group>"; };
+		D4DAE0A61E692F3100F7D425 /* CountStringLengthHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountStringLengthHelper.h; path = Helper/CountStringLengthHelper.h; sourceTree = "<group>"; };
+		D4DAE0A71E692F3100F7D425 /* CountStringLengthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountStringLengthHelper.m; path = Helper/CountStringLengthHelper.m; sourceTree = "<group>"; };
+		D4DAE0A81E692F3100F7D425 /* EditUserInfoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditUserInfoHelper.h; path = Helper/EditUserInfoHelper.h; sourceTree = "<group>"; };
+		D4DAE0A91E692F3100F7D425 /* EditUserInfoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditUserInfoHelper.m; path = Helper/EditUserInfoHelper.m; sourceTree = "<group>"; };
+		D4DAE0AA1E692F3100F7D425 /* ErrorInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorInfo.h; path = Helper/ErrorInfo.h; sourceTree = "<group>"; };
+		D4DAE0AB1E692F3100F7D425 /* ErrorInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorInfo.m; path = Helper/ErrorInfo.m; sourceTree = "<group>"; };
+		D4DAE0AC1E692F3100F7D425 /* LoginHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginHelper.h; path = Helper/LoginHelper.h; sourceTree = "<group>"; };
+		D4DAE0AD1E692F3100F7D425 /* LoginHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginHelper.m; path = Helper/LoginHelper.m; sourceTree = "<group>"; };
+		D4DAE0AE1E692F3100F7D425 /* RegisterHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterHelper.h; path = Helper/RegisterHelper.h; sourceTree = "<group>"; };
+		D4DAE0AF1E692F3100F7D425 /* RegisterHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterHelper.m; path = Helper/RegisterHelper.m; sourceTree = "<group>"; };
+		D4DAE0B01E692F3100F7D425 /* UIBaseSettingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIBaseSettingInfo.h; path = Helper/UIBaseSettingInfo.h; sourceTree = "<group>"; };
+		D4DAE0B11E692F3100F7D425 /* UIBaseSettingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIBaseSettingInfo.m; path = Helper/UIBaseSettingInfo.m; sourceTree = "<group>"; };
+		D4DAE0B91E692F5700F7D425 /* AppleWatch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppleWatch@2x.png"; path = "photos/AppleWatch@2x.png"; sourceTree = "<group>"; };
+		D4DAE0BA1E692F5700F7D425 /* DefaultHeadImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DefaultHeadImg@2x.png"; path = "photos/DefaultHeadImg@2x.png"; sourceTree = "<group>"; };
+		D4DAE0BB1E692F5700F7D425 /* gongzhonghao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gongzhonghao@2x.png"; path = "photos/gongzhonghao@2x.png"; sourceTree = "<group>"; };
+		D4DAE0BC1E692F5700F7D425 /* GroupChat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GroupChat@2x.png"; path = "photos/GroupChat@2x.png"; sourceTree = "<group>"; };
+		D4DAE0BD1E692F5700F7D425 /* leida@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "leida@2x.png"; path = "photos/leida@2x.png"; sourceTree = "<group>"; };
+		D4DAE0BE1E692F5700F7D425 /* LoginBackgroundImg@2x.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "LoginBackgroundImg@2x.JPG"; path = "photos/LoginBackgroundImg@2x.JPG"; sourceTree = "<group>"; };
+		D4DAE0BF1E692F5700F7D425 /* mianduimian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mianduimian@2x.png"; path = "photos/mianduimian@2x.png"; sourceTree = "<group>"; };
+		D4DAE0C01E692F5700F7D425 /* MoreEmotions@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MoreEmotions@2x.png"; path = "photos/MoreEmotions@2x.png"; sourceTree = "<group>"; };
+		D4DAE0C11E692F5700F7D425 /* MyAlbum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MyAlbum@2x.png"; path = "photos/MyAlbum@2x.png"; sourceTree = "<group>"; };
+		D4DAE0C21E692F5700F7D425 /* MyCards@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MyCards@2x.png"; path = "photos/MyCards@2x.png"; sourceTree = "<group>"; };
+		D4DAE0C31E692F5700F7D425 /* MyFavorites@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MyFavorites@2x.png"; path = "photos/MyFavorites@2x.png"; sourceTree = "<group>"; };
+		D4DAE0C41E692F5700F7D425 /* MySetting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MySetting@2x.png"; path = "photos/MySetting@2x.png"; sourceTree = "<group>"; };
+		D4DAE0C51E692F5700F7D425 /* MyWallet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MyWallet@2x.png"; path = "photos/MyWallet@2x.png"; sourceTree = "<group>"; };
+		D4DAE0C61E692F5700F7D425 /* NewFriend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewFriend@2x.png"; path = "photos/NewFriend@2x.png"; sourceTree = "<group>"; };
+		D4DAE0C71E692F5700F7D425 /* PublicAccount@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PublicAccount@2x.png"; path = "photos/PublicAccount@2x.png"; sourceTree = "<group>"; };
+		D4DAE0C81E692F5700F7D425 /* saoyisao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "saoyisao@2x.png"; path = "photos/saoyisao@2x.png"; sourceTree = "<group>"; };
+		D4DAE0C91E692F5700F7D425 /* searchIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "searchIcon@2x.png"; path = "photos/searchIcon@2x.png"; sourceTree = "<group>"; };
+		D4DAE0CA1E692F5700F7D425 /* searchIcon2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "searchIcon2@2x.png"; path = "photos/searchIcon2@2x.png"; sourceTree = "<group>"; };
+		D4DAE0CB1E692F5700F7D425 /* shouji@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shouji@2x.png"; path = "photos/shouji@2x.png"; sourceTree = "<group>"; };
+		D4DAE0CC1E692F5700F7D425 /* Stamp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Stamp@2x.png"; path = "photos/Stamp@2x.png"; sourceTree = "<group>"; };
+		D4DAE0CD1E692F5700F7D425 /* TestHeadImg@2x.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "TestHeadImg@2x.JPG"; path = "photos/TestHeadImg@2x.JPG"; sourceTree = "<group>"; };
+		D4DAE0E31E692F7900F7D425 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewController.h; sourceTree = "<group>"; };
+		D4DAE0E41E692F7900F7D425 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controller/ViewController.m; sourceTree = "<group>"; };
+		D4DAE0E61E692FE400F7D425 /* WCBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCBaseNavigationController.h; path = Controller/WCBaseVC/WCBaseNavigationController.h; sourceTree = "<group>"; };
+		D4DAE0E71E692FE400F7D425 /* WCBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCBaseNavigationController.m; path = Controller/WCBaseVC/WCBaseNavigationController.m; sourceTree = "<group>"; };
+		D4DAE0E81E692FE400F7D425 /* WCBaseSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCBaseSearchController.h; path = Controller/WCBaseVC/WCBaseSearchController.h; sourceTree = "<group>"; };
+		D4DAE0E91E692FE400F7D425 /* WCBaseSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCBaseSearchController.m; path = Controller/WCBaseVC/WCBaseSearchController.m; sourceTree = "<group>"; };
+		D4DAE0EA1E692FE400F7D425 /* WCBaseSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCBaseSearchViewController.h; path = Controller/WCBaseVC/WCBaseSearchViewController.h; sourceTree = "<group>"; };
+		D4DAE0EB1E692FE400F7D425 /* WCBaseSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCBaseSearchViewController.m; path = Controller/WCBaseVC/WCBaseSearchViewController.m; sourceTree = "<group>"; };
+		D4DAE0EC1E692FE400F7D425 /* WCBaseTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCBaseTabBarViewController.h; path = Controller/WCBaseVC/WCBaseTabBarViewController.h; sourceTree = "<group>"; };
+		D4DAE0ED1E692FE400F7D425 /* WCBaseTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCBaseTabBarViewController.m; path = Controller/WCBaseVC/WCBaseTabBarViewController.m; sourceTree = "<group>"; };
+		D4DAE0EE1E692FE400F7D425 /* WCBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCBaseTableViewController.h; path = Controller/WCBaseVC/WCBaseTableViewController.h; sourceTree = "<group>"; };
+		D4DAE0EF1E692FE400F7D425 /* WCBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCBaseTableViewController.m; path = Controller/WCBaseVC/WCBaseTableViewController.m; sourceTree = "<group>"; };
+		D4DAE0F01E692FE400F7D425 /* WCBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCBaseViewController.h; path = Controller/WCBaseVC/WCBaseViewController.h; sourceTree = "<group>"; };
+		D4DAE0F11E692FE400F7D425 /* WCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCBaseViewController.m; path = Controller/WCBaseVC/WCBaseViewController.m; sourceTree = "<group>"; };
+		D4DAE0F81E69301100F7D425 /* WCFetchResultControllerDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCFetchResultControllerDataBase.h; path = Controller/WCFetchResultVC/WCFetchResultControllerDataBase.h; sourceTree = "<group>"; };
+		D4DAE0F91E69301100F7D425 /* WCFetchResultControllerDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCFetchResultControllerDataBase.m; path = Controller/WCFetchResultVC/WCFetchResultControllerDataBase.m; sourceTree = "<group>"; };
+		D4DAE0FB1E69304100F7D425 /* WCBaseSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCBaseSearchBar.h; path = View/WCBaseSearchBar.h; sourceTree = "<group>"; };
+		D4DAE0FC1E69304100F7D425 /* WCBaseSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCBaseSearchBar.m; path = View/WCBaseSearchBar.m; sourceTree = "<group>"; };
+		D4DAE0FD1E69304100F7D425 /* WCContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCContactTableViewCell.h; path = View/WCContactTableViewCell.h; sourceTree = "<group>"; };
+		D4DAE0FE1E69304100F7D425 /* WCContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCContactTableViewCell.m; path = View/WCContactTableViewCell.m; sourceTree = "<group>"; };
+		D4DAE0FF1E69304100F7D425 /* WCHeadImgScrollVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCHeadImgScrollVIew.h; path = View/WCHeadImgScrollVIew.h; sourceTree = "<group>"; };
+		D4DAE1001E69304100F7D425 /* WCHeadImgScrollVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCHeadImgScrollVIew.m; path = View/WCHeadImgScrollVIew.m; sourceTree = "<group>"; };
+		D4DAE1011E69304100F7D425 /* WCProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCProfileTableViewCell.h; path = View/WCProfileTableViewCell.h; sourceTree = "<group>"; };
+		D4DAE1021E69304100F7D425 /* WCProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCProfileTableViewCell.m; path = View/WCProfileTableViewCell.m; sourceTree = "<group>"; };
+		D4DAE1071E69309B00F7D425 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controller/WCRootVC/LoginViewController.h; sourceTree = "<group>"; };
+		D4DAE1081E69309B00F7D425 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controller/WCRootVC/LoginViewController.m; sourceTree = "<group>"; };
+		D4DAE1091E69309B00F7D425 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Controller/WCRootVC/RegisterViewController.h; sourceTree = "<group>"; };
+		D4DAE10A1E69309B00F7D425 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Controller/WCRootVC/RegisterViewController.m; sourceTree = "<group>"; };
+		D4DAE10B1E69309B00F7D425 /* WCContactRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCContactRootTableViewController.h; path = Controller/WCRootVC/WCContactRootTableViewController.h; sourceTree = "<group>"; };
+		D4DAE10C1E69309B00F7D425 /* WCContactRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCContactRootTableViewController.m; path = Controller/WCRootVC/WCContactRootTableViewController.m; sourceTree = "<group>"; };
+		D4DAE10D1E69309B00F7D425 /* WCDiscoverRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCDiscoverRootTableViewController.h; path = Controller/WCRootVC/WCDiscoverRootTableViewController.h; sourceTree = "<group>"; };
+		D4DAE10E1E69309B00F7D425 /* WCDiscoverRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCDiscoverRootTableViewController.m; path = Controller/WCRootVC/WCDiscoverRootTableViewController.m; sourceTree = "<group>"; };
+		D4DAE10F1E69309B00F7D425 /* WCMessageRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCMessageRootTableViewController.h; path = Controller/WCRootVC/WCMessageRootTableViewController.h; sourceTree = "<group>"; };
+		D4DAE1101E69309B00F7D425 /* WCMessageRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCMessageRootTableViewController.m; path = Controller/WCRootVC/WCMessageRootTableViewController.m; sourceTree = "<group>"; };
+		D4DAE1111E69309B00F7D425 /* WCProfileRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCProfileRootTableViewController.h; path = Controller/WCRootVC/WCProfileRootTableViewController.h; sourceTree = "<group>"; };
+		D4DAE1121E69309B00F7D425 /* WCProfileRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCProfileRootTableViewController.m; path = Controller/WCRootVC/WCProfileRootTableViewController.m; sourceTree = "<group>"; };
+		D4DAE1191E6930CD00F7D425 /* WCAddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCAddContactViewController.h; path = Controller/WCAddContactViewController.h; sourceTree = "<group>"; };
+		D4DAE11A1E6930CD00F7D425 /* WCAddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCAddContactViewController.m; path = Controller/WCAddContactViewController.m; sourceTree = "<group>"; };
+		D4DAE11B1E6930CD00F7D425 /* WCContactInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCContactInfoViewController.h; path = Controller/WCContactInfoViewController.h; sourceTree = "<group>"; };
+		D4DAE11C1E6930CD00F7D425 /* WCContactInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCContactInfoViewController.m; path = Controller/WCContactInfoViewController.m; sourceTree = "<group>"; };
+		D4DAE11D1E6930CD00F7D425 /* WCSearchResultTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCSearchResultTableController.h; path = Controller/WCSearchResultTableController.h; sourceTree = "<group>"; };
+		D4DAE11E1E6930CD00F7D425 /* WCSearchResultTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCSearchResultTableController.m; path = Controller/WCSearchResultTableController.m; sourceTree = "<group>"; };
+		D4DAE1221E6930E500F7D425 /* WCEditUserInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCEditUserInfoTableViewController.h; path = Controller/WCEditUserInfoTableViewController.h; sourceTree = "<group>"; };
+		D4DAE1231E6930E500F7D425 /* WCEditUserInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCEditUserInfoTableViewController.m; path = Controller/WCEditUserInfoTableViewController.m; sourceTree = "<group>"; };
+		D4DAE1241E6930E500F7D425 /* WCUserInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCUserInfoTableViewController.h; path = Controller/WCUserInfoTableViewController.h; sourceTree = "<group>"; };
+		D4DAE1251E6930E500F7D425 /* WCUserInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCUserInfoTableViewController.m; path = Controller/WCUserInfoTableViewController.m; sourceTree = "<group>"; };
 		D4E228F81D96A18300299CA9 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		D4E228F91D96A18300299CA9 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		D4E228FA1D96A18300299CA9 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
@@ -272,20 +285,7 @@
 		D4E2290B1D96A19A00299CA9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D4E2290E1D96A9D800299CA9 /* SmoothCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmoothCheckBox.h; path = "../../SmoothCheckBox-master/SmoothCheckBox/SmoothCheckBox.h"; sourceTree = "<group>"; };
 		D4E2290F1D96A9D800299CA9 /* SmoothCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmoothCheckBox.m; path = "../../SmoothCheckBox-master/SmoothCheckBox/SmoothCheckBox.m"; sourceTree = "<group>"; };
-		D4F228221DA2728E005DB421 /* WCBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseTableViewController.h; sourceTree = "<group>"; };
-		D4F228231DA2728E005DB421 /* WCBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseTableViewController.m; sourceTree = "<group>"; };
-		D4F2282A1DA2762D005DB421 /* WCFetchResultControllerDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCFetchResultControllerDataBase.h; sourceTree = "<group>"; };
-		D4F2282B1DA2762D005DB421 /* WCFetchResultControllerDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCFetchResultControllerDataBase.m; sourceTree = "<group>"; };
-		D4F228401DA27F47005DB421 /* WCBaseTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBaseTabBarViewController.h; sourceTree = "<group>"; };
-		D4F228411DA27F47005DB421 /* WCBaseTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCBaseTabBarViewController.m; sourceTree = "<group>"; };
 		D4F228451DA289CE005DB421 /* WCLocalizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = WCLocalizable.strings; sourceTree = "<group>"; };
-		D4F2701F1DDDD12B00330662 /* WCSearchResultTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCSearchResultTableController.h; sourceTree = "<group>"; };
-		D4F270201DDDD12B00330662 /* WCSearchResultTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCSearchResultTableController.m; sourceTree = "<group>"; };
-		D4FF91B81DD08FB200473CC7 /* searchIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "searchIcon@2x.png"; path = "photos/searchIcon@2x.png"; sourceTree = SOURCE_ROOT; };
-		D4FF91BA1DD097FC00473CC7 /* AddContactHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactHelper.h; sourceTree = "<group>"; };
-		D4FF91BB1DD097FC00473CC7 /* AddContactHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactHelper.m; sourceTree = "<group>"; };
-		D4FF91BD1DD0A25300473CC7 /* WCContactInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCContactInfoViewController.h; sourceTree = "<group>"; };
-		D4FF91BE1DD0A25300473CC7 /* WCContactInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCContactInfoViewController.m; sourceTree = "<group>"; };
 		EFFC6CE4E7E646752E8AD613 /* Pods-WiiChat_2_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiiChat_2_2.release.xcconfig"; path = "Pods/Target Support Files/Pods-WiiChat_2_2/Pods-WiiChat_2_2.release.xcconfig"; sourceTree = "<group>"; };
 		FD788BB6BD2249FBAFAA404E /* Pods-WiiChat_2_2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiiChat_2_2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WiiChat_2_2/Pods-WiiChat_2_2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -341,15 +341,15 @@
 		D446448C1DC761630050433E /* STConfig */ = {
 			isa = PBXGroup;
 			children = (
-				D446448D1DC761630050433E /* STConfig.h */,
-				D446448E1DC761630050433E /* STConst.h */,
-				D446448F1DC761630050433E /* STConst.m */,
-				D44644901DC761630050433E /* STUI.h */,
-				D44644911DC761630050433E /* STUI.m */,
-				D44644921DC761630050433E /* UIImage+ST.h */,
-				D44644931DC761630050433E /* UIImage+ST.m */,
-				D44644941DC761630050433E /* UIView+ST.h */,
-				D44644951DC761630050433E /* UIView+ST.m */,
+				D4DAE07F1E692E5E00F7D425 /* STConfig.h */,
+				D4DAE0801E692E5E00F7D425 /* STConst.h */,
+				D4DAE0811E692E5E00F7D425 /* STConst.m */,
+				D4DAE0821E692E5E00F7D425 /* STUI.h */,
+				D4DAE0831E692E5E00F7D425 /* STUI.m */,
+				D4DAE0841E692E5E00F7D425 /* UIImage+ST.h */,
+				D4DAE0851E692E5E00F7D425 /* UIImage+ST.m */,
+				D4DAE0861E692E5E00F7D425 /* UIView+ST.h */,
+				D4DAE0871E692E5E00F7D425 /* UIView+ST.m */,
 			);
 			path = STConfig;
 			sourceTree = "<group>";
@@ -357,10 +357,10 @@
 		D44644961DC761630050433E /* STPhotoKit */ = {
 			isa = PBXGroup;
 			children = (
-				D44644971DC761630050433E /* STPhotoKitController.h */,
-				D44644981DC761630050433E /* STPhotoKitController.m */,
-				D44644991DC761630050433E /* UIImagePickerController+ST.h */,
-				D446449A1DC761630050433E /* UIImagePickerController+ST.m */,
+				D4DAE0921E692EA000F7D425 /* STPhotoKitController.h */,
+				D4DAE0931E692EA000F7D425 /* STPhotoKitController.m */,
+				D4DAE0941E692EA000F7D425 /* UIImagePickerController+ST.h */,
+				D4DAE0951E692EA000F7D425 /* UIImagePickerController+ST.m */,
 			);
 			path = STPhotoKit;
 			sourceTree = "<group>";
@@ -368,16 +368,24 @@
 		D45A7DCA1DA13DB4001F19A1 /* HelperClass */ = {
 			isa = PBXGroup;
 			children = (
-				D48AED9B1E4708FF0002D18F /* CountStringLengthHelper.h */,
-				D48AED9C1E4708FF0002D18F /* CountStringLengthHelper.m */,
-				D4D2DEEC1D9D37F700BCA6F6 /* RegisterHelper.h */,
-				D4D2DEED1D9D37F700BCA6F6 /* RegisterHelper.m */,
-				D45A7DC71DA13DA6001F19A1 /* LoginHelper.h */,
-				D45A7DC81DA13DA6001F19A1 /* LoginHelper.m */,
-				D4C4B63C1DB106EE00F5D105 /* EditUserInfoHelper.h */,
-				D4C4B63D1DB106EE00F5D105 /* EditUserInfoHelper.m */,
-				D4FF91BA1DD097FC00473CC7 /* AddContactHelper.h */,
-				D4FF91BB1DD097FC00473CC7 /* AddContactHelper.m */,
+				D4DAE09E1E692F1900F7D425 /* WCUIStoreManager.h */,
+				D4DAE09F1E692F1900F7D425 /* WCUIStoreManager.m */,
+				D4DAE0A01E692F1900F7D425 /* WiiChatSingletonClass.h */,
+				D4DAE0A11E692F1900F7D425 /* WiiChatSingletonClass.m */,
+				D4DAE0A41E692F3100F7D425 /* AddContactHelper.h */,
+				D4DAE0A51E692F3100F7D425 /* AddContactHelper.m */,
+				D4DAE0A61E692F3100F7D425 /* CountStringLengthHelper.h */,
+				D4DAE0A71E692F3100F7D425 /* CountStringLengthHelper.m */,
+				D4DAE0A81E692F3100F7D425 /* EditUserInfoHelper.h */,
+				D4DAE0A91E692F3100F7D425 /* EditUserInfoHelper.m */,
+				D4DAE0AA1E692F3100F7D425 /* ErrorInfo.h */,
+				D4DAE0AB1E692F3100F7D425 /* ErrorInfo.m */,
+				D4DAE0AC1E692F3100F7D425 /* LoginHelper.h */,
+				D4DAE0AD1E692F3100F7D425 /* LoginHelper.m */,
+				D4DAE0AE1E692F3100F7D425 /* RegisterHelper.h */,
+				D4DAE0AF1E692F3100F7D425 /* RegisterHelper.m */,
+				D4DAE0B01E692F3100F7D425 /* UIBaseSettingInfo.h */,
+				D4DAE0B11E692F3100F7D425 /* UIBaseSettingInfo.m */,
 			);
 			name = HelperClass;
 			sourceTree = "<group>";
@@ -419,12 +427,8 @@
 			children = (
 				D45C29001D90EE45005C2B9A /* AppDelegate.h */,
 				D45C29011D90EE45005C2B9A /* AppDelegate.m */,
-				D45C29031D90EE45005C2B9A /* ViewController.h */,
-				D45C29041D90EE45005C2B9A /* ViewController.m */,
-				D45C29361D90EF28005C2B9A /* WiiChatSingletonClass.h */,
-				D45C29371D90EF28005C2B9A /* WiiChatSingletonClass.m */,
-				D4AF93C11DA9166D00675224 /* WCUIStoreManager.h */,
-				D4AF93C21DA9166D00675224 /* WCUIStoreManager.m */,
+				D4DAE0E31E692F7900F7D425 /* ViewController.h */,
+				D4DAE0E41E692F7900F7D425 /* ViewController.m */,
 				D4F228251DA2737D005DB421 /* WCBaseController */,
 				D4F2282D1DA27636005DB421 /* FetchResultDatabase */,
 				D4D219F21E5AF7E700D0A173 /* WCView */,
@@ -440,11 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				D45C28FE1D90EE45005C2B9A /* main.m */,
-				D48AEDA51E4713C90002D18F /* ErrorInfo.h */,
-				D48AEDA61E4713C90002D18F /* ErrorInfo.m */,
 				D4F228451DA289CE005DB421 /* WCLocalizable.strings */,
-				D48AEDCC1E4715890002D18F /* UIBaseSettingInfo.h */,
-				D48AEDCD1E4715890002D18F /* UIBaseSettingInfo.m */,
 				D45C29061D90EE45005C2B9A /* Main.storyboard */,
 				D46A333B1D93EDC40075E358 /* Login.storyboard */,
 				D42E64311E080604007E1A92 /* WiiChat_iOS-Prefix.pch */,
@@ -478,27 +478,27 @@
 		D46A333D1D93F8170075E358 /* photos */ = {
 			isa = PBXGroup;
 			children = (
-				D4AF93CF1DA91CA000675224 /* MyAlbum@2x.png */,
-				D47EA6FC1DEC3EEF00F949B0 /* GroupChat@2x.png */,
-				D47EA6FD1DEC3EEF00F949B0 /* NewFriend@2x.png */,
-				D47EA6FE1DEC3EEF00F949B0 /* PublicAccount@2x.png */,
-				D47EA6FF1DEC3EEF00F949B0 /* Stamp@2x.png */,
-				D4AF93D01DA91CA000675224 /* MyCards@2x.png */,
-				D4AF93D81DA91E8200675224 /* MyWallet@2x.png */,
-				D4AF93D11DA91CA000675224 /* MyFavorites@2x.png */,
-				D4AF93D21DA91CA000675224 /* MySetting@2x.png */,
-				D437ACFA1DC5E5D10024513A /* TestHeadImg@2x.JPG */,
-				D4846BA51DAA27EF00209CDB /* AppleWatch@2x.png */,
-				D401E2881DF6AD50001F63B2 /* DefaultHeadImg@2x.png */,
-				D42D7A691DD33182009097A6 /* searchIcon2@2x.png */,
-				D499285C1DAB4A2200F6DD90 /* LoginBackgroundImg@2x.JPG */,
-				D4FF91B81DD08FB200473CC7 /* searchIcon@2x.png */,
-				D499285D1DAB4A2200F6DD90 /* MoreEmotions@2x.png */,
-				D4DB484B1DCA00BF002B7665 /* gongzhonghao@2x.png */,
-				D4DB484C1DCA00BF002B7665 /* leida@2x.png */,
-				D4DB484D1DCA00BF002B7665 /* mianduimian@2x.png */,
-				D4DB484E1DCA00BF002B7665 /* saoyisao@2x.png */,
-				D4DB484F1DCA00BF002B7665 /* shouji@2x.png */,
+				D4DAE0B91E692F5700F7D425 /* AppleWatch@2x.png */,
+				D4DAE0BA1E692F5700F7D425 /* DefaultHeadImg@2x.png */,
+				D4DAE0BB1E692F5700F7D425 /* gongzhonghao@2x.png */,
+				D4DAE0BC1E692F5700F7D425 /* GroupChat@2x.png */,
+				D4DAE0BD1E692F5700F7D425 /* leida@2x.png */,
+				D4DAE0BE1E692F5700F7D425 /* LoginBackgroundImg@2x.JPG */,
+				D4DAE0BF1E692F5700F7D425 /* mianduimian@2x.png */,
+				D4DAE0C01E692F5700F7D425 /* MoreEmotions@2x.png */,
+				D4DAE0C11E692F5700F7D425 /* MyAlbum@2x.png */,
+				D4DAE0C21E692F5700F7D425 /* MyCards@2x.png */,
+				D4DAE0C31E692F5700F7D425 /* MyFavorites@2x.png */,
+				D4DAE0C41E692F5700F7D425 /* MySetting@2x.png */,
+				D4DAE0C51E692F5700F7D425 /* MyWallet@2x.png */,
+				D4DAE0C61E692F5700F7D425 /* NewFriend@2x.png */,
+				D4DAE0C71E692F5700F7D425 /* PublicAccount@2x.png */,
+				D4DAE0C81E692F5700F7D425 /* saoyisao@2x.png */,
+				D4DAE0C91E692F5700F7D425 /* searchIcon@2x.png */,
+				D4DAE0CA1E692F5700F7D425 /* searchIcon2@2x.png */,
+				D4DAE0CB1E692F5700F7D425 /* shouji@2x.png */,
+				D4DAE0CC1E692F5700F7D425 /* Stamp@2x.png */,
+				D4DAE0CD1E692F5700F7D425 /* TestHeadImg@2x.JPG */,
 			);
 			name = photos;
 			sourceTree = "<group>";
@@ -506,27 +506,15 @@
 		D47EA3431E5442DC007CE82D /* ODRefreshControl */ = {
 			isa = PBXGroup;
 			children = (
-				D47EA3441E5442DC007CE82D /* ODRefreshControl.h */,
-				D47EA3451E5442DC007CE82D /* ODRefreshControl.m */,
+				D4DAE07C1E692E3800F7D425 /* ODRefreshControl.h */,
+				D4DAE07D1E692E3800F7D425 /* ODRefreshControl.m */,
 			);
 			path = ODRefreshControl;
-			sourceTree = "<group>";
-		};
-		D4846BA11DAA219C00209CDB /* WCTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				D4846B9E1DAA217200209CDB /* WCProfileTableViewCell.h */,
-				D4846B9F1DAA217200209CDB /* WCProfileTableViewCell.m */,
-				D47EA7041DEC40A500F949B0 /* WCContactTableViewCell.h */,
-				D47EA7051DEC40A500F949B0 /* WCContactTableViewCell.m */,
-			);
-			name = WCTableViewCell;
 			sourceTree = "<group>";
 		};
 		D4846BA21DAA21E100209CDB /* WCTableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D4846BA11DAA219C00209CDB /* WCTableViewCell */,
 				D4DB48471DC9F5FB002B7665 /* Contact */,
 				D49928581DAB418700F6DD90 /* Profile */,
 			);
@@ -536,10 +524,10 @@
 		D48AED9E1E47127C0002D18F /* ChineseStringConvert */ = {
 			isa = PBXGroup;
 			children = (
-				D48AED9F1E47135C0002D18F /* ChineseString.h */,
-				D48AEDA01E47135C0002D18F /* ChineseString.m */,
-				D48AEDA11E47135C0002D18F /* pinyin.c */,
-				D48AEDA21E47135C0002D18F /* pinyin.h */,
+				D4DAE08C1E692E7800F7D425 /* ChineseString.h */,
+				D4DAE08D1E692E7800F7D425 /* ChineseString.m */,
+				D4DAE08E1E692E7800F7D425 /* pinyin.c */,
+				D4DAE08F1E692E7800F7D425 /* pinyin.h */,
 			);
 			name = ChineseStringConvert;
 			sourceTree = "<group>";
@@ -547,12 +535,10 @@
 		D49928581DAB418700F6DD90 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				D4846BA71DAA53F500209CDB /* WCUserInfoTableViewController.h */,
-				D4846BA81DAA53F500209CDB /* WCUserInfoTableViewController.m */,
-				D49928551DAB417500F6DD90 /* WCEditUserInfoTableViewController.h */,
-				D49928561DAB417500F6DD90 /* WCEditUserInfoTableViewController.m */,
-				D4D8EAA01E488E7800743378 /* WCHeadImgScrollVIew.h */,
-				D4D8EAA11E488E7800743378 /* WCHeadImgScrollVIew.m */,
+				D4DAE1221E6930E500F7D425 /* WCEditUserInfoTableViewController.h */,
+				D4DAE1231E6930E500F7D425 /* WCEditUserInfoTableViewController.m */,
+				D4DAE1241E6930E500F7D425 /* WCUserInfoTableViewController.h */,
+				D4DAE1251E6930E500F7D425 /* WCUserInfoTableViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -560,9 +546,9 @@
 		D49E9DE21DC3725700D709FA /* YQImageTool */ = {
 			isa = PBXGroup;
 			children = (
+				D4DAE09B1E692ED200F7D425 /* YQImageTool.h */,
+				D4DAE09C1E692ED200F7D425 /* YQImageTool.m */,
 				D49E9DE31DC3725700D709FA /* YQImageCompressor */,
-				D49E9DE61DC3725700D709FA /* YQImageTool.h */,
-				D49E9DE71DC3725700D709FA /* YQImageTool.m */,
 			);
 			path = YQImageTool;
 			sourceTree = "<group>";
@@ -570,8 +556,8 @@
 		D49E9DE31DC3725700D709FA /* YQImageCompressor */ = {
 			isa = PBXGroup;
 			children = (
-				D49E9DE41DC3725700D709FA /* YQImageCompressTool.h */,
-				D49E9DE51DC3725700D709FA /* YQImageCompressTool.m */,
+				D4DAE0981E692EBD00F7D425 /* YQImageCompressTool.h */,
+				D4DAE0991E692EBD00F7D425 /* YQImageCompressTool.m */,
 			);
 			path = YQImageCompressor;
 			sourceTree = "<group>";
@@ -579,10 +565,14 @@
 		D4D219F21E5AF7E700D0A173 /* WCView */ = {
 			isa = PBXGroup;
 			children = (
-				D4D219F31E5AF82800D0A173 /* WCBaseSearchBar.h */,
-				D4D219F41E5AF82800D0A173 /* WCBaseSearchBar.m */,
-				D4D219F61E5AFB9E00D0A173 /* WCBaseSearchController.h */,
-				D4D219F71E5AFB9E00D0A173 /* WCBaseSearchController.m */,
+				D4DAE0FB1E69304100F7D425 /* WCBaseSearchBar.h */,
+				D4DAE0FC1E69304100F7D425 /* WCBaseSearchBar.m */,
+				D4DAE0FD1E69304100F7D425 /* WCContactTableViewCell.h */,
+				D4DAE0FE1E69304100F7D425 /* WCContactTableViewCell.m */,
+				D4DAE0FF1E69304100F7D425 /* WCHeadImgScrollVIew.h */,
+				D4DAE1001E69304100F7D425 /* WCHeadImgScrollVIew.m */,
+				D4DAE1011E69304100F7D425 /* WCProfileTableViewCell.h */,
+				D4DAE1021E69304100F7D425 /* WCProfileTableViewCell.m */,
 			);
 			name = WCView;
 			sourceTree = "<group>";
@@ -590,14 +580,12 @@
 		D4DB48471DC9F5FB002B7665 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				D4DB48481DC9F63B002B7665 /* WCAddContactViewController.h */,
-				D4DB48491DC9F63B002B7665 /* WCAddContactViewController.m */,
-				D4D7E5E21E55B6AF00EBFA8C /* WCBaseSearchViewController.h */,
-				D4D7E5E31E55B6AF00EBFA8C /* WCBaseSearchViewController.m */,
-				D4FF91BD1DD0A25300473CC7 /* WCContactInfoViewController.h */,
-				D4FF91BE1DD0A25300473CC7 /* WCContactInfoViewController.m */,
-				D4F2701F1DDDD12B00330662 /* WCSearchResultTableController.h */,
-				D4F270201DDDD12B00330662 /* WCSearchResultTableController.m */,
+				D4DAE1191E6930CD00F7D425 /* WCAddContactViewController.h */,
+				D4DAE11A1E6930CD00F7D425 /* WCAddContactViewController.m */,
+				D4DAE11B1E6930CD00F7D425 /* WCContactInfoViewController.h */,
+				D4DAE11C1E6930CD00F7D425 /* WCContactInfoViewController.m */,
+				D4DAE11D1E6930CD00F7D425 /* WCSearchResultTableController.h */,
+				D4DAE11E1E6930CD00F7D425 /* WCSearchResultTableController.m */,
 			);
 			name = Contact;
 			sourceTree = "<group>";
@@ -654,22 +642,22 @@
 		D4E229111D96A9EE00299CA9 /* CoreDataClass */ = {
 			isa = PBXGroup;
 			children = (
-				D48AEDA81E4714450002D18F /* AllUsers.h */,
-				D48AEDA91E4714450002D18F /* AllUsers.m */,
-				D48AEDAA1E4714450002D18F /* AllUsers+CoreDataProperties.h */,
-				D48AEDAB1E4714450002D18F /* AllUsers+CoreDataProperties.m */,
-				D48AEDAC1E4714450002D18F /* Contact.h */,
-				D48AEDAD1E4714450002D18F /* Contact.m */,
-				D48AEDAE1E4714450002D18F /* Contact+CoreDataProperties.h */,
-				D48AEDAF1E4714450002D18F /* Contact+CoreDataProperties.m */,
-				D48AEDB01E4714450002D18F /* User.h */,
-				D48AEDB11E4714450002D18F /* User.m */,
-				D48AEDB21E4714450002D18F /* User+CoreDataProperties.h */,
-				D48AEDB31E4714450002D18F /* User+CoreDataProperties.m */,
-				D48AEDB41E4714450002D18F /* UserSource.h */,
-				D48AEDB51E4714450002D18F /* UserSource.m */,
-				D48AEDBD1E47148F0002D18F /* WiiChatCoreDataStackManager.h */,
-				D48AEDBE1E47148F0002D18F /* WiiChatCoreDataStackManager.m */,
+				D4DAE0641E692E0F00F7D425 /* AllUsers.h */,
+				D4DAE0651E692E0F00F7D425 /* AllUsers.m */,
+				D4DAE0661E692E0F00F7D425 /* AllUsers+CoreDataProperties.h */,
+				D4DAE0671E692E0F00F7D425 /* AllUsers+CoreDataProperties.m */,
+				D4DAE0681E692E0F00F7D425 /* Contact.h */,
+				D4DAE0691E692E0F00F7D425 /* Contact.m */,
+				D4DAE06A1E692E0F00F7D425 /* Contact+CoreDataProperties.h */,
+				D4DAE06B1E692E0F00F7D425 /* Contact+CoreDataProperties.m */,
+				D4DAE06C1E692E0F00F7D425 /* User.h */,
+				D4DAE06D1E692E0F00F7D425 /* User.m */,
+				D4DAE06E1E692E0F00F7D425 /* User+CoreDataProperties.h */,
+				D4DAE06F1E692E0F00F7D425 /* User+CoreDataProperties.m */,
+				D4DAE0701E692E0F00F7D425 /* UserSource.h */,
+				D4DAE0711E692E0F00F7D425 /* UserSource.m */,
+				D4DAE0721E692E0F00F7D425 /* WiiChatCoreDataStackManager.h */,
+				D4DAE0731E692E0F00F7D425 /* WiiChatCoreDataStackManager.m */,
 			);
 			name = CoreDataClass;
 			sourceTree = "<group>";
@@ -677,14 +665,18 @@
 		D4F228251DA2737D005DB421 /* WCBaseController */ = {
 			isa = PBXGroup;
 			children = (
-				D45C29451D90F3A2005C2B9A /* WCBaseViewController.h */,
-				D45C29461D90F3A2005C2B9A /* WCBaseViewController.m */,
-				D4F228221DA2728E005DB421 /* WCBaseTableViewController.h */,
-				D4F228231DA2728E005DB421 /* WCBaseTableViewController.m */,
-				D4B7FFD21D9556BA004D77B8 /* WCBaseNavigationController.h */,
-				D4B7FFD31D9556BA004D77B8 /* WCBaseNavigationController.m */,
-				D4F228401DA27F47005DB421 /* WCBaseTabBarViewController.h */,
-				D4F228411DA27F47005DB421 /* WCBaseTabBarViewController.m */,
+				D4DAE0E61E692FE400F7D425 /* WCBaseNavigationController.h */,
+				D4DAE0E71E692FE400F7D425 /* WCBaseNavigationController.m */,
+				D4DAE0E81E692FE400F7D425 /* WCBaseSearchController.h */,
+				D4DAE0E91E692FE400F7D425 /* WCBaseSearchController.m */,
+				D4DAE0EA1E692FE400F7D425 /* WCBaseSearchViewController.h */,
+				D4DAE0EB1E692FE400F7D425 /* WCBaseSearchViewController.m */,
+				D4DAE0EC1E692FE400F7D425 /* WCBaseTabBarViewController.h */,
+				D4DAE0ED1E692FE400F7D425 /* WCBaseTabBarViewController.m */,
+				D4DAE0EE1E692FE400F7D425 /* WCBaseTableViewController.h */,
+				D4DAE0EF1E692FE400F7D425 /* WCBaseTableViewController.m */,
+				D4DAE0F01E692FE400F7D425 /* WCBaseViewController.h */,
+				D4DAE0F11E692FE400F7D425 /* WCBaseViewController.m */,
 			);
 			name = WCBaseController;
 			sourceTree = "<group>";
@@ -692,18 +684,18 @@
 		D4F228261DA273A6005DB421 /* WCViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D45C29481D912576005C2B9A /* LoginViewController.h */,
-				D45C29491D912576005C2B9A /* LoginViewController.m */,
-				D4B7FFD51D9557F2004D77B8 /* RegisterViewController.h */,
-				D4B7FFD61D9557F2004D77B8 /* RegisterViewController.m */,
-				D48AEDC01E47151D0002D18F /* WCContactRootTableViewController.h */,
-				D48AEDC11E47151D0002D18F /* WCContactRootTableViewController.m */,
-				D48AEDC21E47151D0002D18F /* WCDiscoverRootTableViewController.h */,
-				D48AEDC31E47151D0002D18F /* WCDiscoverRootTableViewController.m */,
-				D48AEDC41E47151D0002D18F /* WCMessageRootTableViewController.h */,
-				D48AEDC51E47151D0002D18F /* WCMessageRootTableViewController.m */,
-				D48AEDC61E47151D0002D18F /* WCProfileRootTableViewController.h */,
-				D48AEDC71E47151D0002D18F /* WCProfileRootTableViewController.m */,
+				D4DAE1071E69309B00F7D425 /* LoginViewController.h */,
+				D4DAE1081E69309B00F7D425 /* LoginViewController.m */,
+				D4DAE1091E69309B00F7D425 /* RegisterViewController.h */,
+				D4DAE10A1E69309B00F7D425 /* RegisterViewController.m */,
+				D4DAE10B1E69309B00F7D425 /* WCContactRootTableViewController.h */,
+				D4DAE10C1E69309B00F7D425 /* WCContactRootTableViewController.m */,
+				D4DAE10D1E69309B00F7D425 /* WCDiscoverRootTableViewController.h */,
+				D4DAE10E1E69309B00F7D425 /* WCDiscoverRootTableViewController.m */,
+				D4DAE10F1E69309B00F7D425 /* WCMessageRootTableViewController.h */,
+				D4DAE1101E69309B00F7D425 /* WCMessageRootTableViewController.m */,
+				D4DAE1111E69309B00F7D425 /* WCProfileRootTableViewController.h */,
+				D4DAE1121E69309B00F7D425 /* WCProfileRootTableViewController.m */,
 				D4846BA21DAA21E100209CDB /* WCTableViewController */,
 			);
 			name = WCViewController;
@@ -712,8 +704,8 @@
 		D4F2282D1DA27636005DB421 /* FetchResultDatabase */ = {
 			isa = PBXGroup;
 			children = (
-				D4F2282A1DA2762D005DB421 /* WCFetchResultControllerDataBase.h */,
-				D4F2282B1DA2762D005DB421 /* WCFetchResultControllerDataBase.m */,
+				D4DAE0F81E69301100F7D425 /* WCFetchResultControllerDataBase.h */,
+				D4DAE0F91E69301100F7D425 /* WCFetchResultControllerDataBase.m */,
 			);
 			name = FetchResultDatabase;
 			sourceTree = "<group>";
@@ -828,34 +820,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4DAE0D21E692F5700F7D425 /* leida@2x.png in Resources */,
+				D4DAE0DB1E692F5700F7D425 /* NewFriend@2x.png in Resources */,
+				D4DAE0DF1E692F5700F7D425 /* searchIcon2@2x.png in Resources */,
 				D46A333C1D93EDC40075E358 /* Login.storyboard in Resources */,
-				D4AF93D41DA91CA000675224 /* MyAlbum@2x.png in Resources */,
+				D4DAE0D61E692F5700F7D425 /* MyAlbum@2x.png in Resources */,
+				D4DAE0DA1E692F5700F7D425 /* MyWallet@2x.png in Resources */,
 				D4F228461DA289CE005DB421 /* WCLocalizable.strings in Resources */,
-				D47EA7021DEC3EEF00F949B0 /* PublicAccount@2x.png in Resources */,
-				D4AF93D61DA91CA000675224 /* MyFavorites@2x.png in Resources */,
 				D4E229061D96A18300299CA9 /* SVProgressHUD.bundle in Resources */,
-				D49928661DAB4A2200F6DD90 /* MoreEmotions@2x.png in Resources */,
-				D4DB48521DCA00BF002B7665 /* mianduimian@2x.png in Resources */,
-				D47EA7031DEC3EEF00F949B0 /* Stamp@2x.png in Resources */,
+				D4DAE0E11E692F5700F7D425 /* Stamp@2x.png in Resources */,
+				D4DAE0D71E692F5700F7D425 /* MyCards@2x.png in Resources */,
+				D4DAE0E21E692F5700F7D425 /* TestHeadImg@2x.JPG in Resources */,
 				D45C29101D90EE45005C2B9A /* LaunchScreen.storyboard in Resources */,
-				D4DB48531DCA00BF002B7665 /* saoyisao@2x.png in Resources */,
-				D4AF93D91DA91E8200675224 /* MyWallet@2x.png in Resources */,
-				D47EA7001DEC3EEF00F949B0 /* GroupChat@2x.png in Resources */,
-				D49928651DAB4A2200F6DD90 /* LoginBackgroundImg@2x.JPG in Resources */,
 				D45C290D1D90EE45005C2B9A /* Assets.xcassets in Resources */,
-				D4DB48501DCA00BF002B7665 /* gongzhonghao@2x.png in Resources */,
-				D42D7A6A1DD33182009097A6 /* searchIcon2@2x.png in Resources */,
-				D437ACFB1DC5E5D10024513A /* TestHeadImg@2x.JPG in Resources */,
-				D47EA7011DEC3EEF00F949B0 /* NewFriend@2x.png in Resources */,
-				D4DB48511DCA00BF002B7665 /* leida@2x.png in Resources */,
-				D4AF93D71DA91CA000675224 /* MySetting@2x.png in Resources */,
-				D401E2891DF6AD50001F63B2 /* DefaultHeadImg@2x.png in Resources */,
+				D4DAE0D31E692F5700F7D425 /* LoginBackgroundImg@2x.JPG in Resources */,
 				D45C29081D90EE45005C2B9A /* Main.storyboard in Resources */,
-				D4846BA61DAA27EF00209CDB /* AppleWatch@2x.png in Resources */,
-				D4DB48541DCA00BF002B7665 /* shouji@2x.png in Resources */,
-				D4FF91B91DD08FB200473CC7 /* searchIcon@2x.png in Resources */,
-				D4AF93D51DA91CA000675224 /* MyCards@2x.png in Resources */,
 				D4E229091D96A18300299CA9 /* Info.plist in Resources */,
+				D4DAE0E01E692F5700F7D425 /* shouji@2x.png in Resources */,
+				D4DAE0CF1E692F5700F7D425 /* DefaultHeadImg@2x.png in Resources */,
+				D4DAE0CE1E692F5700F7D425 /* AppleWatch@2x.png in Resources */,
+				D4DAE0D51E692F5700F7D425 /* MoreEmotions@2x.png in Resources */,
+				D4DAE0D81E692F5700F7D425 /* MyFavorites@2x.png in Resources */,
+				D4DAE0D41E692F5700F7D425 /* mianduimian@2x.png in Resources */,
+				D4DAE0D91E692F5700F7D425 /* MySetting@2x.png in Resources */,
+				D4DAE0D01E692F5700F7D425 /* gongzhonghao@2x.png in Resources */,
+				D4DAE0D11E692F5700F7D425 /* GroupChat@2x.png in Resources */,
+				D4DAE0DE1E692F5700F7D425 /* searchIcon@2x.png in Resources */,
+				D4DAE0DC1E692F5700F7D425 /* PublicAccount@2x.png in Resources */,
+				D4DAE0DD1E692F5700F7D425 /* saoyisao@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,67 +920,67 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D48AEDA41E47135C0002D18F /* pinyin.c in Sources */,
-				D45C29381D90EF28005C2B9A /* WiiChatSingletonClass.m in Sources */,
-				D48AEDBA1E4714450002D18F /* User.m in Sources */,
 				D4E229081D96A18300299CA9 /* SVRadialGradientLayer.m in Sources */,
-				D4D7E5E41E55B6AF00EBFA8C /* WCBaseSearchViewController.m in Sources */,
-				D45C29051D90EE45005C2B9A /* ViewController.m in Sources */,
 				D45C29021D90EE45005C2B9A /* AppDelegate.m in Sources */,
+				D4DAE1271E6930E500F7D425 /* WCUserInfoTableViewController.m in Sources */,
+				D4DAE08A1E692E5E00F7D425 /* UIImage+ST.m in Sources */,
+				D4DAE1171E69309B00F7D425 /* WCMessageRootTableViewController.m in Sources */,
+				D4DAE1211E6930CD00F7D425 /* WCSearchResultTableController.m in Sources */,
 				D4D2DEF11D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodeld in Sources */,
 				D4E229071D96A18300299CA9 /* SVProgressHUD.m in Sources */,
 				D41C23341DAE66CC00699CE7 /* YYEAnimatorPush.m in Sources */,
-				D48AEDBB1E4714450002D18F /* User+CoreDataProperties.m in Sources */,
-				D49E9DE91DC3725700D709FA /* YQImageTool.m in Sources */,
+				D4DAE1261E6930E500F7D425 /* WCEditUserInfoTableViewController.m in Sources */,
+				D4DAE0911E692E7800F7D425 /* pinyin.c in Sources */,
+				D4DAE09A1E692EBD00F7D425 /* YQImageCompressTool.m in Sources */,
+				D4DAE0961E692EA000F7D425 /* STPhotoKitController.m in Sources */,
+				D4DAE0B81E692F3100F7D425 /* UIBaseSettingInfo.m in Sources */,
+				D4DAE1141E69309B00F7D425 /* RegisterViewController.m in Sources */,
 				D4E229041D96A18300299CA9 /* SVIndefiniteAnimatedView.m in Sources */,
-				D48AEDA71E4713C90002D18F /* ErrorInfo.m in Sources */,
-				D4846BA91DAA53F500209CDB /* WCUserInfoTableViewController.m in Sources */,
-				D4FF91BF1DD0A25300473CC7 /* WCContactInfoViewController.m in Sources */,
-				D446449D1DC761630050433E /* UIImage+ST.m in Sources */,
-				D48AEDC91E47151D0002D18F /* WCDiscoverRootTableViewController.m in Sources */,
-				D44644A01DC761630050433E /* UIImagePickerController+ST.m in Sources */,
-				D4FF91BC1DD097FC00473CC7 /* AddContactHelper.m in Sources */,
-				D45A7DC91DA13DA6001F19A1 /* LoginHelper.m in Sources */,
-				D48AEDA31E47135C0002D18F /* ChineseString.m in Sources */,
-				D4B7FFD41D9556BA004D77B8 /* WCBaseNavigationController.m in Sources */,
-				D4846BA01DAA217200209CDB /* WCProfileTableViewCell.m in Sources */,
-				D45C29471D90F3A2005C2B9A /* WCBaseViewController.m in Sources */,
-				D446449E1DC761630050433E /* UIView+ST.m in Sources */,
-				D48AEDCE1E4715890002D18F /* UIBaseSettingInfo.m in Sources */,
-				D4F228421DA27F47005DB421 /* WCBaseTabBarViewController.m in Sources */,
-				D45C294A1D912576005C2B9A /* LoginViewController.m in Sources */,
-				D48AEDB71E4714450002D18F /* AllUsers+CoreDataProperties.m in Sources */,
-				D446449F1DC761630050433E /* STPhotoKitController.m in Sources */,
-				D446449C1DC761630050433E /* STUI.m in Sources */,
+				D4DAE0791E692E0F00F7D425 /* User+CoreDataProperties.m in Sources */,
+				D4DAE09D1E692ED200F7D425 /* YQImageTool.m in Sources */,
+				D4DAE0741E692E0F00F7D425 /* AllUsers.m in Sources */,
+				D4DAE0781E692E0F00F7D425 /* User.m in Sources */,
+				D4DAE0E51E692F7900F7D425 /* ViewController.m in Sources */,
+				D4DAE07A1E692E0F00F7D425 /* UserSource.m in Sources */,
+				D4DAE1031E69304100F7D425 /* WCBaseSearchBar.m in Sources */,
+				D4DAE0F21E692FE400F7D425 /* WCBaseNavigationController.m in Sources */,
+				D4DAE0771E692E0F00F7D425 /* Contact+CoreDataProperties.m in Sources */,
+				D4DAE0A31E692F1900F7D425 /* WiiChatSingletonClass.m in Sources */,
+				D4DAE0F31E692FE400F7D425 /* WCBaseSearchController.m in Sources */,
+				D4DAE07B1E692E0F00F7D425 /* WiiChatCoreDataStackManager.m in Sources */,
 				D45C28FF1D90EE45005C2B9A /* main.m in Sources */,
-				D4F2282C1DA2762D005DB421 /* WCFetchResultControllerDataBase.m in Sources */,
-				D48AEDB91E4714450002D18F /* Contact+CoreDataProperties.m in Sources */,
-				D4B7FFD71D9557F2004D77B8 /* RegisterViewController.m in Sources */,
-				D4D8EAA21E488E7800743378 /* WCHeadImgScrollVIew.m in Sources */,
-				D4AF93C31DA9166D00675224 /* WCUIStoreManager.m in Sources */,
-				D4F228241DA2728E005DB421 /* WCBaseTableViewController.m in Sources */,
-				D48AEDCA1E47151D0002D18F /* WCMessageRootTableViewController.m in Sources */,
-				D4C4B63E1DB106EE00F5D105 /* EditUserInfoHelper.m in Sources */,
-				D4DB484A1DC9F63B002B7665 /* WCAddContactViewController.m in Sources */,
-				D48AEDCB1E47151D0002D18F /* WCProfileRootTableViewController.m in Sources */,
-				D4D219F81E5AFB9E00D0A173 /* WCBaseSearchController.m in Sources */,
-				D4D2DEEE1D9D37F700BCA6F6 /* RegisterHelper.m in Sources */,
-				D4D219F51E5AF82800D0A173 /* WCBaseSearchBar.m in Sources */,
-				D48AED9D1E4708FF0002D18F /* CountStringLengthHelper.m in Sources */,
-				D48AEDC81E47151D0002D18F /* WCContactRootTableViewController.m in Sources */,
+				D4DAE1151E69309B00F7D425 /* WCContactRootTableViewController.m in Sources */,
+				D4DAE0891E692E5E00F7D425 /* STUI.m in Sources */,
+				D4DAE0B21E692F3100F7D425 /* AddContactHelper.m in Sources */,
+				D4DAE0761E692E0F00F7D425 /* Contact.m in Sources */,
+				D4DAE1041E69304100F7D425 /* WCContactTableViewCell.m in Sources */,
+				D4DAE0F51E692FE400F7D425 /* WCBaseTabBarViewController.m in Sources */,
+				D4DAE07E1E692E3800F7D425 /* ODRefreshControl.m in Sources */,
+				D4DAE0B51E692F3100F7D425 /* ErrorInfo.m in Sources */,
+				D4DAE0B41E692F3100F7D425 /* EditUserInfoHelper.m in Sources */,
+				D4DAE0FA1E69301100F7D425 /* WCFetchResultControllerDataBase.m in Sources */,
+				D4DAE0F41E692FE400F7D425 /* WCBaseSearchViewController.m in Sources */,
+				D4DAE0F71E692FE400F7D425 /* WCBaseViewController.m in Sources */,
+				D4DAE0751E692E0F00F7D425 /* AllUsers+CoreDataProperties.m in Sources */,
+				D4DAE0971E692EA000F7D425 /* UIImagePickerController+ST.m in Sources */,
+				D4DAE0F61E692FE400F7D425 /* WCBaseTableViewController.m in Sources */,
+				D4DAE0881E692E5E00F7D425 /* STConst.m in Sources */,
+				D4DAE0B61E692F3100F7D425 /* LoginHelper.m in Sources */,
 				D45C290B1D90EE45005C2B9A /* WiiChat_2_2.xcdatamodeld in Sources */,
-				D47EA7061DEC40A500F949B0 /* WCContactTableViewCell.m in Sources */,
-				D48AEDB81E4714450002D18F /* Contact.m in Sources */,
-				D49928571DAB417500F6DD90 /* WCEditUserInfoTableViewController.m in Sources */,
-				D446449B1DC761630050433E /* STConst.m in Sources */,
+				D4DAE1201E6930CD00F7D425 /* WCContactInfoViewController.m in Sources */,
+				D4DAE08B1E692E5E00F7D425 /* UIView+ST.m in Sources */,
+				D4DAE0B31E692F3100F7D425 /* CountStringLengthHelper.m in Sources */,
+				D4DAE1181E69309B00F7D425 /* WCProfileRootTableViewController.m in Sources */,
 				D4E229051D96A18300299CA9 /* SVProgressAnimatedView.m in Sources */,
+				D4DAE0901E692E7800F7D425 /* ChineseString.m in Sources */,
+				D4DAE0A21E692F1900F7D425 /* WCUIStoreManager.m in Sources */,
 				D4E229101D96A9D800299CA9 /* SmoothCheckBox.m in Sources */,
-				D47EA3461E5442DC007CE82D /* ODRefreshControl.m in Sources */,
-				D49E9DE81DC3725700D709FA /* YQImageCompressTool.m in Sources */,
-				D48AEDB61E4714450002D18F /* AllUsers.m in Sources */,
-				D48AEDBF1E47148F0002D18F /* WiiChatCoreDataStackManager.m in Sources */,
-				D4F270211DDDD12B00330662 /* WCSearchResultTableController.m in Sources */,
-				D48AEDBC1E4714450002D18F /* UserSource.m in Sources */,
+				D4DAE11F1E6930CD00F7D425 /* WCAddContactViewController.m in Sources */,
+				D4DAE0B71E692F3100F7D425 /* RegisterHelper.m in Sources */,
+				D4DAE1131E69309B00F7D425 /* LoginViewController.m in Sources */,
+				D4DAE1061E69304100F7D425 /* WCProfileTableViewCell.m in Sources */,
+				D4DAE1051E69304100F7D425 /* WCHeadImgScrollVIew.m in Sources */,
+				D4DAE1161E69309B00F7D425 /* WCDiscoverRootTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
