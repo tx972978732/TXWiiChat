@@ -39,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.registerDic = [NSMutableDictionary dictionary];
-    self.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"LoginBackgroundImg.jpg"]];
+    self.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"LoginBackgroundImg"]];
     [self.view insertSubview:self.backgroundView atIndex:1];
     [self loadRegisterTextField];
     [self loadRegisterLabel];

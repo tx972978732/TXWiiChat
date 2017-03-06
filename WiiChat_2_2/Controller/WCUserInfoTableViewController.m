@@ -123,7 +123,7 @@ static BOOL shouldRefreshData = NO;//避免初始化时重复刷新tableView
         if ([self.userInfo valueForKey:@"wiiHeadImg"]!=nil) {
             headTableViewCell.cellImgView.image = [UIImage imageWithData:[self.userInfo valueForKey:@"wiiHeadImg"]];
         }else{
-            headTableViewCell.cellImgView.image = [YQImageTool getThumbImageWithImage:[UIImage imageNamed:@"TestHeadImg.jpg"] andSize:CGSizeMake(50, 50) Scale:NO];        }
+            headTableViewCell.cellImgView.image = [YQImageTool getThumbImageWithImage:[UIImage imageNamed:@"TestHeadImg"] andSize:CGSizeMake(50, 50) Scale:NO];        }
         headTableViewCell.cellNameLabel.text = @"头像";
         headTableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return headTableViewCell;

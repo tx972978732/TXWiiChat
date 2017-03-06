@@ -11,6 +11,7 @@
 #import "ODRefreshControl.h"
 #import <Masonry/Masonry.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "AFNetworking.h"
 
 @interface WCMessageRootTableViewController ()<NSXMLParserDelegate>
 @property(nonatomic,strong)UISearchController *searchController;
@@ -49,26 +50,34 @@ static float HUDProgress = 0.0f;
     //[self.view addSubview:self.tableView];
     // Do any additional setup after loading the view.
     
-    
-    NSURL *url = [NSURL URLWithString:@"http://php.weather.sina.com.cn/xml.php?city=%B1%B1%BE%A9&password=DJOYnieT8234jlsK&day=0"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (error!=nil&&response==nil) {
-            if (error.code==NSURLErrorAppTransportSecurityRequiresSecureConnection) {
-                NSLog(@"error:%ld",error.code);
-            }
-        }
-        if (response!=nil) {
-            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
-            NSString *responseData = [NSString stringWithFormat:@"%@",data];
-            //NSLog(@"responseData:%@",responseData);
-            NSXMLParser *parser = [[NSXMLParser alloc]initWithData:data];
-            parser.delegate = self;
-            [parser parse];
+
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+    [[AFNetworkReachabilityManager sharedManager]setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        NSLog(@"Reachability:%@",AFStringFromNetworkReachabilityStatus(status));
+        if (status==AFNetworkReachabilityStatusReachableViaWiFi) {
+            NSURL *url = [NSURL URLWithString:@"http://php.weather.sina.com.cn/xml.php?city=%B1%B1%BE%A9&password=DJOYnieT8234jlsK&day=0"];
+            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+            NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                if (error!=nil&&response==nil) {
+                    if (error.code==NSURLErrorAppTransportSecurityRequiresSecureConnection) {
+                        NSLog(@"error:%ld",error.code);
+                    }
+                }
+                if (response!=nil) {
+                    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
+                    NSString *responseData = [NSString stringWithFormat:@"%@",data];
+                    //NSLog(@"responseData:%@",responseData);
+                    NSXMLParser *parser = [[NSXMLParser alloc]initWithData:data];
+                    parser.delegate = self;
+                    [parser parse];
+                }
+            }];
+            [dataTask resume];
         }
     }];
-    [dataTask resume];
-
 }
 
 - (void)didReceiveMemoryWarning {

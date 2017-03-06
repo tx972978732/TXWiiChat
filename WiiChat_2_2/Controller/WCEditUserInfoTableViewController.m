@@ -118,7 +118,7 @@ static BOOL tapClicks=NO;
     if (_headImgScrollView) {
         return _headImgScrollView;
     }
-    _headImgScrollView = [[WCHeadImgScrollVIew alloc]initHeadImgScrollViewWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 810) ViewType:headImgScrollViewTypeDefault headImg:[UIImage imageNamed:@"TestHeadImg.jpg"]];
+    _headImgScrollView = [[WCHeadImgScrollVIew alloc]initHeadImgScrollViewWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 810) ViewType:headImgScrollViewTypeDefault headImg:[UIImage imageNamed:@"TestHeadImg"]];
     _headImgScrollView.delegate = self;
     self.tableView.scrollEnabled = NO;
     _headImgScrollView.contentSize = CGSizeMake(self.view.bounds.size.width, 800);

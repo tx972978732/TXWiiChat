@@ -14,6 +14,8 @@
 #import "WCContactRootTableViewController.h"
 #import "WCDiscoverRootTableViewController.h"
 #import "WCProfileRootTableViewController.h"
+#import "AFNetworking.h"
+#import "AFNetworkActivityIndicatorManager.h"
 
 @interface AppDelegate ()
 
@@ -56,7 +58,9 @@
         loginNC.automaticallyAdjustsScrollViewInsets = NO;
         self.window.rootViewController = loginNC;
     }
-   
+    //监听网络状态
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    [[AFNetworkReachabilityManager sharedManager]startMonitoring];
    
     
     [self.window makeKeyAndVisible];

@@ -8,7 +8,7 @@
 
 #import "WCDiscoverRootTableViewController.h"
 #import "ODRefreshControl.h"
-
+#import "AFNetworking.h"
 @interface WCDiscoverRootTableViewController ()
 @property(nonatomic,strong)ODRefreshControl *refreshController;
 @end
@@ -20,6 +20,14 @@
     self.refreshController = [[ODRefreshControl alloc]initInScrollView:self.tableView];
     [self.refreshController addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [[AFNetworkReachabilityManager sharedManager]setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        NSLog(@"WCDiscovery-networkstatus:%@",AFStringFromNetworkReachabilityStatus(status));
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning {

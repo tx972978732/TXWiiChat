@@ -75,9 +75,6 @@ NSString *const addContactVCCellIdentifier = @"addContactVCCellIdentifier";
     self.tableView.dataSource = nil;
 }
 
-- (void)updateViewConstraints{
-    
-}
 
 #pragma mark - load
 -(WCSearchResultTableController*)searchResultsTableController{

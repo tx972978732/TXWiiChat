@@ -19,6 +19,8 @@
 		D45C29261D90EE45005C2B9A /* WiiChat_2_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D45C29251D90EE45005C2B9A /* WiiChat_2_2UITests.m */; };
 		D46A333C1D93EDC40075E358 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D46A333B1D93EDC40075E358 /* Login.storyboard */; };
 		D47EA3481E5466AB007CE82D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47EA3471E5466AB007CE82D /* CoreGraphics.framework */; };
+		D498C3141E6D23CD0093D126 /* LoginBackgroundImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D498C3121E6D23CD0093D126 /* LoginBackgroundImg@2x.png */; };
+		D498C3151E6D23CD0093D126 /* TestHeadImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D498C3131E6D23CD0093D126 /* TestHeadImg@2x.png */; };
 		D4CC81C91E5065E700926922 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CC81C61E5065E700926922 /* AFNetworking.framework */; };
 		D4CC81CA1E5065E700926922 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CC81C71E5065E700926922 /* ReactiveCocoa.framework */; };
 		D4D2DEF11D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4D2DEEF1D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodeld */; };
@@ -55,7 +57,6 @@
 		D4DAE0D01E692F5700F7D425 /* gongzhonghao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0BB1E692F5700F7D425 /* gongzhonghao@2x.png */; };
 		D4DAE0D11E692F5700F7D425 /* GroupChat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0BC1E692F5700F7D425 /* GroupChat@2x.png */; };
 		D4DAE0D21E692F5700F7D425 /* leida@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0BD1E692F5700F7D425 /* leida@2x.png */; };
-		D4DAE0D31E692F5700F7D425 /* LoginBackgroundImg@2x.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0BE1E692F5700F7D425 /* LoginBackgroundImg@2x.JPG */; };
 		D4DAE0D41E692F5700F7D425 /* mianduimian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0BF1E692F5700F7D425 /* mianduimian@2x.png */; };
 		D4DAE0D51E692F5700F7D425 /* MoreEmotions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0C01E692F5700F7D425 /* MoreEmotions@2x.png */; };
 		D4DAE0D61E692F5700F7D425 /* MyAlbum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0C11E692F5700F7D425 /* MyAlbum@2x.png */; };
@@ -70,7 +71,6 @@
 		D4DAE0DF1E692F5700F7D425 /* searchIcon2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0CA1E692F5700F7D425 /* searchIcon2@2x.png */; };
 		D4DAE0E01E692F5700F7D425 /* shouji@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0CB1E692F5700F7D425 /* shouji@2x.png */; };
 		D4DAE0E11E692F5700F7D425 /* Stamp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0CC1E692F5700F7D425 /* Stamp@2x.png */; };
-		D4DAE0E21E692F5700F7D425 /* TestHeadImg@2x.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D4DAE0CD1E692F5700F7D425 /* TestHeadImg@2x.JPG */; };
 		D4DAE0E51E692F7900F7D425 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0E41E692F7900F7D425 /* ViewController.m */; };
 		D4DAE0F21E692FE400F7D425 /* WCBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0E71E692FE400F7D425 /* WCBaseNavigationController.m */; };
 		D4DAE0F31E692FE400F7D425 /* WCBaseSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0E91E692FE400F7D425 /* WCBaseSearchController.m */; };
@@ -144,6 +144,8 @@
 		D45C29271D90EE45005C2B9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D46A333B1D93EDC40075E358 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D47EA3471E5466AB007CE82D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D498C3121E6D23CD0093D126 /* LoginBackgroundImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LoginBackgroundImg@2x.png"; path = "photos/LoginBackgroundImg@2x.png"; sourceTree = "<group>"; };
+		D498C3131E6D23CD0093D126 /* TestHeadImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TestHeadImg@2x.png"; path = "photos/TestHeadImg@2x.png"; sourceTree = "<group>"; };
 		D4CC81C61E5065E700926922 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
 		D4CC81C71E5065E700926922 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "Pods/../build/Debug-iphoneos/ReactiveCocoa/ReactiveCocoa.framework"; sourceTree = "<group>"; };
 		D4D2DEF01D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WiiChatSourceData.xcdatamodel; sourceTree = "<group>"; };
@@ -209,7 +211,6 @@
 		D4DAE0BB1E692F5700F7D425 /* gongzhonghao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gongzhonghao@2x.png"; path = "photos/gongzhonghao@2x.png"; sourceTree = "<group>"; };
 		D4DAE0BC1E692F5700F7D425 /* GroupChat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GroupChat@2x.png"; path = "photos/GroupChat@2x.png"; sourceTree = "<group>"; };
 		D4DAE0BD1E692F5700F7D425 /* leida@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "leida@2x.png"; path = "photos/leida@2x.png"; sourceTree = "<group>"; };
-		D4DAE0BE1E692F5700F7D425 /* LoginBackgroundImg@2x.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "LoginBackgroundImg@2x.JPG"; path = "photos/LoginBackgroundImg@2x.JPG"; sourceTree = "<group>"; };
 		D4DAE0BF1E692F5700F7D425 /* mianduimian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mianduimian@2x.png"; path = "photos/mianduimian@2x.png"; sourceTree = "<group>"; };
 		D4DAE0C01E692F5700F7D425 /* MoreEmotions@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MoreEmotions@2x.png"; path = "photos/MoreEmotions@2x.png"; sourceTree = "<group>"; };
 		D4DAE0C11E692F5700F7D425 /* MyAlbum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MyAlbum@2x.png"; path = "photos/MyAlbum@2x.png"; sourceTree = "<group>"; };
@@ -224,7 +225,6 @@
 		D4DAE0CA1E692F5700F7D425 /* searchIcon2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "searchIcon2@2x.png"; path = "photos/searchIcon2@2x.png"; sourceTree = "<group>"; };
 		D4DAE0CB1E692F5700F7D425 /* shouji@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shouji@2x.png"; path = "photos/shouji@2x.png"; sourceTree = "<group>"; };
 		D4DAE0CC1E692F5700F7D425 /* Stamp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Stamp@2x.png"; path = "photos/Stamp@2x.png"; sourceTree = "<group>"; };
-		D4DAE0CD1E692F5700F7D425 /* TestHeadImg@2x.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "TestHeadImg@2x.JPG"; path = "photos/TestHeadImg@2x.JPG"; sourceTree = "<group>"; };
 		D4DAE0E31E692F7900F7D425 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewController.h; sourceTree = "<group>"; };
 		D4DAE0E41E692F7900F7D425 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controller/ViewController.m; sourceTree = "<group>"; };
 		D4DAE0E61E692FE400F7D425 /* WCBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCBaseNavigationController.h; path = Controller/WCBaseVC/WCBaseNavigationController.h; sourceTree = "<group>"; };
@@ -329,6 +329,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D4214D891E6C04BF00B2A84C /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				D47EA3431E5442DC007CE82D /* ODRefreshControl */,
+				D446448C1DC761630050433E /* STConfig */,
+				D48AED9E1E47127C0002D18F /* ChineseStringConvert */,
+				D44644961DC761630050433E /* STPhotoKit */,
+				D437ACFD1DC60DF90024513A /* YYEAAnimatorPush */,
+				D49E9DE21DC3725700D709FA /* YQImageTool */,
+				D4E228F71D96A18300299CA9 /* SVProgressHUD */,
+				D4E229021D96A18300299CA9 /* SVProgressHUD-Framework */,
+				D4E2290D1D96A99C00299CA9 /* CheckBoxHelper */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
 		D437ACFD1DC60DF90024513A /* YYEAAnimatorPush */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,15 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				D4E229111D96A9EE00299CA9 /* CoreDataClass */,
-				D47EA3431E5442DC007CE82D /* ODRefreshControl */,
-				D446448C1DC761630050433E /* STConfig */,
-				D48AED9E1E47127C0002D18F /* ChineseStringConvert */,
-				D44644961DC761630050433E /* STPhotoKit */,
-				D437ACFD1DC60DF90024513A /* YYEAAnimatorPush */,
-				D49E9DE21DC3725700D709FA /* YQImageTool */,
-				D4E228F71D96A18300299CA9 /* SVProgressHUD */,
-				D4E229021D96A18300299CA9 /* SVProgressHUD-Framework */,
-				D4E2290D1D96A99C00299CA9 /* CheckBoxHelper */,
+				D4214D891E6C04BF00B2A84C /* Vendor */,
 				D45C28FC1D90EE45005C2B9A /* WiiChat_2_2 */,
 				D45C29191D90EE45005C2B9A /* WiiChat_2_2Tests */,
 				D45C29241D90EE45005C2B9A /* WiiChat_2_2UITests */,
@@ -482,8 +490,9 @@
 				D4DAE0BA1E692F5700F7D425 /* DefaultHeadImg@2x.png */,
 				D4DAE0BB1E692F5700F7D425 /* gongzhonghao@2x.png */,
 				D4DAE0BC1E692F5700F7D425 /* GroupChat@2x.png */,
+				D498C3121E6D23CD0093D126 /* LoginBackgroundImg@2x.png */,
+				D498C3131E6D23CD0093D126 /* TestHeadImg@2x.png */,
 				D4DAE0BD1E692F5700F7D425 /* leida@2x.png */,
-				D4DAE0BE1E692F5700F7D425 /* LoginBackgroundImg@2x.JPG */,
 				D4DAE0BF1E692F5700F7D425 /* mianduimian@2x.png */,
 				D4DAE0C01E692F5700F7D425 /* MoreEmotions@2x.png */,
 				D4DAE0C11E692F5700F7D425 /* MyAlbum@2x.png */,
@@ -498,7 +507,6 @@
 				D4DAE0CA1E692F5700F7D425 /* searchIcon2@2x.png */,
 				D4DAE0CB1E692F5700F7D425 /* shouji@2x.png */,
 				D4DAE0CC1E692F5700F7D425 /* Stamp@2x.png */,
-				D4DAE0CD1E692F5700F7D425 /* TestHeadImg@2x.JPG */,
 			);
 			name = photos;
 			sourceTree = "<group>";
@@ -780,6 +788,7 @@
 				TargetAttributes = {
 					D45C28F91D90EE45005C2B9A = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ES9WP5M338;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -826,14 +835,13 @@
 				D46A333C1D93EDC40075E358 /* Login.storyboard in Resources */,
 				D4DAE0D61E692F5700F7D425 /* MyAlbum@2x.png in Resources */,
 				D4DAE0DA1E692F5700F7D425 /* MyWallet@2x.png in Resources */,
+				D498C3151E6D23CD0093D126 /* TestHeadImg@2x.png in Resources */,
 				D4F228461DA289CE005DB421 /* WCLocalizable.strings in Resources */,
 				D4E229061D96A18300299CA9 /* SVProgressHUD.bundle in Resources */,
 				D4DAE0E11E692F5700F7D425 /* Stamp@2x.png in Resources */,
 				D4DAE0D71E692F5700F7D425 /* MyCards@2x.png in Resources */,
-				D4DAE0E21E692F5700F7D425 /* TestHeadImg@2x.JPG in Resources */,
 				D45C29101D90EE45005C2B9A /* LaunchScreen.storyboard in Resources */,
 				D45C290D1D90EE45005C2B9A /* Assets.xcassets in Resources */,
-				D4DAE0D31E692F5700F7D425 /* LoginBackgroundImg@2x.JPG in Resources */,
 				D45C29081D90EE45005C2B9A /* Main.storyboard in Resources */,
 				D4E229091D96A18300299CA9 /* Info.plist in Resources */,
 				D4DAE0E01E692F5700F7D425 /* shouji@2x.png in Resources */,
@@ -844,6 +852,7 @@
 				D4DAE0D41E692F5700F7D425 /* mianduimian@2x.png in Resources */,
 				D4DAE0D91E692F5700F7D425 /* MySetting@2x.png in Resources */,
 				D4DAE0D01E692F5700F7D425 /* gongzhonghao@2x.png in Resources */,
+				D498C3141E6D23CD0093D126 /* LoginBackgroundImg@2x.png in Resources */,
 				D4DAE0D11E692F5700F7D425 /* GroupChat@2x.png in Resources */,
 				D4DAE0DE1E692F5700F7D425 /* searchIcon@2x.png in Resources */,
 				D4DAE0DC1E692F5700F7D425 /* PublicAccount@2x.png in Resources */,
@@ -1133,6 +1142,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = ES9WP5M338;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
@@ -1155,6 +1165,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = ES9WP5M338;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",

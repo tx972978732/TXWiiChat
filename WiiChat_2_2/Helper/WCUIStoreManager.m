@@ -15,7 +15,7 @@ WiiSingletonClass_Implementation(WCUIStoreManager)
 -(NSMutableArray*)getProfileUIDataSource{
     NSMutableArray *UIDataSource = [NSMutableArray arrayWithCapacity:1];
     NSDictionary *section_1_Dic_0 = @{@"title":@"相册",@"image":@"MyAlbum"};
-    NSDictionary *section_1_Dic_1 = @{@"title":@"收藏",@"image":@"Myfavorites"};
+    NSDictionary *section_1_Dic_1 = @{@"title":@"收藏",@"image":@"MyFavorites"};
     NSDictionary *section_1_Dic_2 = @{@"title":@"钱包",@"image":@"MyWallet"};
     NSDictionary *section_1_Dic_3 = @{@"title":@"卡包",@"image":@"MyCards"};
     NSMutableArray *section1 = [[NSMutableArray alloc]initWithCapacity:4];

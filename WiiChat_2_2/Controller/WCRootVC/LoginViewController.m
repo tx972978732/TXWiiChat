@@ -43,7 +43,7 @@
 #pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"LoginBackgroundImg.jpg"]];
+    self.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"LoginBackgroundImg"]];
     [self.view insertSubview:self.backgroundView atIndex:1];//背景图
     self.navigationItem.backBarButtonItem = self.backItem;//返回按钮
     [self loadLoginTextField];
