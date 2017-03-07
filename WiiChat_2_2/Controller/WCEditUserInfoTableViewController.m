@@ -707,13 +707,20 @@ static BOOL tapClicks=NO;
             [self presentViewController:controller animated:YES completion:nil];
         }else {
             NSLog(@"%s %@", __FUNCTION__, @"相机权限受限");
+            UIAlertController *warningAlert = [UIAlertController alertControllerWithTitle:@"相机使用权限受限" message:@"请在隐私设置中开启相机权限" preferredStyle:UIAlertControllerStyleAlert];
+            [warningAlert addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleCancel handler:nil]];
+            [self presentViewController:warningAlert animated:YES completion:nil];
         }
     }]];
     [alertVC addAction:[UIAlertAction actionWithTitle:@"相册中选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UIImagePickerController *controller = [UIImagePickerController imagePickerControllerWithSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-        [controller setDelegate:self];
-        if ([controller isAvailablePhotoLibrary]) {
+        if ([controller isAvailablePhotoLibrary]&&[UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+            [controller setDelegate:self];
             [self presentViewController:controller animated:YES completion:nil];
+        }else{
+            UIAlertController *warningAlert1 = [UIAlertController alertControllerWithTitle:@"相册访问权限受限" message:@"请在隐私设置中开启相册权限" preferredStyle:UIAlertControllerStyleAlert];
+            [warningAlert1 addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleCancel handler:nil]];
+            [self presentViewController:warningAlert1 animated:YES completion:nil];
         }
     }]];
     

@@ -63,9 +63,6 @@ NSString *const contactInfoVCCellIdentifier = @"contactInfoVCCellIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.ContactInfoVCUserSource = [[UserSource alloc]init];
-    [self loadBtn];
-    
-
     // Do any additional setup after loading the view.
 }
 
@@ -86,54 +83,71 @@ NSString *const contactInfoVCCellIdentifier = @"contactInfoVCCellIdentifier";
     // Dispose of any resources that can be recreated.
 }
 
-- (void)updateViewConstraints{
-    UITableViewHeaderFooterView *tempView = [self.tableView footerViewForSection:2];
-    NSLog(@"tempView:%@",tempView);
-    NSLayoutConstraint *messageBtnHeight = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:44];
-    [self.sendMessageBtn addConstraint:messageBtnHeight];
-    NSLayoutConstraint *messageBtnLeft = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:tempView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:50];
-    [tempView addConstraint:messageBtnLeft];
-    NSLayoutConstraint *messageBtnWidth = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeWidth multiplier:1.0 constant:275];
-    [self.sendMessageBtn addConstraint:messageBtnWidth];
-    NSLayoutConstraint *messageBtnTop = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:tempView attribute:NSLayoutAttributeTop multiplier:1.0 constant:30];
-    [tempView addConstraint:messageBtnTop];
+//- (void)updateViewConstraints{
+//    UITableViewHeaderFooterView *tempView = [self.tableView footerViewForSection:2];
+//    NSLog(@"tempView:%@",tempView);
+//    NSLayoutConstraint *messageBtnHeight = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:44];
+//    [self.sendMessageBtn addConstraint:messageBtnHeight];
+//    NSLayoutConstraint *messageBtnLeft = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:tempView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:50];
+//    [tempView addConstraint:messageBtnLeft];
+//    NSLayoutConstraint *messageBtnWidth = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeWidth multiplier:1.0 constant:275];
+//    [self.sendMessageBtn addConstraint:messageBtnWidth];
+//    NSLayoutConstraint *messageBtnTop = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:tempView attribute:NSLayoutAttributeTop multiplier:1.0 constant:30];
+//    [tempView addConstraint:messageBtnTop];
+//
+//    [super updateViewConstraints];
+//}
 
-    [super updateViewConstraints];
-
-}
 #pragma mark - load view
--(void)loadBtn{
-    self.sendMessageBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+
+- (UIButton*)sendMessageBtn{
+    if (_sendMessageBtn) {
+        return _sendMessageBtn;
+    }
+    _sendMessageBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     //self.sendMessageBtn.frame = CGRectMake(50, 30, self.view.frame.size.width-100, 44);
-    self.sendMessageBtn.translatesAutoresizingMaskIntoConstraints = NO;
+    _sendMessageBtn.translatesAutoresizingMaskIntoConstraints = NO;
     
-    self.sendMessageBtn.backgroundColor = [UIColor greenColor];
-    [self.sendMessageBtn setTitle:@"发送消息" forState:UIControlStateNormal];
-    [self.sendMessageBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
-    self.sendMessageBtn.layer.cornerRadius = 5;
-    self.sendMessageBtn.layer.borderWidth = 3.0f;
-    self.sendMessageBtn.showsTouchWhenHighlighted = YES;
-    [self.sendMessageBtn addTarget:self action:@selector(sendMessageToContact) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.faceTimeRequestBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.faceTimeRequestBtn.frame = CGRectMake(50, 104, self.view.frame.size.width-100, 44);
-    self.faceTimeRequestBtn.backgroundColor = [UIColor greenColor];
-    [self.faceTimeRequestBtn setTitle:@"视频通话" forState:UIControlStateNormal];
-    [self.faceTimeRequestBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
-    self.faceTimeRequestBtn.layer.cornerRadius = 5;
-    self.faceTimeRequestBtn.layer.borderWidth = 3.0f;
-    self.faceTimeRequestBtn.showsTouchWhenHighlighted = YES;
-    [self.faceTimeRequestBtn addTarget:self action:@selector(faceTimeWithContact) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.addContactBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.addContactBtn.backgroundColor = [UIColor greenColor];
-    self.addContactBtn.frame = CGRectMake(50, 30, self.view.frame.size.width-100, 44);
-    [self.addContactBtn setTitle:@"添加到通讯录" forState:UIControlStateNormal];
-    [self.addContactBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
-    self.addContactBtn.layer.cornerRadius = 5;
-    self.addContactBtn.layer.borderWidth = 3.0f;
-    self.addContactBtn.showsTouchWhenHighlighted = YES;
-    [self.addContactBtn addTarget:self action:@selector(addContactToUser) forControlEvents:UIControlEventTouchUpInside];
+    _sendMessageBtn.backgroundColor = [UIColor greenColor];
+    [_sendMessageBtn setTitle:@"发送消息" forState:UIControlStateNormal];
+    [_sendMessageBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+    _sendMessageBtn.layer.cornerRadius = 5;
+    _sendMessageBtn.layer.borderWidth = 3.0f;
+    _sendMessageBtn.showsTouchWhenHighlighted = YES;
+    [_sendMessageBtn addTarget:self action:@selector(sendMessageToContact) forControlEvents:UIControlEventTouchUpInside];
+    return _sendMessageBtn;
+}
+
+- (UIButton*)faceTimeRequestBtn{
+    if (_faceTimeRequestBtn) {
+        return _faceTimeRequestBtn;
+    }
+    _faceTimeRequestBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    _faceTimeRequestBtn.frame = CGRectMake(50, 104, self.view.frame.size.width-100, 44);
+    _faceTimeRequestBtn.backgroundColor = [UIColor greenColor];
+    [_faceTimeRequestBtn setTitle:@"视频通话" forState:UIControlStateNormal];
+    [_faceTimeRequestBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+    _faceTimeRequestBtn.layer.cornerRadius = 5;
+    _faceTimeRequestBtn.layer.borderWidth = 3.0f;
+    _faceTimeRequestBtn.showsTouchWhenHighlighted = YES;
+    [_faceTimeRequestBtn addTarget:self action:@selector(faceTimeWithContact) forControlEvents:UIControlEventTouchUpInside];
+    return _faceTimeRequestBtn;
+}
+
+- (UIButton*)addContactBtn{
+    if (_addContactBtn) {
+        return _addContactBtn;
+    }
+    _addContactBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    _addContactBtn.backgroundColor = [UIColor greenColor];
+//    _addContactBtn.frame = CGRectMake(50, 30, self.view.frame.size.width-100, 44);
+    [_addContactBtn setTitle:@"添加到通讯录" forState:UIControlStateNormal];
+    [_addContactBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+    _addContactBtn.layer.cornerRadius = 5;
+    _addContactBtn.layer.borderWidth = 3.0f;
+    _addContactBtn.showsTouchWhenHighlighted = YES;
+    [_addContactBtn addTarget:self action:@selector(addContactToUser) forControlEvents:UIControlEventTouchUpInside];
+    return _addContactBtn;
 }
 
 #pragma mark - UITableView Delegate
@@ -179,7 +193,8 @@ NSString *const contactInfoVCCellIdentifier = @"contactInfoVCCellIdentifier";
     if (section==2) {
         if (relationships==alreadyAddedIntoContact) {        //判断是否为好友 footerView不同
             [footerView addSubview:self.sendMessageBtn];
-            
+            [footerView addSubview:self.faceTimeRequestBtn];
+
             NSLog(@"footerView:%@",footerView);
 //原生约束方法 代码自动布局
 //            NSLayoutConstraint *messageBtnHeight = [NSLayoutConstraint constraintWithItem:self.sendMessageBtn attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:44];
@@ -195,14 +210,27 @@ NSString *const contactInfoVCCellIdentifier = @"contactInfoVCCellIdentifier";
             [self.sendMessageBtn makeConstraints:^(MASConstraintMaker *make) {
                 make.width.equalTo(275);
                 make.height.equalTo(44);
+                make.top.equalTo(footerView).with.offset(30);
                 make.right.equalTo(footerView).with.offset(-50);
                 
             }];
+            [self.faceTimeRequestBtn makeConstraints:^(MASConstraintMaker *make) {
+                make.width.equalTo(275);
+                make.height.equalTo(44);
+                make.top.equalTo(footerView).with.offset(104);
+                make.right.equalTo(footerView).with.offset(-50);
 
-            [footerView addSubview:self.faceTimeRequestBtn];
+            }];
             return footerView;
         }else{
             [footerView addSubview:self.addContactBtn];
+            [self.addContactBtn makeConstraints:^(MASConstraintMaker *make) {
+                make.width.equalTo(275);
+                make.height.equalTo(44);
+                make.top.equalTo(footerView).with.offset(30);
+                make.right.equalTo(footerView).with.offset(-50);
+                
+            }];
             return footerView;
         }
     }

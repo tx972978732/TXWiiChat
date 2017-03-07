@@ -139,8 +139,8 @@ NSString *const addContactVCCellIdentifier = @"addContactVCCellIdentifier";
         id searchResult = [[AddContactHelper sharedAddContactHelper] searchSourceDataSourceWithInfo:searchDic];
         NSLog(@"searchResult:%@",searchResult);
         if ([(AllUsers*)searchResult isKindOfClass:[NSManagedObject class]]) {
+            self.filterUser = searchResult;
             if ([[AddContactHelper sharedAddContactHelper] isFriendContact:searchResult]) {
-                self.filterUser = searchResult;
                 [self alreadyAddedIntoContact];
             }else{
                 [self neverAddedIntoContact];
@@ -346,8 +346,6 @@ NSString *const addContactVCCellIdentifier = @"addContactVCCellIdentifier";
     NSLog(@"陌生人");
     //_searchController.active = NO;
     //[searchBar resignFirstResponder];
-    [self.effectView removeFromSuperview];
-    self.tableView.backgroundView.backgroundColor = [UIColor whiteColor];
     [self.effectView removeFromSuperview];
     self.tableView.backgroundView.backgroundColor = [UIColor clearColor];
     [self.tableView reloadData];
