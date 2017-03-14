@@ -38,8 +38,8 @@
 - (void)setUpConstraints{
     [_menuContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).with.offset(self.bounds.size.width-WCMenuTableViewWidth-6);
-        if ([self.currentSuperView.superview isKindOfClass:NSClassFromString(@"UIViewControllerWrapperView")]) {
-            make.top.equalTo(self.currentSuperView.superview).with.offset(65);
+        if ([self.currentSuperView isKindOfClass:NSClassFromString(@"UIViewControllerWrapperView")]) {
+            make.top.equalTo(self.currentSuperView).with.offset(65);
         }
         make.width.equalTo(@WCMenuTableViewWidth);
         make.height.equalTo(@(self.menus.count*(WCMenuItemViewHeight+WCSeparatorLineImageViewHeight)+WCMenuTableViewSpacing));
@@ -53,6 +53,8 @@
 
 }
 
+
+#pragma property
 - (UIImageView*)menuContainerView{
     if (_menuContainerView) {
         return _menuContainerView;
@@ -79,6 +81,7 @@
     return _menuTableView;
 }
 
+#pragma method
 -(void)showMenuOnView:(UIView *)view atPoint:(CGPoint)point{
     self.currentSuperView = view;
     self.targetPoint = point;
@@ -92,6 +95,7 @@
     if (![self.currentSuperView.subviews containsObject:self]) {
         self.alpha = 0.0;
         [self.currentSuperView addSubview:self];
+        NSLog(@"currentSuperView Class:%@",[self.currentSuperView class]);
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             self.alpha = 1.0;
         } completion:^(BOOL finished) {
@@ -105,18 +109,13 @@
 
 
 //手势响应
--(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event{
     UITouch *touch = [touches anyObject];
     CGPoint localPoint = [touch locationInView:self];
-    [self dismissPopMenuAnimatedOnMenuSelected:NO];
+    if ([[self hitTest:localPoint withEvent:event] isKindOfClass:[self class]]) {
+        [self dismissPopMenuAnimatedOnMenuSelected:NO];
+    }
 
-//    if (CGRectContainsPoint(self.menuTableView.frame, localPoint)) {
-//        [self hitTest:localPoint withEvent:event];
-//        NSLog(@"hit location:%@",NSStringFromCGPoint(localPoint));
-//        NSLog(@"tableviewframe:%@",NSStringFromCGRect(self.menuTableView.frame));
-//    }else{
-//        [self dismissPopMenuAnimatedOnMenuSelected:NO];
-//    }
 }
 -(void)dismissPopMenuAnimatedOnMenuSelected:(BOOL)selected{
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{

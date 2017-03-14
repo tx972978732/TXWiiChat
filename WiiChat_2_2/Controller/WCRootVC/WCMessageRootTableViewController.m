@@ -21,6 +21,7 @@
 @property(nonatomic,strong)MBProgressHUD *myHUD;
 @property(nonatomic,strong)WCPopMenuView *popMenu;
 @property(atomic,assign)BOOL cancelHUD;
+@property(atomic,assign)BOOL isPopMenuShowed;//切换视图时隐藏popMenu
 @end
 static float HUDProgress = 0.0f;
 
@@ -51,10 +52,6 @@ static float HUDProgress = 0.0f;
     _refreshController = [[ODRefreshControl alloc]initInScrollView:self.tableView];
     _refreshController.tintColor = [UIColor lightGrayColor];
     [_refreshController addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
-    //[self.view addSubview:self.tableView];
-    // Do any additional setup after loading the view.
-    
-
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -116,10 +113,20 @@ static float HUDProgress = 0.0f;
     }];
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    NSLog(@"MessageRootVC WiiDisappear");
+    if (_isPopMenuShowed==YES) {
+        [self.popMenu dismissPopMenuAnimatedOnMenuSelected:NO];
+        _isPopMenuShowed = NO;
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma property
 
 - (MBProgressHUD*)myHUD{
     if (_myHUD) {
@@ -130,6 +137,7 @@ static float HUDProgress = 0.0f;
 
 -(WCPopMenuView*)popMenu{
     if (!_popMenu) {
+        self.isPopMenuShowed = NO;
         NSMutableArray *myPopMenuItems = [[NSMutableArray alloc]initWithCapacity:6];
         for (int i=0; i<5; i++) {
             NSString *imageName;
@@ -182,8 +190,6 @@ static float HUDProgress = 0.0f;
             NSString * log = @"hello,world!";
             return log;
         };
-        
-        
     }
     return _popMenu;
 }
@@ -252,7 +258,15 @@ static float HUDProgress = 0.0f;
 
 - (void)showPopMenu{
     NSLog(@"show pop menu!");
-    [self.popMenu showMenuOnView:self.view atPoint:CGPointZero];
+    [self.popMenu showMenuOnView:self.view.superview atPoint:CGPointZero];
+    //在UIViewControllerWrapperView中显示popMenu,Menu才不会随着tableView滚动
+    //UITableViewController中的view属性指向其自身的tableView；
+    
+    if (_isPopMenuShowed==NO) {
+        _isPopMenuShowed = YES;
+    }else{
+        _isPopMenuShowed = NO;
+    }
 
 }
 

@@ -19,5 +19,6 @@ typedef NSString*(^PopMenuDidSelectBlock)(NSInteger index,WCPopMenuItem *menuIte
 
 - (instancetype)initWithMenus:(NSArray*)menus;
 -(void)showMenuOnView:(UIView *)view atPoint:(CGPoint)point;
+-(void)dismissPopMenuAnimatedOnMenuSelected:(BOOL)selected;
 
 @end
