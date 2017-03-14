@@ -21,6 +21,17 @@
 		D47EA3481E5466AB007CE82D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47EA3471E5466AB007CE82D /* CoreGraphics.framework */; };
 		D498C3141E6D23CD0093D126 /* LoginBackgroundImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D498C3121E6D23CD0093D126 /* LoginBackgroundImg@2x.png */; };
 		D498C3151E6D23CD0093D126 /* TestHeadImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D498C3131E6D23CD0093D126 /* TestHeadImg@2x.png */; };
+		D4BC95381E765D5C001676E5 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BC95371E765D5C001676E5 /* OCMock.framework */; };
+		D4BC95391E765D88001676E5 /* RegisterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DAE0AF1E692F3100F7D425 /* RegisterHelper.m */; };
+		D4BC953C1E768428001676E5 /* WCPopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BC953B1E768428001676E5 /* WCPopMenuView.m */; };
+		D4BC953F1E7686E5001676E5 /* WCPopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BC953E1E7686E5001676E5 /* WCPopMenuItem.m */; };
+		D4BC95411E76915F001676E5 /* MoreFunctionFrame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BC95401E76915E001676E5 /* MoreFunctionFrame@2x.png */; };
+		D4BC95441E76C667001676E5 /* WCPopMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BC95431E76C667001676E5 /* WCPopMenuTableViewCell.m */; };
+		D4BC954A1E76CA49001676E5 /* contacts_add_friend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BC95451E76CA49001676E5 /* contacts_add_friend@2x.png */; };
+		D4BC954B1E76CA49001676E5 /* contacts_add_newmessage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BC95461E76CA49001676E5 /* contacts_add_newmessage@2x.png */; };
+		D4BC954C1E76CA49001676E5 /* contacts_add_photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BC95471E76CA49001676E5 /* contacts_add_photo@2x.png */; };
+		D4BC954D1E76CA49001676E5 /* contacts_add_scan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BC95481E76CA49001676E5 /* contacts_add_scan@2x.png */; };
+		D4BC954E1E76CA49001676E5 /* contacts_add_voip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BC95491E76CA49001676E5 /* contacts_add_voip@2x.png */; };
 		D4CC81C91E5065E700926922 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CC81C61E5065E700926922 /* AFNetworking.framework */; };
 		D4CC81CA1E5065E700926922 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CC81C71E5065E700926922 /* ReactiveCocoa.framework */; };
 		D4D2DEF11D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4D2DEEF1D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodeld */; };
@@ -126,6 +137,7 @@
 		B86A55449349F48C0FEE35F7 /* Pods_WiiChat_2_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WiiChat_2_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41C23321DAE66CC00699CE7 /* YYEAnimatorPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YYEAnimatorPush.h; path = "../../../../../../Downloads/presentViewController--pushViewController-master/presente模拟push/YYEAnimatorPush.h"; sourceTree = "<group>"; };
 		D41C23331DAE66CC00699CE7 /* YYEAnimatorPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YYEAnimatorPush.m; path = "../../../../../../Downloads/presentViewController--pushViewController-master/presente模拟push/YYEAnimatorPush.m"; sourceTree = "<group>"; };
+		D42103B61E7655AC006C9897 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = "../../../../../../../../Volumes/OCMock 3.4/iOS library/libOCMock.a"; sourceTree = "<group>"; };
 		D42E64311E080604007E1A92 /* WiiChat_iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WiiChat_iOS-Prefix.pch"; sourceTree = "<group>"; };
 		D45C28FA1D90EE45005C2B9A /* WiiChat_2_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiiChat_2_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45C28FE1D90EE45005C2B9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -146,6 +158,19 @@
 		D47EA3471E5466AB007CE82D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D498C3121E6D23CD0093D126 /* LoginBackgroundImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LoginBackgroundImg@2x.png"; path = "photos/LoginBackgroundImg@2x.png"; sourceTree = "<group>"; };
 		D498C3131E6D23CD0093D126 /* TestHeadImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TestHeadImg@2x.png"; path = "photos/TestHeadImg@2x.png"; sourceTree = "<group>"; };
+		D4BC95371E765D5C001676E5 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/WiiChat_2_2-fffqblbpllxvshgxkvbrpupuqnvc/Build/Products/Debug-iphonesimulator/OCMock/OCMock.framework"; sourceTree = "<group>"; };
+		D4BC953A1E768428001676E5 /* WCPopMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCPopMenuView.h; path = View/WCPopMenuView.h; sourceTree = "<group>"; };
+		D4BC953B1E768428001676E5 /* WCPopMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCPopMenuView.m; path = View/WCPopMenuView.m; sourceTree = "<group>"; };
+		D4BC953D1E7686E5001676E5 /* WCPopMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCPopMenuItem.h; path = View/WCPopMenuItem.h; sourceTree = "<group>"; };
+		D4BC953E1E7686E5001676E5 /* WCPopMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCPopMenuItem.m; path = View/WCPopMenuItem.m; sourceTree = "<group>"; };
+		D4BC95401E76915E001676E5 /* MoreFunctionFrame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MoreFunctionFrame@2x.png"; path = "photos/MoreFunctionFrame@2x.png"; sourceTree = "<group>"; };
+		D4BC95421E76C667001676E5 /* WCPopMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCPopMenuTableViewCell.h; path = View/WCPopMenuTableViewCell.h; sourceTree = "<group>"; };
+		D4BC95431E76C667001676E5 /* WCPopMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCPopMenuTableViewCell.m; path = View/WCPopMenuTableViewCell.m; sourceTree = "<group>"; };
+		D4BC95451E76CA49001676E5 /* contacts_add_friend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "contacts_add_friend@2x.png"; path = "photos/contacts_add_friend@2x.png"; sourceTree = "<group>"; };
+		D4BC95461E76CA49001676E5 /* contacts_add_newmessage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "contacts_add_newmessage@2x.png"; path = "photos/contacts_add_newmessage@2x.png"; sourceTree = "<group>"; };
+		D4BC95471E76CA49001676E5 /* contacts_add_photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "contacts_add_photo@2x.png"; path = "photos/contacts_add_photo@2x.png"; sourceTree = "<group>"; };
+		D4BC95481E76CA49001676E5 /* contacts_add_scan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "contacts_add_scan@2x.png"; path = "photos/contacts_add_scan@2x.png"; sourceTree = "<group>"; };
+		D4BC95491E76CA49001676E5 /* contacts_add_voip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "contacts_add_voip@2x.png"; path = "photos/contacts_add_voip@2x.png"; sourceTree = "<group>"; };
 		D4CC81C61E5065E700926922 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
 		D4CC81C71E5065E700926922 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "Pods/../build/Debug-iphoneos/ReactiveCocoa/ReactiveCocoa.framework"; sourceTree = "<group>"; };
 		D4D2DEF01D9D3A4700BCA6F6 /* WiiChatSourceData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WiiChatSourceData.xcdatamodel; sourceTree = "<group>"; };
@@ -307,6 +332,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4BC95381E765D5C001676E5 /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +513,7 @@
 			isa = PBXGroup;
 			children = (
 				D4DAE0B91E692F5700F7D425 /* AppleWatch@2x.png */,
+				D4BC95401E76915E001676E5 /* MoreFunctionFrame@2x.png */,
 				D4DAE0BA1E692F5700F7D425 /* DefaultHeadImg@2x.png */,
 				D4DAE0BB1E692F5700F7D425 /* gongzhonghao@2x.png */,
 				D4DAE0BC1E692F5700F7D425 /* GroupChat@2x.png */,
@@ -507,6 +534,11 @@
 				D4DAE0CA1E692F5700F7D425 /* searchIcon2@2x.png */,
 				D4DAE0CB1E692F5700F7D425 /* shouji@2x.png */,
 				D4DAE0CC1E692F5700F7D425 /* Stamp@2x.png */,
+				D4BC95451E76CA49001676E5 /* contacts_add_friend@2x.png */,
+				D4BC95461E76CA49001676E5 /* contacts_add_newmessage@2x.png */,
+				D4BC95471E76CA49001676E5 /* contacts_add_photo@2x.png */,
+				D4BC95481E76CA49001676E5 /* contacts_add_scan@2x.png */,
+				D4BC95491E76CA49001676E5 /* contacts_add_voip@2x.png */,
 			);
 			name = photos;
 			sourceTree = "<group>";
@@ -581,6 +613,12 @@
 				D4DAE1001E69304100F7D425 /* WCHeadImgScrollVIew.m */,
 				D4DAE1011E69304100F7D425 /* WCProfileTableViewCell.h */,
 				D4DAE1021E69304100F7D425 /* WCProfileTableViewCell.m */,
+				D4BC953A1E768428001676E5 /* WCPopMenuView.h */,
+				D4BC953B1E768428001676E5 /* WCPopMenuView.m */,
+				D4BC953D1E7686E5001676E5 /* WCPopMenuItem.h */,
+				D4BC953E1E7686E5001676E5 /* WCPopMenuItem.m */,
+				D4BC95421E76C667001676E5 /* WCPopMenuTableViewCell.h */,
+				D4BC95431E76C667001676E5 /* WCPopMenuTableViewCell.m */,
 			);
 			name = WCView;
 			sourceTree = "<group>";
@@ -628,6 +666,8 @@
 		D4E2290A1D96A19A00299CA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4BC95371E765D5C001676E5 /* OCMock.framework */,
+				D42103B61E7655AC006C9897 /* libOCMock.a */,
 				D47EA3471E5466AB007CE82D /* CoreGraphics.framework */,
 				D4CC81C61E5065E700926922 /* AFNetworking.framework */,
 				D4CC81C71E5065E700926922 /* ReactiveCocoa.framework */,
@@ -840,16 +880,22 @@
 				D46A333C1D93EDC40075E358 /* Login.storyboard in Resources */,
 				D4DAE0D61E692F5700F7D425 /* MyAlbum@2x.png in Resources */,
 				D4DAE0DA1E692F5700F7D425 /* MyWallet@2x.png in Resources */,
+				D4BC954C1E76CA49001676E5 /* contacts_add_photo@2x.png in Resources */,
 				D498C3151E6D23CD0093D126 /* TestHeadImg@2x.png in Resources */,
 				D4F228461DA289CE005DB421 /* WCLocalizable.strings in Resources */,
 				D4E229061D96A18300299CA9 /* SVProgressHUD.bundle in Resources */,
 				D4DAE0E11E692F5700F7D425 /* Stamp@2x.png in Resources */,
 				D4DAE0D71E692F5700F7D425 /* MyCards@2x.png in Resources */,
+				D4BC954A1E76CA49001676E5 /* contacts_add_friend@2x.png in Resources */,
+				D4BC954B1E76CA49001676E5 /* contacts_add_newmessage@2x.png in Resources */,
+				D4BC954D1E76CA49001676E5 /* contacts_add_scan@2x.png in Resources */,
 				D45C29101D90EE45005C2B9A /* LaunchScreen.storyboard in Resources */,
 				D45C290D1D90EE45005C2B9A /* Assets.xcassets in Resources */,
 				D45C29081D90EE45005C2B9A /* Main.storyboard in Resources */,
 				D4E229091D96A18300299CA9 /* Info.plist in Resources */,
+				D4BC954E1E76CA49001676E5 /* contacts_add_voip@2x.png in Resources */,
 				D4DAE0E01E692F5700F7D425 /* shouji@2x.png in Resources */,
+				D4BC95411E76915F001676E5 /* MoreFunctionFrame@2x.png in Resources */,
 				D4DAE0CF1E692F5700F7D425 /* DefaultHeadImg@2x.png in Resources */,
 				D4DAE0CE1E692F5700F7D425 /* AppleWatch@2x.png in Resources */,
 				D4DAE0D51E692F5700F7D425 /* MoreEmotions@2x.png in Resources */,
@@ -954,6 +1000,7 @@
 				D4DAE09D1E692ED200F7D425 /* YQImageTool.m in Sources */,
 				D4DAE0741E692E0F00F7D425 /* AllUsers.m in Sources */,
 				D4DAE0781E692E0F00F7D425 /* User.m in Sources */,
+				D4BC95441E76C667001676E5 /* WCPopMenuTableViewCell.m in Sources */,
 				D4DAE0E51E692F7900F7D425 /* ViewController.m in Sources */,
 				D4DAE07A1E692E0F00F7D425 /* UserSource.m in Sources */,
 				D4DAE1031E69304100F7D425 /* WCBaseSearchBar.m in Sources */,
@@ -985,8 +1032,10 @@
 				D4DAE08B1E692E5E00F7D425 /* UIView+ST.m in Sources */,
 				D4DAE0B31E692F3100F7D425 /* CountStringLengthHelper.m in Sources */,
 				D4DAE1181E69309B00F7D425 /* WCProfileRootTableViewController.m in Sources */,
+				D4BC953C1E768428001676E5 /* WCPopMenuView.m in Sources */,
 				D4E229051D96A18300299CA9 /* SVProgressAnimatedView.m in Sources */,
 				D4DAE0901E692E7800F7D425 /* ChineseString.m in Sources */,
+				D4BC953F1E7686E5001676E5 /* WCPopMenuItem.m in Sources */,
 				D4DAE0A21E692F1900F7D425 /* WCUIStoreManager.m in Sources */,
 				D4E229101D96A9D800299CA9 /* SmoothCheckBox.m in Sources */,
 				D4DAE11F1E6930CD00F7D425 /* WCAddContactViewController.m in Sources */,
@@ -1002,6 +1051,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4BC95391E765D88001676E5 /* RegisterHelper.m in Sources */,
 				D45C291B1D90EE45005C2B9A /* WiiChat_2_2Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1094,6 +1144,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1136,6 +1187,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

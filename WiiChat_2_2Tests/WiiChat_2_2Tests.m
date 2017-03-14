@@ -7,6 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "RegisterHelper.h"
+#import <OCMock/OCMock.h>
 
 @interface WiiChat_2_2Tests : XCTestCase
 
@@ -27,6 +29,12 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+}
+- (void)testIsEmailRegistered{
+    id defaultRegister = OCMClassMock([RegisterHelper class]);
+    OCMStub([[defaultRegister sharedRegisterHelper] isEmailRegistered:[OCMArg any]])._andReturn(@YES);
+    XCTAssertTrue([[RegisterHelper sharedRegisterHelper] isEmailRegistered:@"123@123.com"],@"没有被注册");
+    XCTAssertTrue([[RegisterHelper sharedRegisterHelper] isEmailRegistered:@"1232413@123.com"],@"没有被注册");
 }
 
 - (void)testPerformanceExample {

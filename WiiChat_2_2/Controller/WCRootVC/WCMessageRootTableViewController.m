@@ -12,12 +12,14 @@
 #import <Masonry/Masonry.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "AFNetworking.h"
+#import "WCPopMenuView.h"
 
 @interface WCMessageRootTableViewController ()<NSXMLParserDelegate>
 @property(nonatomic,strong)UISearchController *searchController;
 @property(nonatomic,strong)ODRefreshControl *refreshController;
 @property(nonatomic,strong)NSString *currentParse;
 @property(nonatomic,strong)MBProgressHUD *myHUD;
+@property(nonatomic,strong)WCPopMenuView *popMenu;
 @property(atomic,assign)BOOL cancelHUD;
 @end
 static float HUDProgress = 0.0f;
@@ -35,15 +37,17 @@ static float HUDProgress = 0.0f;
 //    self.tableView.contentInset = insets;
 //    self.tableView.scrollIndicatorInsets = insets;
 //    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-    self.searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
-    self.searchController.searchBar.frame = CGRectMake(0, 0, self.view.frame.size.width, 44);
-    self.searchController.searchResultsUpdater = self;
-    self.searchController.searchBar.delegate = self;
-    self.searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
-    self.searchController.hidesNavigationBarDuringPresentation = YES;
-    self.searchController.definesPresentationContext = YES;
-    self.tableView.tableHeaderView = self.searchController.searchBar;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(test)];
+    _searchController = ({
+        UISearchController *searchC = [[UISearchController alloc]initWithSearchResultsController:nil];
+        searchC.searchBar.frame = CGRectMake(0, 0, self.view.frame.size.width, 44);
+        searchC.searchResultsUpdater = self;
+        searchC.searchBar.delegate = self;
+        searchC.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+        searchC.hidesNavigationBarDuringPresentation = YES;
+        searchC.definesPresentationContext = YES;
+        searchC;} );
+    self.tableView.tableHeaderView = _searchController.searchBar;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showPopMenu)];
     _refreshController = [[ODRefreshControl alloc]initInScrollView:self.tableView];
     _refreshController.tintColor = [UIColor lightGrayColor];
     [_refreshController addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
@@ -58,24 +62,56 @@ static float HUDProgress = 0.0f;
     [[AFNetworkReachabilityManager sharedManager]setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         NSLog(@"Reachability:%@",AFStringFromNetworkReachabilityStatus(status));
         if (status==AFNetworkReachabilityStatusReachableViaWiFi) {
-            NSURL *url = [NSURL URLWithString:@"http://php.weather.sina.com.cn/xml.php?city=%B1%B1%BE%A9&password=DJOYnieT8234jlsK&day=0"];
-            NSURLRequest *request = [NSURLRequest requestWithURL:url];
-            NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-                if (error!=nil&&response==nil) {
-                    if (error.code==NSURLErrorAppTransportSecurityRequiresSecureConnection) {
-                        NSLog(@"error:%ld",error.code);
+                NSURL *url = [NSURL URLWithString:@"http://php.weather.sina.com.cn/xml.php?city=%B1%B1%BE%A9&password=DJOYnieT8234jlsK&day=0"];
+                NSURLRequest *request = [NSURLRequest requestWithURL:url];
+                AFURLSessionManager *manager = [[AFURLSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+                manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+                NSURLSessionDataTask *task = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    if (error!=nil&&response==nil) {
+                        if (error.code==NSURLErrorAppTransportSecurityRequiresSecureConnection) {
+                            NSLog(@"error:%ld",error.code);
+                        }
                     }
-                }
-                if (response!=nil) {
-                    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
-                    NSString *responseData = [NSString stringWithFormat:@"%@",data];
-                    //NSLog(@"responseData:%@",responseData);
-                    NSXMLParser *parser = [[NSXMLParser alloc]initWithData:data];
-                    parser.delegate = self;
-                    [parser parse];
-                }
-            }];
-            [dataTask resume];
+                    if (response!=nil) {
+                        //response-响应反馈   responseObject-响应结果返回的数据
+                        NSLog(@"response encode name:%@",response.textEncodingName);
+                        NSLog(@"response mime type:%@",response.MIMEType);
+                        NSLog(@"response url:%@",response.URL);
+                        NSLog(@"response file name:%@",response.suggestedFilename);
+                        
+                        NSLog(@"responseObject:%@",responseObject);
+                        //NSLog(@"responseData:%@",responseData);
+                        NSXMLParser *parser = [[NSXMLParser alloc]initWithData:responseObject];
+                        parser.delegate = self;
+                        [parser parse];
+                    }
+                    });
+                }];
+                [task resume];
+            
+            
+            
+            
+//            NSURL *url = [NSURL URLWithString:@"http://php.weather.sina.com.cn/xml.php?city=%B1%B1%BE%A9&password=DJOYnieT8234jlsK&day=0"];
+//            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//
+//            NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//                if (error!=nil&&response==nil) {
+//                    if (error.code==NSURLErrorAppTransportSecurityRequiresSecureConnection) {
+//                        NSLog(@"error:%ld",error.code);
+//                    }
+//                }
+//                if (response!=nil) {
+//                    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
+//                    NSString *responseData = [NSString stringWithFormat:@"%@",data];
+//                    //NSLog(@"responseData:%@",responseData);
+//                    NSXMLParser *parser = [[NSXMLParser alloc]initWithData:data];
+//                    parser.delegate = self;
+//                    [parser parse];
+//                }
+//            }];
+//            [dataTask resume];
         }
     }];
 }
@@ -91,6 +127,67 @@ static float HUDProgress = 0.0f;
     }
     return _myHUD;
 }
+
+-(WCPopMenuView*)popMenu{
+    if (!_popMenu) {
+        NSMutableArray *myPopMenuItems = [[NSMutableArray alloc]initWithCapacity:6];
+        for (int i=0; i<5; i++) {
+            NSString *imageName;
+            NSString *title;
+            switch (i) {
+                case 0:
+                {
+                    imageName = @"contacts_add_newmessage";
+                    title = @"发起群聊";
+                    break;
+                }
+                case 1:{
+                    imageName = @"contacts_add_friend";
+                    title = @"添加朋友";
+                    break;
+                }
+                case 2: {
+                    imageName = @"contacts_add_scan";
+                    title = @"扫一扫";
+                    break;
+                }
+                case 3: {
+                    imageName = @"contacts_add_photo";
+                    title = @"拍照";
+                    break;
+                }
+                case 4: {
+                    imageName = @"contacts_add_voip";
+                    title = @"录视频";
+                    break;
+                }
+                default:
+                    break;
+            }
+            WCPopMenuItem *item = [[WCPopMenuItem alloc]initPopMenuItemWithImage:[UIImage imageNamed:imageName] title:title];
+            [myPopMenuItems addObject:item];
+        }
+        _popMenu = [[WCPopMenuView alloc]initWithMenus:myPopMenuItems];
+        WEAKSELF
+        _popMenu.popMenuDidSelectBlock = ^(NSInteger index,WCPopMenuItem *menuItem){
+            if (index==2) {
+                [weakSelf test];
+            }else if (index==3){
+                [weakSelf test];
+            }else if (index==1){
+                [weakSelf test];
+            }else if(index==0){
+                [weakSelf test];
+            }
+            NSString * log = @"hello,world!";
+            return log;
+        };
+        
+        
+    }
+    return _popMenu;
+}
+
 
 #pragma mark - UISearchResultsUpdating delegate
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
@@ -118,7 +215,7 @@ static float HUDProgress = 0.0f;
     else{
         if(![self.currentParse isEqualToString:@"savedate_zhishu"]&&HUDProgress<=1.0f) {
             HUDProgress +=0.02f;
-            usleep(50000);
+            usleep(10000);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [MBProgressHUD HUDForView:weakSelf.navigationController.view].progress = HUDProgress;
                 
@@ -137,6 +234,7 @@ static float HUDProgress = 0.0f;
         _myHUD = [MBProgressHUD showHUDAddedTo:weakSelf.navigationController.view animated:YES];
         _myHUD.mode = MBProgressHUDModeDeterminateHorizontalBar;
         _myHUD.label.text = @"Loading...";
+        NSLog(@"start loading!");
 
     });
 
@@ -149,6 +247,12 @@ static float HUDProgress = 0.0f;
 
     });
     HUDProgress = 0.0f;
+
+}
+
+- (void)showPopMenu{
+    NSLog(@"show pop menu!");
+    [self.popMenu showMenuOnView:self.view atPoint:CGPointZero];
 
 }
 

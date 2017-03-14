@@ -14,6 +14,7 @@
 #import "WCUIStoreManager.h"
 #import "WCAddContactViewController.h"
 #import "WCContactInfoViewController.h"
+#import "AddContactHelper.h"
 
 @interface WCContactRootTableViewController ()
 @property(nonatomic,strong)UISearchController *searchController;

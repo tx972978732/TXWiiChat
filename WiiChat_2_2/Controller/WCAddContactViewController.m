@@ -148,7 +148,11 @@ NSString *const addContactVCCellIdentifier = @"addContactVCCellIdentifier";
         }else if ([(NSString*)searchResult isKindOfClass:[NSString class]]){
             NSLog(@"isKindOf NSString");
             if ([self respondsToSelector:NSSelectorFromString(searchResult)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
                 [self performSelector:NSSelectorFromString(searchResult) withObject:nil];
+#pragma clang diagnostic pop
+
                 NSLog(@"respondsToSelector%@",searchResult);
             }
         }
@@ -335,7 +339,10 @@ NSString *const addContactVCCellIdentifier = @"addContactVCCellIdentifier";
         }
     }else if ([(NSString*)searchResult isKindOfClass:[NSString class]]){
         if ([self respondsToSelector:NSSelectorFromString(searchResult)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             [self performSelector:NSSelectorFromString(searchResult) withObject:nil];
+#pragma clang diagnostic pop
         }
     }
 }

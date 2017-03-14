@@ -8,9 +8,11 @@
 
 #import "AddContactHelper.h"
 #import "ErrorInfo.h"
+#import "User.h"
 
 @implementation AddContactHelper
 WiiSingletonClass_Implementation(AddContactHelper)
+
 -(id)searchSourceDataSourceWithInfo:(NSMutableDictionary*)info{
     NSString *checkResult;
     AllUsers *resultUser = [AllUsers getUserFromDataSourceWithInfo1:info];
@@ -112,4 +114,6 @@ WiiSingletonClass_Implementation(AddContactHelper)
 //    return result;
     
 }
+
+
 @end
