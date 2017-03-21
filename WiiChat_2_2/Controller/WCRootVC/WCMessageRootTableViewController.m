@@ -13,6 +13,7 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "AFNetworking.h"
 #import "WCPopMenuView.h"
+#import "WCScanQRCodeViewController.h"
 
 @interface WCMessageRootTableViewController ()<NSXMLParserDelegate>
 @property(nonatomic,strong)UISearchController *searchController;
@@ -30,14 +31,6 @@ static float HUDProgress = 0.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(self.view);
-//    }];
-//    
-//    UIEdgeInsets insets = UIEdgeInsetsMake(0, 0,80, 0);
-//    self.tableView.contentInset = insets;
-//    self.tableView.scrollIndicatorInsets = insets;
-//    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     _searchController = ({
         UISearchController *searchC = [[UISearchController alloc]initWithSearchResultsController:nil];
         searchC.searchBar.frame = CGRectMake(0, 0, self.view.frame.size.width, 44);
@@ -178,14 +171,22 @@ static float HUDProgress = 0.0f;
         _popMenu = [[WCPopMenuView alloc]initWithMenus:myPopMenuItems];
         WEAKSELF
         _popMenu.popMenuDidSelectBlock = ^(NSInteger index,WCPopMenuItem *menuItem){
-            if (index==2) {
-                [weakSelf test];
-            }else if (index==3){
-                [weakSelf test];
-            }else if (index==1){
-                [weakSelf test];
-            }else if(index==0){
-                [weakSelf test];
+            switch (index) {
+                case 0:
+                    [weakSelf test];
+                    break;
+                case 1:
+                    [weakSelf test];
+                    break;
+                case 2:
+                    [weakSelf scanBtnClicked];
+                    break;
+                case 3:
+                    [weakSelf test];
+                    break;
+                default:
+                    [weakSelf test];
+                    break;
             }
             NSString * log = @"hello,world!";
             return log;
@@ -256,6 +257,7 @@ static float HUDProgress = 0.0f;
 
 }
 
+#pragma pravite method
 - (void)showPopMenu{
     NSLog(@"show pop menu!");
     [self.popMenu showMenuOnView:self.view.superview atPoint:CGPointZero];
@@ -270,6 +272,29 @@ static float HUDProgress = 0.0f;
 
 }
 
+#pragma popMenuItemClick_Method
+- (void)scanBtnClicked{
+    WCScanQRCodeViewController *scanVC = [WCScanQRCodeViewController new];
+    WEAKSELF
+    scanVC.scanResultBlock = ^(WCScanQRCodeViewController *vc,NSString *result){
+        [weakSelf dealWithScanResult:result inViewController:vc];
+    };
+    [self.navigationController pushViewController:scanVC animated:YES];
+}
+
+- (void)dealWithScanResult:(NSString*)result inViewController:(WCScanQRCodeViewController*)vc{
+    NSURL *url = [NSURL URLWithString:result];
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0*NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:YES];
+        });
+    }else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+#pragma test-MBPrgoressHUD
 -(void)test{
     _myHUD = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     //    _myHUD.center = self.view.center;

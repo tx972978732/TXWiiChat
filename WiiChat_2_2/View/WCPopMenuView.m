@@ -115,7 +115,13 @@
     if ([[self hitTest:localPoint withEvent:event] isKindOfClass:[self class]]) {
         [self dismissPopMenuAnimatedOnMenuSelected:NO];
     }
-
+}
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event{
+    UITouch *touch = [touches anyObject];
+    CGPoint localPoint = [touch locationInView:self];
+    if ([[self hitTest:localPoint withEvent:event] isKindOfClass:[self class]]) {
+        [self dismissPopMenuAnimatedOnMenuSelected:NO];
+    }
 }
 -(void)dismissPopMenuAnimatedOnMenuSelected:(BOOL)selected{
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{

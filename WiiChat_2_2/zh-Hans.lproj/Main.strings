@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; normalTitle = "忘记密码？"; ObjectID = "OdW-TA-EKw"; */
+"OdW-TA-EKw.normalTitle" = "忘记密码？";
+
+/* Class = "UIButton"; normalTitle = "注册新用户"; ObjectID = "Omx-1e-bqi"; */
+"Omx-1e-bqi.normalTitle" = "注册新用户";
+
+/* Class = "UILabel"; text = "帐号："; ObjectID = "Zhx-0c-cS2"; */
+"Zhx-0c-cS2.text" = "帐号：";
+
+/* Class = "UILabel"; text = "密码："; ObjectID = "imr-ds-hPw"; */
+"imr-ds-hPw.text" = "密码：";
+
+/* Class = "UILabel"; text = "WiiChat帐号/邮箱帐号/手机号"; ObjectID = "ogL-UQ-6z9"; */
+"ogL-UQ-6z9.text" = "WiiChat帐号/邮箱帐号/手机号";
+
+/* Class = "UIButton"; normalTitle = "登     录"; ObjectID = "qQ0-OR-KmN"; */
+"qQ0-OR-KmN.normalTitle" = "登     录";

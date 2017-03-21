@@ -19,6 +19,10 @@
 		D45C29261D90EE45005C2B9A /* WiiChat_2_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D45C29251D90EE45005C2B9A /* WiiChat_2_2UITests.m */; };
 		D46A333C1D93EDC40075E358 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D46A333B1D93EDC40075E358 /* Login.storyboard */; };
 		D47EA3481E5466AB007CE82D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47EA3471E5466AB007CE82D /* CoreGraphics.framework */; };
+		D48CB53C1E80E28F00ABEA6D /* scan_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D48CB53A1E80E28F00ABEA6D /* scan_bg@2x.png */; };
+		D48CB53D1E80E28F00ABEA6D /* scan_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D48CB53B1E80E28F00ABEA6D /* scan_line@2x.png */; };
+		D48CB5401E81058D00ABEA6D /* WCScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48CB53F1E81058D00ABEA6D /* WCScanQRCodeViewController.m */; };
+		D48CB5431E8105C400ABEA6D /* WCScanBGView.m in Sources */ = {isa = PBXBuildFile; fileRef = D48CB5421E8105C400ABEA6D /* WCScanBGView.m */; };
 		D498C3141E6D23CD0093D126 /* LoginBackgroundImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D498C3121E6D23CD0093D126 /* LoginBackgroundImg@2x.png */; };
 		D498C3151E6D23CD0093D126 /* TestHeadImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D498C3131E6D23CD0093D126 /* TestHeadImg@2x.png */; };
 		D4BC95381E765D5C001676E5 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BC95371E765D5C001676E5 /* OCMock.framework */; };
@@ -113,7 +117,7 @@
 		D4E229091D96A18300299CA9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4E229031D96A18300299CA9 /* Info.plist */; };
 		D4E2290C1D96A19A00299CA9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E2290B1D96A19A00299CA9 /* QuartzCore.framework */; };
 		D4E229101D96A9D800299CA9 /* SmoothCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E2290F1D96A9D800299CA9 /* SmoothCheckBox.m */; };
-		D4F228461DA289CE005DB421 /* WCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4F228451DA289CE005DB421 /* WCLocalizable.strings */; };
+		D4F8CC531E792583008D3DDB /* WCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4F8CC551E792583008D3DDB /* WCLocalizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +160,12 @@
 		D45C29271D90EE45005C2B9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D46A333B1D93EDC40075E358 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D47EA3471E5466AB007CE82D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D48CB53A1E80E28F00ABEA6D /* scan_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "scan_bg@2x.png"; path = "photos/scan_bg@2x.png"; sourceTree = "<group>"; };
+		D48CB53B1E80E28F00ABEA6D /* scan_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "scan_line@2x.png"; path = "photos/scan_line@2x.png"; sourceTree = "<group>"; };
+		D48CB53E1E81058D00ABEA6D /* WCScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCScanQRCodeViewController.h; path = Controller/WCScanQRCodeViewController.h; sourceTree = "<group>"; };
+		D48CB53F1E81058D00ABEA6D /* WCScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCScanQRCodeViewController.m; path = Controller/WCScanQRCodeViewController.m; sourceTree = "<group>"; };
+		D48CB5411E8105C400ABEA6D /* WCScanBGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCScanBGView.h; path = View/WCScanBGView.h; sourceTree = "<group>"; };
+		D48CB5421E8105C400ABEA6D /* WCScanBGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCScanBGView.m; path = View/WCScanBGView.m; sourceTree = "<group>"; };
 		D498C3121E6D23CD0093D126 /* LoginBackgroundImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LoginBackgroundImg@2x.png"; path = "photos/LoginBackgroundImg@2x.png"; sourceTree = "<group>"; };
 		D498C3131E6D23CD0093D126 /* TestHeadImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TestHeadImg@2x.png"; path = "photos/TestHeadImg@2x.png"; sourceTree = "<group>"; };
 		D4BC95371E765D5C001676E5 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/WiiChat_2_2-fffqblbpllxvshgxkvbrpupuqnvc/Build/Products/Debug-iphonesimulator/OCMock/OCMock.framework"; sourceTree = "<group>"; };
@@ -310,7 +320,9 @@
 		D4E2290B1D96A19A00299CA9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D4E2290E1D96A9D800299CA9 /* SmoothCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmoothCheckBox.h; path = "../../SmoothCheckBox-master/SmoothCheckBox/SmoothCheckBox.h"; sourceTree = "<group>"; };
 		D4E2290F1D96A9D800299CA9 /* SmoothCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmoothCheckBox.m; path = "../../SmoothCheckBox-master/SmoothCheckBox/SmoothCheckBox.m"; sourceTree = "<group>"; };
-		D4F228451DA289CE005DB421 /* WCLocalizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = WCLocalizable.strings; sourceTree = "<group>"; };
+		D4F8CC511E792574008D3DDB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		D4F8CC521E792574008D3DDB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		D4F8CC541E792583008D3DDB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/WCLocalizable.strings"; sourceTree = "<group>"; };
 		EFFC6CE4E7E646752E8AD613 /* Pods-WiiChat_2_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiiChat_2_2.release.xcconfig"; path = "Pods/Target Support Files/Pods-WiiChat_2_2/Pods-WiiChat_2_2.release.xcconfig"; sourceTree = "<group>"; };
 		FD788BB6BD2249FBAFAA404E /* Pods-WiiChat_2_2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiiChat_2_2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WiiChat_2_2/Pods-WiiChat_2_2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -478,7 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				D45C28FE1D90EE45005C2B9A /* main.m */,
-				D4F228451DA289CE005DB421 /* WCLocalizable.strings */,
+				D4F8CC551E792583008D3DDB /* WCLocalizable.strings */,
 				D45C29061D90EE45005C2B9A /* Main.storyboard */,
 				D46A333B1D93EDC40075E358 /* Login.storyboard */,
 				D42E64311E080604007E1A92 /* WiiChat_iOS-Prefix.pch */,
@@ -513,6 +525,8 @@
 			isa = PBXGroup;
 			children = (
 				D4DAE0B91E692F5700F7D425 /* AppleWatch@2x.png */,
+				D48CB53A1E80E28F00ABEA6D /* scan_bg@2x.png */,
+				D48CB53B1E80E28F00ABEA6D /* scan_line@2x.png */,
 				D4BC95401E76915E001676E5 /* MoreFunctionFrame@2x.png */,
 				D4DAE0BA1E692F5700F7D425 /* DefaultHeadImg@2x.png */,
 				D4DAE0BB1E692F5700F7D425 /* gongzhonghao@2x.png */,
@@ -619,6 +633,8 @@
 				D4BC953E1E7686E5001676E5 /* WCPopMenuItem.m */,
 				D4BC95421E76C667001676E5 /* WCPopMenuTableViewCell.h */,
 				D4BC95431E76C667001676E5 /* WCPopMenuTableViewCell.m */,
+				D48CB5411E8105C400ABEA6D /* WCScanBGView.h */,
+				D48CB5421E8105C400ABEA6D /* WCScanBGView.m */,
 			);
 			name = WCView;
 			sourceTree = "<group>";
@@ -744,6 +760,8 @@
 				D4DAE1101E69309B00F7D425 /* WCMessageRootTableViewController.m */,
 				D4DAE1111E69309B00F7D425 /* WCProfileRootTableViewController.h */,
 				D4DAE1121E69309B00F7D425 /* WCProfileRootTableViewController.m */,
+				D48CB53E1E81058D00ABEA6D /* WCScanQRCodeViewController.h */,
+				D48CB53F1E81058D00ABEA6D /* WCScanQRCodeViewController.m */,
 				D4846BA21DAA21E100209CDB /* WCTableViewController */,
 			);
 			name = WCViewController;
@@ -882,7 +900,7 @@
 				D4DAE0DA1E692F5700F7D425 /* MyWallet@2x.png in Resources */,
 				D4BC954C1E76CA49001676E5 /* contacts_add_photo@2x.png in Resources */,
 				D498C3151E6D23CD0093D126 /* TestHeadImg@2x.png in Resources */,
-				D4F228461DA289CE005DB421 /* WCLocalizable.strings in Resources */,
+				D4F8CC531E792583008D3DDB /* WCLocalizable.strings in Resources */,
 				D4E229061D96A18300299CA9 /* SVProgressHUD.bundle in Resources */,
 				D4DAE0E11E692F5700F7D425 /* Stamp@2x.png in Resources */,
 				D4DAE0D71E692F5700F7D425 /* MyCards@2x.png in Resources */,
@@ -896,12 +914,14 @@
 				D4BC954E1E76CA49001676E5 /* contacts_add_voip@2x.png in Resources */,
 				D4DAE0E01E692F5700F7D425 /* shouji@2x.png in Resources */,
 				D4BC95411E76915F001676E5 /* MoreFunctionFrame@2x.png in Resources */,
+				D48CB53C1E80E28F00ABEA6D /* scan_bg@2x.png in Resources */,
 				D4DAE0CF1E692F5700F7D425 /* DefaultHeadImg@2x.png in Resources */,
 				D4DAE0CE1E692F5700F7D425 /* AppleWatch@2x.png in Resources */,
 				D4DAE0D51E692F5700F7D425 /* MoreEmotions@2x.png in Resources */,
 				D4DAE0D81E692F5700F7D425 /* MyFavorites@2x.png in Resources */,
 				D4DAE0D41E692F5700F7D425 /* mianduimian@2x.png in Resources */,
 				D4DAE0D91E692F5700F7D425 /* MySetting@2x.png in Resources */,
+				D48CB53D1E80E28F00ABEA6D /* scan_line@2x.png in Resources */,
 				D4DAE0D01E692F5700F7D425 /* gongzhonghao@2x.png in Resources */,
 				D498C3141E6D23CD0093D126 /* LoginBackgroundImg@2x.png in Resources */,
 				D4DAE0D11E692F5700F7D425 /* GroupChat@2x.png in Resources */,
@@ -1004,6 +1024,7 @@
 				D4DAE0E51E692F7900F7D425 /* ViewController.m in Sources */,
 				D4DAE07A1E692E0F00F7D425 /* UserSource.m in Sources */,
 				D4DAE1031E69304100F7D425 /* WCBaseSearchBar.m in Sources */,
+				D48CB5401E81058D00ABEA6D /* WCScanQRCodeViewController.m in Sources */,
 				D4DAE0F21E692FE400F7D425 /* WCBaseNavigationController.m in Sources */,
 				D4DAE0771E692E0F00F7D425 /* Contact+CoreDataProperties.m in Sources */,
 				D4DAE0A31E692F1900F7D425 /* WiiChatSingletonClass.m in Sources */,
@@ -1041,6 +1062,7 @@
 				D4DAE11F1E6930CD00F7D425 /* WCAddContactViewController.m in Sources */,
 				D4DAE0B71E692F3100F7D425 /* RegisterHelper.m in Sources */,
 				D4DAE1131E69309B00F7D425 /* LoginViewController.m in Sources */,
+				D48CB5431E8105C400ABEA6D /* WCScanBGView.m in Sources */,
 				D4DAE1061E69304100F7D425 /* WCProfileTableViewCell.m in Sources */,
 				D4DAE1051E69304100F7D425 /* WCHeadImgScrollVIew.m in Sources */,
 				D4DAE1161E69309B00F7D425 /* WCDiscoverRootTableViewController.m in Sources */,
@@ -1084,6 +1106,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D45C29071D90EE45005C2B9A /* Base */,
+				D4F8CC511E792574008D3DDB /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1092,8 +1115,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				D45C290F1D90EE45005C2B9A /* Base */,
+				D4F8CC521E792574008D3DDB /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D4F8CC551E792583008D3DDB /* WCLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4F8CC541E792583008D3DDB /* zh-Hans */,
+			);
+			name = WCLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1103,6 +1135,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1153,6 +1186,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
