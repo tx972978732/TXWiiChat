@@ -34,7 +34,7 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         if (!_videoPreviewLayer) {
             [self loadUIView];
         }else{
@@ -116,35 +116,36 @@
         [_videoPreviewLayer setFrame:self.view.bounds];
         }
     }
-    //设置scanBGView
-    if (!_scanBGView) {
-        _scanBGView = [[WCScanBGView alloc]initWithFrame:self.view.bounds];
-        _scanBGView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
-        _scanBGView.scanRect = scanRect;
-    }
-    //设置scanRectView
-    if (!_scanRectView) {
-        _scanRectView = [[UIImageView alloc]initWithFrame:scanRect];
-        _scanRectView.image = [[UIImage imageNamed:@"scan_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(25, 25, 25, 25)];
-        _scanRectView.clipsToBounds = YES;
-    }
-    //设置lineView
-    if (!_lineView) {
-        _lineView = [[UIImageView alloc]initWithFrame:CGRectMake(0, -2, CGRectGetWidth(scanRect), 2)];
-        _lineView.image = [UIImage imageNamed:@"scan_line"];
-        _lineView.contentMode = UIViewContentModeScaleToFill;
-    }
-    //设置tipLabel
-    if (!_tipLabel) {
-        _tipLabel = [UILabel new];
-        _tipLabel.textAlignment = NSTextAlignmentCenter;
-        _tipLabel.font = [UIFont fontWithName:@"Arial" size:16];
-        _tipLabel.textColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
-        _tipLabel.text = @"请将二维码对准框内";
-    }
     
     //添加视图
     dispatch_async(dispatch_get_main_queue(), ^{
+        //设置scanBGView
+        if (!_scanBGView) {
+            _scanBGView = [[WCScanBGView alloc]initWithFrame:self.view.bounds];
+            _scanBGView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+            _scanBGView.scanRect = scanRect;
+        }
+        //设置scanRectView
+        if (!_scanRectView) {
+            _scanRectView = [[UIImageView alloc]initWithFrame:scanRect];
+            _scanRectView.image = [[UIImage imageNamed:@"scan_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(25, 25, 25, 25)];
+            _scanRectView.clipsToBounds = YES;
+        }
+        //设置lineView
+        if (!_lineView) {
+            _lineView = [[UIImageView alloc]initWithFrame:CGRectMake(0, -2, CGRectGetWidth(scanRect), 2)];
+            _lineView.image = [UIImage imageNamed:@"scan_line"];
+            _lineView.contentMode = UIViewContentModeScaleToFill;
+        }
+        //设置tipLabel
+        if (!_tipLabel) {
+            _tipLabel = [UILabel new];
+            _tipLabel.textAlignment = NSTextAlignmentCenter;
+            _tipLabel.font = [UIFont fontWithName:@"Arial" size:16];
+            _tipLabel.textColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
+            _tipLabel.text = @"请将二维码对准框内";
+        }
+        //隐藏 HUD
         [_loadHUD hideAnimated:YES];
         [self.view.layer addSublayer:_videoPreviewLayer];
         [self.view addSubview:_scanBGView];
@@ -173,6 +174,11 @@
     scanAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     scanAnimation.repeatCount = CGFLOAT_MAX;
     scanAnimation.duration = 1.5;
+    //convertTime获取本地时间，Param：CACurrentMediaTime 系统时间（距离最近一次启动设备的时间），Param：toLayer 为nil则直接返回参数1
+    CFTimeInterval timeInterval = [self.lineView.layer convertTime:CACurrentMediaTime() toLayer:nil];
+    //不加上timeInterval 则时间起点为layer自己的时间线起点，很可能已经超出了自己设置的起点时间，导致得不到延时效果。
+    scanAnimation.beginTime = .5f + timeInterval;
+    //scanAnimation.timeOffset = 1.0f; 动画偏移1秒
     [self.lineView.layer addAnimation:scanAnimation forKey:@"Scan_Animation"];
 }
 

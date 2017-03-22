@@ -8,7 +8,7 @@
 
 #import "WCBaseViewController.h"
 
-#define MAX_STARWORDS_LENGTH 6
+#define MAX_STARWORDS_LENGTH 12
 @interface RegisterViewController : WCBaseViewController<UITextFieldDelegate>
 -(BOOL)isValidateEmail:(NSString *)email;//邮箱合法性判断
 -(BOOL)isValidatePassWord:(NSString *)password;//6-20位数字和字母组成
