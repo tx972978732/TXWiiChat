@@ -12,6 +12,7 @@
 #import "EditUserInfoHelper.h"
 #import "CountStringLengthHelper.h"
 #import "WCHeadImgScrollVIew.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 #define MAX_STARWORDS_LENGTH 30
 
@@ -25,6 +26,7 @@
 @property(nonatomic,strong)UIImageView *editHeadImgView;
 @property(nonatomic,strong)CountStringLengthHelper *countStringHelper;
 @property(nonatomic,strong)WCHeadImgScrollVIew *headImgScrollView;
+@property(nonatomic,strong)RACSignal *nameStringValue;
 @end
 
 NSString *const eidtUserInfoTableVCCellIdentifier = @"eidtUserInfoTableVCCellIdentifier";
@@ -272,6 +274,17 @@ static BOOL tapClicks=NO;
             if ([editNameCell.cellTextField canBecomeFirstResponder]) {
                 [editNameCell.cellTextField becomeFirstResponder];
             }
+            _nameStringValue = editNameCell.cellTextField.rac_textSignal;
+            [_nameStringValue subscribeNext:^(id x) {
+                if ([(NSString*)x isEqualToString:[self.userInfo valueForKey:@"wiiName"]] ) {
+                    NSLog(@"equal text :%@",x);
+                    self.navigationItem.rightBarButtonItem.enabled = NO;
+                }else{
+                    NSLog(@"new text :%@",x);
+                    self.navigationItem.rightBarButtonItem.enabled = YES;
+                }
+            }];
+
             self.editNameTextField = editNameCell.cellTextField;
             return editNameCell;
             

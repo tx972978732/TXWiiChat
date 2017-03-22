@@ -9,12 +9,14 @@
 #import "WCScanQRCodeViewController.h"
 #import "WCScanBGView.h"
 #import "masonry.h"
+#import "MBProgressHUD.h"
 
 @interface WCScanQRCodeViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 @property(nonatomic,strong,readwrite)AVCaptureVideoPreviewLayer *videoPreviewLayer;
 @property(nonatomic,strong)WCScanBGView *scanBGView;
 @property(nonatomic,strong)UIImageView *scanRectView, *lineView;
 @property(nonatomic,strong)UILabel *tipLabel;
+@property(nonatomic,strong)MBProgressHUD *loadHUD;
 @end
 
 @implementation WCScanQRCodeViewController
@@ -23,7 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"扫描二维码";
-    self.navigationController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"相册" style:UIBarButtonItemStylePlain target:self action:@selector(chosePicInAlbum:)];
+    self.view.backgroundColor = [UIColor blackColor];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"相册" style:UIBarButtonItemStylePlain target:self action:@selector(chosePicInAlbum:)];
     NSNotificationCenter *notify = [NSNotificationCenter defaultCenter];
     [notify addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
     [notify addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
@@ -31,11 +34,19 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
-    if (!_videoPreviewLayer) {
-        [self loadUIView];
-    }else{
-        [self startScan];
-    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        if (!_videoPreviewLayer) {
+            [self loadUIView];
+        }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_loadHUD hideAnimated:YES];// always use MBPHUD on main_queue
+            });
+            [self startScan];
+        }
+    });
+    _loadHUD = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    _loadHUD.mode = MBProgressHUDModeIndeterminate;
+    _loadHUD.bezelView.color = [UIColor blackColor];
 }
 
 - (void)viewDidDisappear:(BOOL)animated{
@@ -46,6 +57,7 @@
 - (void)dealloc{
     [self.videoPreviewLayer removeFromSuperlayer];
     self.videoPreviewLayer = nil;
+    [self stopScan];
     [self stopScanLineAnimation];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -132,19 +144,22 @@
     }
     
     //添加视图
-    [self.view.layer addSublayer:_videoPreviewLayer];
-    [self.view addSubview:_scanBGView];
-    [self.view addSubview:_scanRectView];
-    [self.view addSubview:_tipLabel];
-    [_tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.view);
-        make.top.equalTo(_scanRectView.bottom).with.offset(@15);
-        make.height.equalTo(@30);
-    }];
-    [_scanRectView addSubview:_lineView];
-    //启动会话
-    [_videoPreviewLayer.session startRunning];
-    [self startScanLineAnimation];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_loadHUD hideAnimated:YES];
+        [self.view.layer addSublayer:_videoPreviewLayer];
+        [self.view addSubview:_scanBGView];
+        [self.view addSubview:_scanRectView];
+        [self.view addSubview:_tipLabel];
+        [_tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.equalTo(self.view);
+            make.top.equalTo(_scanRectView.bottom).with.offset(@15);
+            make.height.equalTo(@30);
+        }];
+        [_scanRectView addSubview:_lineView];
+        //启动会话
+        [_videoPreviewLayer.session startRunning];
+        [self startScanLineAnimation];
+    });
 }
 
 #pragma mark - scan line animation
