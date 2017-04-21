@@ -35,7 +35,7 @@
     _headImgView.userInteractionEnabled = YES;
     _headImgView.transform = CGAffineTransformMakeScale(0.5, 0.5);
     dispatch_block_t animations = ^{
-        _headImgView.transform = CGAffineTransformIdentity;//给图片增加水平翻转动画
+        _headImgView.transform = CGAffineTransformIdentity;
     };
     //@Param Damping-愚蠢的震荡效果  Velocity-动画速率
     [UIView animateWithDuration:2.0 delay:0. usingSpringWithDamping:1.f initialSpringVelocity:0.5f options:UIViewAnimationOptionBeginFromCurrentState animations:animations completion:nil];

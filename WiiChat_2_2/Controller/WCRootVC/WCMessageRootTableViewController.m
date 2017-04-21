@@ -115,6 +115,10 @@ static float HUDProgress = 0.0f;
     }
 }
 
+- (void)dealloc{
+    [self.searchController.view.superview removeFromSuperview];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

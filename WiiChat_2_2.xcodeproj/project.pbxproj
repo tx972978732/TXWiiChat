@@ -118,6 +118,7 @@
 		D4E2290C1D96A19A00299CA9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E2290B1D96A19A00299CA9 /* QuartzCore.framework */; };
 		D4E229101D96A9D800299CA9 /* SmoothCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E2290F1D96A9D800299CA9 /* SmoothCheckBox.m */; };
 		D4F8CC531E792583008D3DDB /* WCLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4F8CC551E792583008D3DDB /* WCLocalizable.strings */; };
+		D4FCC6271EA8953C00D2C3CA /* WCAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FCC6261EA8953C00D2C3CA /* WCAnimationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -323,6 +324,8 @@
 		D4F8CC511E792574008D3DDB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		D4F8CC521E792574008D3DDB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		D4F8CC541E792583008D3DDB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/WCLocalizable.strings"; sourceTree = "<group>"; };
+		D4FCC6251EA8953C00D2C3CA /* WCAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCAnimationView.h; path = View/WCAnimationView.h; sourceTree = "<group>"; };
+		D4FCC6261EA8953C00D2C3CA /* WCAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCAnimationView.m; path = View/WCAnimationView.m; sourceTree = "<group>"; };
 		EFFC6CE4E7E646752E8AD613 /* Pods-WiiChat_2_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiiChat_2_2.release.xcconfig"; path = "Pods/Target Support Files/Pods-WiiChat_2_2/Pods-WiiChat_2_2.release.xcconfig"; sourceTree = "<group>"; };
 		FD788BB6BD2249FBAFAA404E /* Pods-WiiChat_2_2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiiChat_2_2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WiiChat_2_2/Pods-WiiChat_2_2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -635,6 +638,8 @@
 				D4BC95431E76C667001676E5 /* WCPopMenuTableViewCell.m */,
 				D48CB5411E8105C400ABEA6D /* WCScanBGView.h */,
 				D48CB5421E8105C400ABEA6D /* WCScanBGView.m */,
+				D4FCC6251EA8953C00D2C3CA /* WCAnimationView.h */,
+				D4FCC6261EA8953C00D2C3CA /* WCAnimationView.m */,
 			);
 			name = WCView;
 			sourceTree = "<group>";
@@ -1058,6 +1063,7 @@
 				D4DAE0901E692E7800F7D425 /* ChineseString.m in Sources */,
 				D4BC953F1E7686E5001676E5 /* WCPopMenuItem.m in Sources */,
 				D4DAE0A21E692F1900F7D425 /* WCUIStoreManager.m in Sources */,
+				D4FCC6271EA8953C00D2C3CA /* WCAnimationView.m in Sources */,
 				D4E229101D96A9D800299CA9 /* SmoothCheckBox.m in Sources */,
 				D4DAE11F1E6930CD00F7D425 /* WCAddContactViewController.m in Sources */,
 				D4DAE0B71E692F3100F7D425 /* RegisterHelper.m in Sources */,

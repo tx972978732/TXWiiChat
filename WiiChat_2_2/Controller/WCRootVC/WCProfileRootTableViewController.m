@@ -15,6 +15,8 @@
 #import "WCUIStoreManager.h"
 #import "SVProgressHUD.h"
 #import "YQImageTool.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "WCAnimationView.h"
 
 @interface WCProfileRootTableViewController ()
 @property(nonatomic,strong)UIButton *quitBtn;
@@ -22,6 +24,7 @@
 @property(nonatomic,strong)NSMutableDictionary *userInfo;
 @property(nonatomic,strong)WCProfileTableViewCell *tbCell;
 @property(nonatomic,strong)UserSource *profileRootVCUserSource;
+@property(nonatomic,strong)WCAnimationView *animationView;
 @end
 
 NSString *const profileRootTableVCHeadCellIdentifier = @"profileRootTableVCHeadCellIdentifier";
@@ -36,10 +39,43 @@ static BOOL shouldRefreshData = NO;//避免初始化时重复刷新tableView
     _userInfo = [self.profileRootVCUserSource getUserInfo];
     _UIDataSource = [[WCUIStoreManager sharedWCUIStoreManager]getProfileUIDataSource];
     [self.view addSubview:self.quitBtn];
+    CAKeyframeAnimation *ani = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    ani.values = @[[NSValue valueWithCGPoint:self.view.center],[NSValue valueWithCGPoint:CGPointMake(100, 100)],[NSValue valueWithCGPoint:CGPointMake(280, 360)],[NSValue valueWithCGPoint:CGPointMake(60, 500)],[NSValue valueWithCGPoint:CGPointMake(192, 510)]];
+    //ani.beginTime = CACurrentMediaTime() + 1.0f;
+    ani.duration = 2.0f;
+    ani.removedOnCompletion = NO;
+    ani.keyTimes = @[@0,@0.25,@0.5,@0.75,@1];
+    ani.fillMode = kCAFillModeForwards;
+    ani.calculationMode = kCAAnimationCubicPaced;
+    ani.rotationMode = kCAAnimationRotateAuto;
+    
+    CAKeyframeAnimation *ani2 = [CAKeyframeAnimation animationWithKeyPath:@"cornerRadius"];
+    ani2.values = @[@5,@25,@50,@25,@5];
+    ani2.keyTimes = @[@0,@0.25,@0.5,@0.75,@1];
+    ani2.calculationMode = kCAAnimationCubicPaced;
+    ani2.duration = 2.0f;
+    ani2.fillMode = kCAFillModeForwards;
+    ani2.removedOnCompletion = NO;
+    
+    CAKeyframeAnimation *ani3 = [CAKeyframeAnimation animationWithKeyPath:@"borderColor"];
+    ani3.duration = 2.0f;
+    ani3.removedOnCompletion = NO;
+    ani3.values = @[(id)[UIColor brownColor].CGColor,(id)[UIColor redColor].CGColor,(id)[UIColor greenColor].CGColor,(id)[UIColor blueColor].CGColor,(id)[UIColor brownColor].CGColor];
+    ani3.fillMode = kCAFillModeForwards;
+    ani3.keyTimes = @[@0,@0.25,@0.5,@0.75,@1];
+    ani3.calculationMode = kCAAnimationCubicPaced;
+    
+    CAAnimationGroup *group = [CAAnimationGroup animation];
+    group.duration = 2.0f;
+    group.fillMode = kCAFillModeForwards;
+    group.removedOnCompletion = NO;
+    group.animations = @[ani,ani2,ani3];
+    [_quitBtn.layer addAnimation:group forKey:@"positionChange"];
+    
     if (shouldRefreshData==YES) {
         shouldRefreshData = NO;
     }
-
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -98,6 +134,18 @@ static BOOL shouldRefreshData = NO;//避免初始化时重复刷新tableView
     [_quitBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
     _quitBtn.showsTouchWhenHighlighted = YES;
     [_quitBtn addTarget:self action:@selector(quitBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    
+//*使用layer层进行添加要修改anchorPoint和position的值，默认分别为（0.5，0.5）和（0，0）。即锚点在layer中心、中心位于父layer（0，0）处。                     同时修改anchorPoint和position的值与直接使用frame属性可以达到同样的效果*//
+//* 设置frame属性可让layer自动调节上述属性来达到这样的效果，见官方文档描述：“When setting the frame the `position' and `bounds.size' are changed to match the given frame.”*//
+//    _quitBtn.layer.anchorPoint = CGPointMake(0, 0);
+//    _quitBtn.layer.position = CGPointMake(139, 490);
+//    _quitBtn.layer.bounds = CGRectMake(139, 490, 106, 40);
+//    NSLog(@"btn position:%@",NSStringFromCGPoint(_quitBtn.layer.position));
+//    NSLog(@"Btn piont :%@",NSStringFromCGPoint(_quitBtn.layer.anchorPoint));
+//    NSLog(@"superViewLayer bounds : %@",NSStringFromCGRect(self.view.layer.bounds));
+//    NSLog(@"BtnLayer bounds : %@",NSStringFromCGRect(_quitBtn.layer.bounds));
+//    [self.view.layer addSublayer:self.quitBtn.layer];
+
     return _quitBtn;
 }
 #pragma mark - UITableView Delegate
@@ -120,6 +168,14 @@ static BOOL shouldRefreshData = NO;//避免初始化时重复刷新tableView
         WCUserInfoTableViewController  *useInfo = [[WCUserInfoTableViewController alloc]init];
         [self.navigationController pushViewController:useInfo animated:YES];
     }
+    else{
+        if (!_animationView) {
+            _animationView = [[WCAnimationView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 40)];
+            [self.view addSubview:_animationView];
+            [_animationView setAnimationStart:YES];
+        }
+        [_animationView setAnimationStart:YES];
+    }
 }
 #pragma mark - UITableView Datasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -139,7 +195,11 @@ static BOOL shouldRefreshData = NO;//避免初始化时重复刷新tableView
             cell = [[WCProfileTableViewCell alloc]initHeadCellWithStyle:UITableViewCellStyleDefault reuseIdentifier:profileRootTableVCHeadCellIdentifier];// coredata
         }
         if ([self.userInfo valueForKey:@"wiiHeadImg"]!=nil) {
-            cell.cellImgView.image = [UIImage imageWithData:[_userInfo valueForKey:@"wiiHeadImg"]];
+            //cell.cellImgView.image = [UIImage imageWithData:[_userInfo valueForKey:@"wiiHeadImg"]];
+            NSURL *url = [NSURL URLWithString:@"https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM859/en_US/sierra-roundel-240.png"];
+            [cell.cellImgView setShowActivityIndicatorView:YES];
+            [cell.cellImgView setIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            [cell.cellImgView sd_setImageWithURL:url placeholderImage:[UIImage imageWithData:[_userInfo valueForKey:@"wiiHeadImg"]]]; 
         }else{
             cell.cellImgView.image = [YQImageTool getThumbImageWithImage:[UIImage imageNamed:@"TestHeadImg"] andSize:CGSizeMake(50, 50) Scale:NO];
         }
@@ -203,6 +263,8 @@ static BOOL shouldRefreshData = NO;//避免初始化时重复刷新tableView
     }
     
 }
+
+
 
 /*
 #pragma mark - Navigation
