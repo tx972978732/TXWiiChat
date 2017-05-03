@@ -46,7 +46,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.cellNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 44, 100, 15)];
-        self.cellImgView = [[UIImageView alloc]initWithFrame:CGRectMake(278, 12, 64, 69)];
+        self.cellImgView = [[UIImageView alloc]initWithFrame:CGRectMake(278, 12, 69, 69)];
         self.cellImgView.layer.masksToBounds = YES;
         self.cellImgView.layer.cornerRadius = 8.0f;
         [self.contentView addSubview:self.cellNameLabel];

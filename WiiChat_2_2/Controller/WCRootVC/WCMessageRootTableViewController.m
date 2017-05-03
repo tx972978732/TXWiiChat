@@ -242,7 +242,8 @@ static float HUDProgress = 0.0f;
 - (void)parserDidStartDocument:(NSXMLParser *)parser{
     WEAKSELF
     dispatch_async(dispatch_get_main_queue(), ^{
-        _myHUD = [MBProgressHUD showHUDAddedTo:weakSelf.navigationController.view animated:YES];
+        STRONGSELF
+        _myHUD = [MBProgressHUD showHUDAddedTo:strongSelf.navigationController.view animated:YES];
         _myHUD.mode = MBProgressHUDModeDeterminateHorizontalBar;
         _myHUD.label.text = @"Loading...";
         NSLog(@"start loading!");

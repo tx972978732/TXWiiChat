@@ -46,7 +46,7 @@ WiiSingletonClass_Implementation(EditUserInfoHelper)
             result = @"修改用户信息成功";
             return result;
             break;
-        case userInfoEditTypeSex:
+        case userInfoEditTypeSex://修改用户性别
             resultUser.wiiSex = [userInfo valueForKey:@"wiiSex"];
             sourceUser = [User synchronousDataBaseWithUser:resultUser];//将修改后的user同步至数据源
             if (sourceUser.wiiError!=nil) {
@@ -61,8 +61,23 @@ WiiSingletonClass_Implementation(EditUserInfoHelper)
             result = @"修改用户信息成功";
             return result;
             break;
-        case userInfoEditTypeSignature:
+        case userInfoEditTypeSignature://修改个性签名
             resultUser.wiiSignature = [userInfo valueForKey:@"wiiSignature"];
+            sourceUser = [User synchronousDataBaseWithUser:resultUser];//将修改后的user同步至数据源
+            if (sourceUser.wiiError!=nil) {
+                result = @"同步至数据源出错";
+                return result;//同步至数据源失败 报错返回
+            }
+            resultUser = [User synchronousLocalWithUser:resultUser];//将修改后的user同步至本地
+            if (resultUser.wiiError!=nil) {
+                result = @"同步至本地出错";//*****调整  若数据已同步至数据源，但本地保存修改失败，需重新从数据源加载用户信息或调整策略
+                return result;//存储user修改信息失败 报错返回
+            }
+            result = @"修改用户信息成功";
+            return result;
+            break;
+        case userInfoEditTypeHeadImg://修改头像
+            resultUser.wiiHeadImg = [userInfo valueForKey:@"wiiHeadImg"];
             sourceUser = [User synchronousDataBaseWithUser:resultUser];//将修改后的user同步至数据源
             if (sourceUser.wiiError!=nil) {
                 result = @"同步至数据源出错";

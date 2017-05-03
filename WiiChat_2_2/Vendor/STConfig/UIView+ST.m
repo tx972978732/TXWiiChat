@@ -201,6 +201,8 @@
     [path appendPath:[UIBezierPath bezierPathWithRect:self.frame]];
     [path appendPath:[UIBezierPath bezierPathWithRect:centerFrame].bezierPathByReversingPath];
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.strokeColor = [UIColor whiteColor].CGColor;
+    maskLayer.lineWidth = 1.f;
     maskLayer.path = path.CGPath;
     self.layer.mask = maskLayer;
     

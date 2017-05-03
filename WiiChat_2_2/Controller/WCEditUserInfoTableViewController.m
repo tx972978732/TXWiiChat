@@ -13,6 +13,7 @@
 #import "CountStringLengthHelper.h"
 #import "WCHeadImgScrollVIew.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #define MAX_STARWORDS_LENGTH 30
 
@@ -32,6 +33,7 @@
 NSString *const eidtUserInfoTableVCCellIdentifier = @"eidtUserInfoTableVCCellIdentifier";
 static userInfoEditType editType;
 static BOOL tapClicks=NO;
+
 @implementation WCEditUserInfoTableViewController
 
 #pragma mark - life cycle
@@ -120,7 +122,17 @@ static BOOL tapClicks=NO;
     if (_headImgScrollView) {
         return _headImgScrollView;
     }
-    _headImgScrollView = [[WCHeadImgScrollVIew alloc]initHeadImgScrollViewWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 810) ViewType:headImgScrollViewTypeDefault headImg:[UIImage imageNamed:@"TestHeadImg"]];
+    if (![self.userInfo valueForKey:@"wiiHeadImg"]) {
+        NSURL *url = [NSURL URLWithString:@"https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM859/en_US/sierra-roundel-240.png"];
+        _headImgScrollView = [[WCHeadImgScrollVIew alloc]initHeadImgScrollViewWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 810) ViewType:headImgScrollViewTypeDefault headImg:nil];
+
+        [_headImgScrollView.headImgView setShowActivityIndicatorView:YES];
+        [_headImgScrollView.headImgView setIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [_headImgScrollView.headImgView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"LoginBackgroundImg"]];
+
+    }else{
+    _headImgScrollView = [[WCHeadImgScrollVIew alloc]initHeadImgScrollViewWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 810) ViewType:headImgScrollViewTypeDefault headImg:[UIImage imageWithData:[self.userInfo valueForKey:@"wiiHeadImg"]]];
+    }
     _headImgScrollView.delegate = self;
     self.tableView.scrollEnabled = NO;
     _headImgScrollView.contentSize = CGSizeMake(self.view.bounds.size.width, 800);
@@ -376,12 +388,27 @@ static BOOL tapClicks=NO;
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
     [picker dismissViewControllerAnimated:YES completion:^{
-        UIImage *imageOriginal = [info objectForKey:UIImagePickerControllerOriginalImage];
-        STPhotoKitController *photoVC = [STPhotoKitController new];
-        [photoVC setDelegate:self];
-        [photoVC setImageOriginal:imageOriginal];
-        [photoVC setSizeClip:CGSizeMake(self.headImgScrollView.headImgView.width, self.headImgScrollView.headImgView.height)];
-        [self presentViewController:photoVC animated:YES completion:nil];
+        UIImage *editedImage, *originalImage;
+        editedImage = [info objectForKey:UIImagePickerControllerEditedImage];
+        self.headImgScrollView.headImgView.image = editedImage;//****保存选择的相片至数据库中
+        [self saveEditHeadImg:editedImage];
+        // 保存原图片到相册中  *****拍照图片orientation问题！
+        if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+            originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+            UIImageWriteToSavedPhotosAlbum(originalImage, self, nil, NULL);
+            self.headImgScrollView.headImgView.image = [UIImage imageWithCGImage:originalImage.CGImage scale:1.f orientation:UIImageOrientationRight];
+            [self saveEditHeadImg:[UIImage imageWithCGImage:originalImage.CGImage scale:1.f orientation:UIImageOrientationRight]];
+        }
+
+        //*第三方方法修改编辑头像界面
+//        UIImage *imageOriginal = [info objectForKey:UIImagePickerControllerOriginalImage];
+//        STPhotoKitController *photoVC = [STPhotoKitController new];
+//        [photoVC setDelegate:self];
+//        [photoVC setImageOriginal:imageOriginal];
+//        [photoVC setSizeClip:CGSizeMake(300, 300)];
+//        [self presentViewController:photoVC animated:YES completion:nil];
+        
+  
     }];
 }
 
@@ -707,7 +734,28 @@ static BOOL tapClicks=NO;
     }
 }
 
--(void)choseHeadImg{
+- (void)saveEditHeadImg:(UIImage*)image{
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:1];
+    NSString *saveResult;
+    NSData *imgData = UIImagePNGRepresentation(image);
+    [dic setValue:imgData forKey:@"wiiHeadImg"];
+    saveResult = [[EditUserInfoHelper sharedEditUserInfoHelper]saveChangesWithUserInfo:dic editChangetype:userInfoEditTypeHeadImg];
+    if (![saveResult isEqualToString:@"修改用户信息成功"]) {
+        [SVProgressHUD setFont:[UIFont fontWithName:@"Arial" size:13.0f]];
+        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];//背景风格
+        [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeNative];//动画类型
+        [SVProgressHUD setOffsetFromCenter:UIOffsetMake(0, -30.0f)];
+        [SVProgressHUD showWithStatus:[NSString stringWithFormat:@"%@",saveResult]];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            sleep(1);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+            });
+        });
+    }
+}
+
+- (void)choseHeadImg{
     NSLog(@"选择照片");
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     [alertVC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
@@ -729,6 +777,7 @@ static BOOL tapClicks=NO;
         UIImagePickerController *controller = [UIImagePickerController imagePickerControllerWithSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
         if ([controller isAvailablePhotoLibrary]&&[UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
             [controller setDelegate:self];
+            controller.allowsEditing = YES;
             [self presentViewController:controller animated:YES completion:nil];
         }else{
             UIAlertController *warningAlert1 = [UIAlertController alertControllerWithTitle:@"相册访问权限受限" message:@"请在隐私设置中开启相册权限" preferredStyle:UIAlertControllerStyleAlert];

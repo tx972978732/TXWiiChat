@@ -78,7 +78,7 @@ static BOOL shouldRefreshData = NO;//避免初始化时重复刷新tableView
     
 }
 
--(void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated{
     NSLog(@"WCProfileRootTableViewController ViewWillAppear 调用了");
     if (shouldRefreshData==NO) {
         shouldRefreshData = YES;
@@ -94,11 +94,17 @@ static BOOL shouldRefreshData = NO;//避免初始化时重复刷新tableView
     });
 
 }
--(void)viewDidAppear:(BOOL)animated{
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
     NSLog(@"WCProfileRootTableViewController ViewDidAppear 调用了");
 
 }
--(void)dealloc{
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    [_animationView setAnimationStart:NO];
+}
+- (void)dealloc{
     _profileRootVCUserSource = nil;
     _userInfo = nil;
     _UIDataSource = nil;
@@ -169,6 +175,7 @@ static BOOL shouldRefreshData = NO;//避免初始化时重复刷新tableView
         [self.navigationController pushViewController:useInfo animated:YES];
     }
     else{
+        //测试CoreAnimation
         if (!_animationView) {
             _animationView = [[WCAnimationView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 40)];
             [self.view addSubview:_animationView];
@@ -195,13 +202,12 @@ static BOOL shouldRefreshData = NO;//避免初始化时重复刷新tableView
             cell = [[WCProfileTableViewCell alloc]initHeadCellWithStyle:UITableViewCellStyleDefault reuseIdentifier:profileRootTableVCHeadCellIdentifier];// coredata
         }
         if ([self.userInfo valueForKey:@"wiiHeadImg"]!=nil) {
-            //cell.cellImgView.image = [UIImage imageWithData:[_userInfo valueForKey:@"wiiHeadImg"]];
+            cell.cellImgView.image = [UIImage imageWithData:[_userInfo valueForKey:@"wiiHeadImg"]];
+        }else{
             NSURL *url = [NSURL URLWithString:@"https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM859/en_US/sierra-roundel-240.png"];
             [cell.cellImgView setShowActivityIndicatorView:YES];
             [cell.cellImgView setIndicatorStyle:UIActivityIndicatorViewStyleGray];
-            [cell.cellImgView sd_setImageWithURL:url placeholderImage:[UIImage imageWithData:[_userInfo valueForKey:@"wiiHeadImg"]]]; 
-        }else{
-            cell.cellImgView.image = [YQImageTool getThumbImageWithImage:[UIImage imageNamed:@"TestHeadImg"] andSize:CGSizeMake(50, 50) Scale:NO];
+            [cell.cellImgView sd_setImageWithURL:url placeholderImage:[UIImage imageWithData:[_userInfo valueForKey:@"wiiHeadImg"]]];
         }
         cell.cellNameLabel.text = [NSString stringWithFormat:@"%@",[_userInfo valueForKey:@"wiiName"]];
         cell.cellDetailLabel.text = [NSString stringWithFormat:@"WiiChat号: %@",[self.userInfo valueForKey:@"wiiID"]];

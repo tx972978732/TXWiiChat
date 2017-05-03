@@ -10,8 +10,9 @@
 #import "STConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@interface STPhotoKitController ()<UIGestureRecognizerDelegate>
+@interface STPhotoKitController ()<UIGestureRecognizerDelegate,UIScrollViewDelegate>
 
+@property (nonatomic,strong)UIScrollView *scrollView;
 /** 1.图片 */
 @property (nonatomic, strong) UIImageView *imageView;
 /** 2.取消按钮 */
@@ -44,9 +45,10 @@ NS_ASSUME_NONNULL_END
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.viewOverlay setHollowWithCenterFrame:self.rectClip];
     [self.view setBackgroundColor:[UIColor blackColor]];
-    [self.view addSubview:self.imageView];
+    [self.viewOverlay setHollowWithCenterFrame:self.rectClip];
+    [self.view addSubview:self.scrollView];
+    [self.scrollView addSubview:self.imageView];
     [self.view addSubview:self.viewOverlay];
     [self.view addSubview:self.buttonCancel];
     [self.view addSubview:self.buttonConfirm];
@@ -87,7 +89,9 @@ NS_ASSUME_NONNULL_END
     [self.buttonBack setHidden:YES];
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
         [self.imageView setTransform:CGAffineTransformMakeRotation(0)];
-        [self.imageView setFrame:self.view.bounds];
+        [self.scrollView setFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+        self.scrollView.zoomScale = 1.f;
+        [self.imageView setFrame:self.scrollView.bounds];
     } completion:^(BOOL finished) {
     }];
 
@@ -98,10 +102,13 @@ NS_ASSUME_NONNULL_END
 - (void)rotateView:(UIRotationGestureRecognizer *)rotationGestureRecognizer
 {
     [self.buttonBack setHidden:NO];
-    UIView *view = self.imageView;
-    if (rotationGestureRecognizer.state == UIGestureRecognizerStateBegan || rotationGestureRecognizer.state == UIGestureRecognizerStateChanged) {
-        view.transform = CGAffineTransformRotate(view.transform, rotationGestureRecognizer.rotation);
-        [rotationGestureRecognizer setRotation:0];
+    CGPoint touchPoint = [rotationGestureRecognizer locationInView:self.view];
+    if (!(touchPoint.x<self.rectClip.origin.x||touchPoint.y<self.rectClip.origin.y||touchPoint.x>(self.rectClip.size.width+self.rectClip.origin.x)||touchPoint.y>(self.rectClip.size.height+self.rectClip.origin.y))) {
+        UIView *view = self.imageView;
+        if (rotationGestureRecognizer.state == UIGestureRecognizerStateBegan || rotationGestureRecognizer.state == UIGestureRecognizerStateChanged) {
+            view.transform = CGAffineTransformRotate(view.transform, rotationGestureRecognizer.rotation);
+            [rotationGestureRecognizer setRotation:0];
+        }
     }
 }
 /**
@@ -109,11 +116,30 @@ NS_ASSUME_NONNULL_END
  */
 - (void)pinchView:(UIPinchGestureRecognizer *)pinchGestureRecognizer
 {
-     [self.buttonBack setHidden:NO];
-    UIView *view = self.imageView;
-    if (pinchGestureRecognizer.state == UIGestureRecognizerStateBegan || pinchGestureRecognizer.state == UIGestureRecognizerStateChanged) {
-        view.transform = CGAffineTransformScale(view.transform, pinchGestureRecognizer.scale, pinchGestureRecognizer.scale);
-        pinchGestureRecognizer.scale = 1;
+    [self.buttonBack setHidden:NO];
+    CGPoint touchPoint = [pinchGestureRecognizer locationInView:self.view];
+    if (!(touchPoint.x<self.rectClip.origin.x||touchPoint.y<self.rectClip.origin.y||touchPoint.x>(self.rectClip.size.width+self.rectClip.origin.x)||touchPoint.y>(self.rectClip.size.height+self.rectClip.origin.y))) {
+       __block UIView *view = self.imageView;
+        if (pinchGestureRecognizer.state == UIGestureRecognizerStateBegan || pinchGestureRecognizer.state == UIGestureRecognizerStateChanged) {
+            //不允许缩小至低于clip框
+            if (pinchGestureRecognizer.scale<=1) {
+                [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+                    [view setFrame:self.view.bounds];
+                } completion:^(BOOL finished) {
+                }];
+            }
+            //不允许放大至超过图像2倍size
+            if(view.contentScaleFactor>=2.f){
+                dispatch_block_t animation = ^{
+                    view.transform = CGAffineTransformIdentity;
+                };
+                [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:animation completion:^(BOOL finished) {
+                }];
+
+            }
+            view.transform = CGAffineTransformScale(view.transform, pinchGestureRecognizer.scale, pinchGestureRecognizer.scale);
+            pinchGestureRecognizer.scale = 1;
+        }
     }
 }
 /**
@@ -122,11 +148,14 @@ NS_ASSUME_NONNULL_END
 - (void)panView:(UIPanGestureRecognizer *)panGestureRecognizer
 {
      [self.buttonBack setHidden:NO];
-    UIView *view = self.imageView;
-    if (panGestureRecognizer.state == UIGestureRecognizerStateBegan || panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
-        CGPoint translation = [panGestureRecognizer translationInView:view.superview];
-        [view setCenter:(CGPoint){view.center.x + translation.x, view.center.y + translation.y}];
-        [panGestureRecognizer setTranslation:CGPointZero inView:view.superview];
+    CGPoint touchPoint = [panGestureRecognizer locationInView:self.view];
+    if (!(touchPoint.x<self.rectClip.origin.x||touchPoint.y<self.rectClip.origin.y||touchPoint.x>(self.rectClip.size.width+self.rectClip.origin.x)||touchPoint.y>(self.rectClip.size.height+self.rectClip.origin.y))) {
+        UIView *view = self.imageView;
+        if (panGestureRecognizer.state == UIGestureRecognizerStateBegan || panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
+            CGPoint translation = [panGestureRecognizer translationInView:view.superview];
+            [view setCenter:(CGPoint){view.center.x + translation.x, view.center.y + translation.y}];
+            [panGestureRecognizer setTranslation:CGPointZero inView:view.superview];
+        }
     }
 }
 #pragma mark - --- private methods 私有方法 ---
@@ -136,14 +165,14 @@ NS_ASSUME_NONNULL_END
  */
 - (void) addGestureRecognizerToView:(UIView *)view
 {
-    // 旋转手势
-    UIRotationGestureRecognizer *rotationGestureRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotateView:)];
-    [view addGestureRecognizer:rotationGestureRecognizer];
-
-    // 缩放手势
-    UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchView:)];
-    [view addGestureRecognizer:pinchGestureRecognizer];
-
+//    // 旋转手势
+//    UIRotationGestureRecognizer *rotationGestureRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotateView:)];
+//    [view addGestureRecognizer:rotationGestureRecognizer];
+//
+//    // 缩放手势
+//    UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchView:)];
+//    [view addGestureRecognizer:pinchGestureRecognizer];
+    [view addGestureRecognizer:self.scrollView.pinchGestureRecognizer];
     // 移动手势
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panView:)];
     [view addGestureRecognizer:panGestureRecognizer];
@@ -179,11 +208,26 @@ NS_ASSUME_NONNULL_END
     _rectClip = CGRectMake(clipX, clipY, clipW, clipH);
 }
 
+- (UIScrollView *)scrollView{
+    if (_scrollView) {
+        return _scrollView;
+    }
+    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+    _scrollView.backgroundColor = [UIColor blackColor];
+    _scrollView.maximumZoomScale = 1.5f;
+    _scrollView.minimumZoomScale = 1.f;
+    _scrollView.showsVerticalScrollIndicator = NO;
+    _scrollView.showsHorizontalScrollIndicator = NO;
+    _scrollView.userInteractionEnabled = YES;
+    _scrollView.scrollEnabled = NO;
+    _scrollView.delegate = self;
+    return _scrollView;
+}
 /** 1.图片 */
 - (UIImageView *)imageView
 {
     if (!_imageView) {
-        _imageView = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        _imageView = [[UIImageView alloc]initWithFrame:self.scrollView.bounds];
         [_imageView setContentMode:UIViewContentModeScaleAspectFit];
         [_imageView setUserInteractionEnabled:YES];
         [_imageView setMultipleTouchEnabled:YES];
@@ -280,4 +324,25 @@ NS_ASSUME_NONNULL_END
     }
     return _buttonBack;
 }
+
+#pragma UIScrollView Delegate
+
+- (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
+    return self.imageView;
+}
+
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view{
+    [self.buttonBack setHidden:NO];
+}
+
+//- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale{
+//    if (scrollView.pinchGestureRecognizer.numberOfTouches==2) {
+//        CGPoint p1 = [scrollView.pinchGestureRecognizer locationOfTouch:0 inView:self.view];
+//        CGPoint p2 = [scrollView.pinchGestureRecognizer locationOfTouch:1 inView:self.view];
+//        CGPoint pointCenter = CGPointMake((p1.x+p2.x)/2, (p1.y+p2.y)/2);
+//        NSLog(@"pointCenter:%@",NSStringFromCGPoint(pointCenter));
+//    }
+//    [scrollView setZoomScale:scale animated:YES];
+//}
+
 @end

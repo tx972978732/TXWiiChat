@@ -12,6 +12,7 @@
 #import "WCProfileTableViewCell.h"
 #import "UserSource.h"
 #import "YQImageTool.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface WCUserInfoTableViewController ()
 @property(nonatomic,strong)NSMutableDictionary *userInfo;
@@ -119,11 +120,15 @@ static BOOL shouldRefreshData = NO;//避免初始化时重复刷新tableView
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section==0&&indexPath.row==0) {
-        WCProfileTableViewCell *headTableViewCell = [[WCProfileTableViewCell alloc]initUserInfoHeadCellWithStyle:UITableViewCellStyleDefault reuseIdentifier:userInfoTableVCCellIdentifier];// coredata
+        WCProfileTableViewCell *headTableViewCell = [[WCProfileTableViewCell alloc]initUserInfoHeadCellWithStyle:UITableViewCellStyleDefault reuseIdentifier:userInfoTableVCCellIdentifier];// CoreData
         if ([self.userInfo valueForKey:@"wiiHeadImg"]!=nil) {
             headTableViewCell.cellImgView.image = [UIImage imageWithData:[self.userInfo valueForKey:@"wiiHeadImg"]];
         }else{
-            headTableViewCell.cellImgView.image = [YQImageTool getThumbImageWithImage:[UIImage imageNamed:@"TestHeadImg"] andSize:CGSizeMake(50, 50) Scale:NO];        }
+            NSURL *url = [NSURL URLWithString:@"https://km.support.apple.com/resources/sites/APPLE/content/live/IMAGES/0/IM859/en_US/sierra-roundel-240.png"];
+            [headTableViewCell.cellImgView setShowActivityIndicatorView:YES];
+            [headTableViewCell.cellImgView setIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            [headTableViewCell.cellImgView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"LoginBackgroundImg"]];
+        }
         headTableViewCell.cellNameLabel.text = @"头像";
         headTableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return headTableViewCell;

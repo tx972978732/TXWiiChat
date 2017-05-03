@@ -35,51 +35,56 @@
 
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
-    if (_emitterLayer&&_emitterCell) {
+    if (_animationStart==YES) {
+        if (_emitterLayer&&_emitterCell) {
+            [_emitterLayer removeFromSuperlayer];
+            _emitterLayer = nil;
+            _emitterCell = nil;
+        }
+        _emitterLayer = [CAEmitterLayer layer];
+        _emitterLayer.bounds = self.bounds;
+        self.backgroundColor = [UIColor clearColor];
+        [self.layer addSublayer:_emitterLayer];
+        _emitterLayer.birthRate = 100;
+        _emitterLayer.lifetime = 4;
+        _emitterLayer.velocity = 100;
+        _emitterLayer.scale = 0.5;
+        //_emitterLayer.spin = M_PI;
+        _emitterLayer.renderMode = kCAEmitterLayerBackToFront;
+        _emitterLayer.emitterPosition = self.center;
+        _emitterLayer.emitterSize = self.bounds.size;
+        _emitterLayer.emitterShape = kCAEmitterLayerLine;
+        _emitterLayer.emitterMode = kCAEmitterLayerLine;
+        
+        _emitterCell = [CAEmitterCell emitterCell];
+        //_emitterCell.contents = (__bridge id _Nullable)([UIImage imageNamed:@"MoreEmotions"].CGImage);
+        _emitterCell.contents = (__bridge id _Nullable)([self creratCircle].CGImage);
+        _emitterCell.birthRate = 1.f;
+        _emitterCell.lifetime = 1.f;
+        _emitterCell.velocity = 1.f;
+        _emitterCell.velocityRange = 40.f;
+        _emitterCell.yAcceleration = 10.f;
+        _emitterCell.emissionLongitude = M_PI;
+        _emitterCell.emissionRange = M_PI_4;
+        _emitterCell.scale = 1;
+        _emitterCell.scaleRange = 0.5;
+        _emitterCell.scaleSpeed = 0.05;
+        _emitterCell.color = [UIColor colorWithRed:.5f green:.5f blue:.5f alpha:1.f].CGColor;
+        _emitterCell.redRange = 1.f;
+        _emitterCell.greenRange = 1.f;
+        _emitterCell.blueRange = 1.f;
+        //    _emitterCell.redSpeed = .01f;
+        //    _emitterCell.greenSpeed = .01f;
+        //    _emitterCell.blueSpeed = .01f;
+        _emitterCell.alphaRange = .8f;
+        _emitterCell.alphaSpeed = -.1f;
+        
+        _emitterLayer.emitterCells = @[_emitterCell];
+    }else{
         [_emitterLayer removeFromSuperlayer];
         _emitterLayer = nil;
         _emitterCell = nil;
     }
-    _emitterLayer = [CAEmitterLayer layer];
-    _emitterLayer.bounds = self.bounds;
-    self.backgroundColor = [UIColor clearColor];
-    [self.layer addSublayer:_emitterLayer];
-    _emitterLayer.birthRate = 100;
-    _emitterLayer.lifetime = 4;
-    _emitterLayer.velocity = 100;
-    _emitterLayer.scale = 0.5;
-    //_emitterLayer.spin = M_PI;
-    _emitterLayer.renderMode = kCAEmitterLayerBackToFront;
-    _emitterLayer.emitterPosition = self.center;
-    _emitterLayer.emitterSize = self.bounds.size;
-    _emitterLayer.emitterShape = kCAEmitterLayerLine;
-    _emitterLayer.emitterMode = kCAEmitterLayerLine;
-    
-    _emitterCell = [CAEmitterCell emitterCell];
-    //_emitterCell.contents = (__bridge id _Nullable)([UIImage imageNamed:@"MoreEmotions"].CGImage);
-    _emitterCell.contents = (__bridge id _Nullable)([self creratCircle].CGImage);
-    _emitterCell.birthRate = 1.f;
-    _emitterCell.lifetime = 1.f;
-    _emitterCell.velocity = 1.f;
-    _emitterCell.velocityRange = 40.f;
-    _emitterCell.yAcceleration = 10.f;
-    _emitterCell.emissionLongitude = M_PI;
-    _emitterCell.emissionRange = M_PI_4;
-    _emitterCell.scale = 1;
-    _emitterCell.scaleRange = 0.5;
-    _emitterCell.scaleSpeed = 0.05;
-    _emitterCell.color = [UIColor colorWithRed:.5f green:.5f blue:.5f alpha:1.f].CGColor;
-    _emitterCell.redRange = 1.f;
-    _emitterCell.greenRange = 1.f;
-    _emitterCell.blueRange = 1.f;
-//    _emitterCell.redSpeed = .01f;
-//    _emitterCell.greenSpeed = .01f;
-//    _emitterCell.blueSpeed = .01f;
-    _emitterCell.alphaRange = .8f;
-    _emitterCell.alphaSpeed = -.1f;
-    
-    
-    _emitterLayer.emitterCells = @[_emitterCell];
     
 }
 

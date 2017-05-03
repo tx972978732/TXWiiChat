@@ -18,7 +18,6 @@ static NSMutableDictionary *allUsersInfoDic;
     user.wiiName = name;
     user.wiiPassword = password;
     user.wiiEmail = email;
-    user.wiiHeadImg = UIImagePNGRepresentation([UIImage imageNamed:@"DefaultHeadImg"]);
     NSString *tempNum = [AllUsers generateNewID];
     NSLog(@"%@",tempNum);
     user.wiiID = tempNum;
